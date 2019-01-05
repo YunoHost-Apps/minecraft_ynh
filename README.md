@@ -1,6 +1,8 @@
 # Minecraft app for YunoHost
 Minecraft Server
 
+# IS NOT WORK IS IN DEV
+
 - [Yunohost project](https://yunohost.org)
 - [Minecraft website](https://www.minecraft.net/)
 
