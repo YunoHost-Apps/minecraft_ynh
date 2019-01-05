@@ -19,5 +19,5 @@ Minecraft Server
  
 ### Upgrade this package:
 
-        $ sudo yunohost app upgrade vintagestory -u https://github.com/YunoHost-Apps/minecraft_ynh
+        $ sudo yunohost app upgrade minecraft -u https://github.com/YunoHost-Apps/minecraft_ynh
 
