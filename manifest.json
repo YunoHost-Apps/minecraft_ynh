@@ -60,7 +60,7 @@
                     "en": "Select your server ?",
                     "fr": "Choisir votre serveur ?"
                 },
-                "choices": ["vanilla", "bungeecord", "craftbukkit", "paper"],
+                "choices": ["vanilla", "bungeecord", "craftbukkit", "paper", "spongeforge"],
                 "default": "vanilla"
             },
             {
