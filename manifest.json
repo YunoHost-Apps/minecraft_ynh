@@ -60,7 +60,8 @@
                     "en": "Select your server ?",
                     "fr": "Choisir votre serveur ?"
                 },
-                "example": "vanilla | paper | spigot"
+                "choices": ["vanilla", "paper"],
+                "default": "vanilla"
             },
             {
                 "name": "ram",
