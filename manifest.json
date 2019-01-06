@@ -6,7 +6,7 @@
         "en": "Minecraft package for YunoHost.",
         "fr": "Minecraft pour YunoHost."
     },
-    "version": "3.5.3.0",
+    "version": "1.13.2",
     "url": "https://minecraft.net/",
     "license": "free",
     "maintainer": {
