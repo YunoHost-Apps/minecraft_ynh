@@ -93,11 +93,9 @@ ynh_package_install openjdk-8-jre-headless
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
-mv "../conf/$server.src" "../conf/app.src"
-
 ynh_app_setting_set $app final_path $final_path
 # Download, check integrity, uncompress and patch the source from app.src
-ynh_setup_source "$final_path"
+ynh_setup_source "$final_path" "$server"
 
 #=================================================
 # MODIFY A CONFIG FILE
