@@ -111,6 +111,13 @@ ynh_add_systemd_config
 systemctl enable $app.service
 
 #=================================================
+# INSTALL CMS
+#=================================================
+
+wget https://github.com/MineWeb/MineWebCMS/archive/1.7.0.tar.gz
+mv 1.7.0.tar.gz /var/www/$path_url
+
+#=================================================
 # NGINX CONFIGURATION
 #=================================================
 
@@ -149,6 +156,8 @@ ynh_add_nginx_config
 # Set permissions to app files
 cp -a ../conf/eula.txt $final_path/eula.txt
 chown -R admin $final_path
+chown -R www-data /var/www/$path_url
+chmod -R 775 /var/www/$path_url
 
 #=================================================
 # SETUP SSOWAT
