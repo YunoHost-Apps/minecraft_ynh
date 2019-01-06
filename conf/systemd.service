@@ -1,14 +1,14 @@
 [Unit]
-Description=vinstagestory
+Description=minecraft
 After=network.target
 
 [Service]
-WorkingDirectory=/home/yunohost.app/vintagestory/
+WorkingDirectory=/home/yunohost.app/minecraft/
 User=admin
 Group=users
 Type=simple
 UMask=000
-ExecStart=/usr/bin/mono VintagestoryServer.exe --dataPath /home/yunohost.app/vintagestory/data
+ExecStart=/usr/bin/java -Xmx__RAM__M -Xms__RAM__M -jar server.jar nogui
 RestartSec=15
 Restart=always
 

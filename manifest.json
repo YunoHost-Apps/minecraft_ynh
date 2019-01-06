@@ -52,6 +52,24 @@
                     "fr": "Est-ce un site public ?"
                 },
                 "default": "true"
+            },
+            {
+                "name": "server",
+                "type": "server",
+                "ask": {
+                    "en": "Select your server ?",
+                    "fr": "Choisir votre serveur ?"
+                },
+                "example": "vanilla"
+            },
+            {
+                "name": "ram",
+                "type": "ram",
+                "ask": {
+                    "en": "Set the memory of server ?",
+                    "fr": "Définir la mémoire du serveur ?"
+                },
+                "example": "1024"
             }
         ]
     }
