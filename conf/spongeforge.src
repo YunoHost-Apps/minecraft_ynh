@@ -1,7 +1,0 @@
-SOURCE_URL=https://repo.spongepowered.org/maven/org/spongepowered/spongeforge/1.12.2-2705-8.0.0-BETA-3474/spongeforge-1.12.2-2705-8.0.0-BETA-3474.jar
-SOURCE_SUM=4a0bd4e1bdf1c96e7552757ef8d0bf19f7fbd97b98dfdf00272a071a15f4beaabf02621a487a755048dc849805aa9b3e971fb88e55ab5d7f7315a076772ead0c
-SOURCE_SUM_PRG=sha512sum
-SOURCE_FORMAT=jar
-SOURCE_IN_SUBDIR=false
-SOURCE_EXTRACT=false
-SOURCE_FILENAME=server.jar
