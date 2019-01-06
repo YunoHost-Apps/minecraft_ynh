@@ -67,10 +67,11 @@
                 "name": "ram",
                 "type": "ram",
                 "ask": {
-                    "en": "Set the memory of server ?",
-                    "fr": "Définir la mémoire du serveur ?"
+                    "en": "Set the memory of server ? Convert the number in MegaByte (MB binary) : for example 2GB = 2048, 4GB = 4096...",
+                    "fr": "Définir la mémoire du serveur ? Convertir le chiffre en MegaByte (MB binaire) : soit 2GB = 2048, 4GB = 4096..."
                 },
-                "example": "1024"
+                "example": "1024, 2048, 4096, ...",
+                "default": "1024"
             }
         ]
     }
