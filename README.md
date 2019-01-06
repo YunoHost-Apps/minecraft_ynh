@@ -22,11 +22,8 @@ Minecraft Server
 1. Minecraft (Vanilla)
 2. Spigot
 3. CraftBukkit (by Spigot)
-4. MinecraftForge
-5. SpongeForge
-6. BungeeCord
-7. PocketMine-MP
-8. Paper
+4. BungeeCord
+5. Paper
  
 ### Upgrade this package:
 
