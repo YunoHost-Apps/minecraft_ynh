@@ -24,6 +24,16 @@
     ],
     "arguments": {
         "install": [{
+                "name": "id",
+                "type": "id",
+                "ask": {
+                    "en": "Choose a server name for Minecraft",
+                    "fr": "Choisissez un nom de server pour Minecraft"
+                },
+                "example": "minecraft",
+                "default": "minecraft"
+            },
+            {
                 "name": "domain",
                 "type": "domain",
                 "ask": {
@@ -32,7 +42,6 @@
                 },
                 "example": "example.com"
             },
-
             {
                 "name": "path",
                 "type": "path",
@@ -43,7 +52,6 @@
                 "example": "/mc",
                 "default": "/mc"
             },
-            
             {
                 "name": "is_public",
                 "type": "boolean",
