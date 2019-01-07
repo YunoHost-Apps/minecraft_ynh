@@ -154,6 +154,7 @@ ynh_add_nginx_config
 
 # Set permissions to app files
 cp -a ../conf/eula.txt $final_path/eula.txt
+sleep 60
 cp -a ../conf/server.properties $final_path/server.properties
 cp -a ../conf/ops.json $final_path/ops.json
 chown -R admin $final_path
