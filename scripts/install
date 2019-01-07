@@ -64,9 +64,9 @@ test ! -e "$final_path" || ynh_die "This path already contains a folder"
 # STORE SETTINGS FROM MANIFEST
 #=================================================
 
-ynh_app_setting_set $app domain $domain
-ynh_app_setting_set $app path $path_url
-ynh_app_setting_set $app is_public $is_public
+#ynh_app_setting_set $app domain $domain
+#ynh_app_setting_set $app path $path_url
+#ynh_app_setting_set $app is_public $is_public
 
 #=================================================
 # FIND AND OPEN A PORT
