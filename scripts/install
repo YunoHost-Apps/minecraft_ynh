@@ -44,7 +44,6 @@ op=$YNH_APP_ARG_OP
 ### guaranteed to be unique. This is a good unique identifier to define installation path,
 ### db names, ...
 app=$YNH_APP_INSTANCE_NAME
-#app1=$YNH_APP_ARG_INSTANCE
 
 #=================================================
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
@@ -105,6 +104,7 @@ ynh_setup_source "$final_path" "$server"
 #=================================================
 
 ynh_replace_string "__RAM__" "$ram" "../conf/systemd.service"
+ynh_replace_string "__PATH__" "$final_path" "../conf/systemd.service"
 ynh_replace_string "__PORT__" "$port" "../conf/server.properties"
 ynh_replace_string "__OP__" "$op" "../conf/ops.txt"
 

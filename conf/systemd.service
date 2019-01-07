@@ -3,7 +3,7 @@ Description=minecraft
 After=network.target
 
 [Service]
-WorkingDirectory=/home/yunohost.app/minecraft/
+WorkingDirectory=__PATH__
 User=admin
 Group=users
 Type=simple
