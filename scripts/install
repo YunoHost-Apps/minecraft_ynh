@@ -106,7 +106,7 @@ ynh_setup_source "$final_path" "$server"
 
 ynh_replace_string "__RAM__" "$ram" "../conf/systemd.service"
 ynh_replace_string "__PORT__" "$port" "../conf/server.properties"
-ynh_replace_string "__OP__" "$op" "../conf/ops.json"
+ynh_replace_string "__OP__" "$op" "../conf/ops.txt"
 
 #=================================================
 # SETUP SYSTEMD
@@ -153,11 +153,8 @@ ynh_add_nginx_config
 
 # Set permissions to app files
 cp -a ../conf/eula.txt $final_path/eula.txt
-chown -R admin $final_path
-systemctl start $app.service
-sleep 60
 cp -a ../conf/server.properties $final_path/server.properties
-cp -a ../conf/ops.json $final_path/ops.json
+cp -a ../conf/ops.txt $final_path/ops.txt
 chown -R admin $final_path
 
 #=================================================
@@ -172,4 +169,4 @@ fi
 
 # Reload services
 systemctl reload nginx
-systemctl restart $app.service
+systemctl start $app.service
