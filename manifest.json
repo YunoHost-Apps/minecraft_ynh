@@ -1,6 +1,5 @@
 {
     "name": "Minecraft",
-    "id": "minecraft",
     "packaging_format": 1,
     "description": {
         "en": "Minecraft package for YunoHost.",
