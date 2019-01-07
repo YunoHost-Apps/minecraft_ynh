@@ -30,6 +30,7 @@ path_url=$YNH_APP_ARG_PATH
 is_public=$YNH_APP_ARG_IS_PUBLIC
 server=$YNH_APP_ARG_SERVER
 ram=$YNH_APP_ARG_RAM
+port=$YNH_APP_ARG_PORT
 
 ### If it's a multi-instance app, meaning it can be installed several times independently
 ### The id of the app as stated in the manifest is available as $YNH_APP_ID
@@ -42,7 +43,7 @@ ram=$YNH_APP_ARG_RAM
 ### guaranteed to be unique. This is a good unique identifier to define installation path,
 ### db names, ...
 app=$YNH_APP_INSTANCE_NAME
-app1=$YNH_APP_ARG_INSTANCE
+#app1=$YNH_APP_ARG_INSTANCE
 
 #=================================================
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
@@ -50,7 +51,7 @@ app1=$YNH_APP_ARG_INSTANCE
 
 ### If the app uses nginx as web server (written in HTML/PHP in most cases), the final path should be "/var/www/$app".
 ### If the app provides an internal web server (or uses another application server such as uwsgi), the final path should be "/opt/yunohost/$app"
-final_path=/home/yunohost.app/$app1
+final_path=/home/yunohost.app/$app
 test ! -e "$final_path" || ynh_die "This path already contains a folder"
 
 # Normalize the url path syntax
@@ -79,10 +80,10 @@ ynh_app_setting_set $app is_public $is_public
 ###		- Remove the section "CLOSE A PORT" in the remove script
 
 # Find a free port
-port=$(ynh_find_port 25565)
+port_test=$(ynh_find_port $port)
 # Open this port
-yunohost firewall allow --no-upnp TCP $port 2>&1
-ynh_app_setting_set $app1 port $port
+yunohost firewall allow --no-upnp TCP $port_test 2>&1
+ynh_app_setting_set $app port_test $port_test
 
 #==============================================
 # INSTALL DEPS
@@ -94,7 +95,7 @@ ynh_package_install openjdk-8-jre-headless
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
-ynh_app_setting_set $app1 final_path $final_path
+ynh_app_setting_set $app final_path $final_path
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source "$final_path" "$server"
 
@@ -103,13 +104,14 @@ ynh_setup_source "$final_path" "$server"
 #=================================================
 
 ynh_replace_string "__RAM__" "$ram" "../conf/systemd.service"
+ynh_replace_string "__PORT__" "$port" "../conf/server.properties"
 
 #=================================================
 # SETUP SYSTEMD
 #=================================================
 
 ynh_add_systemd_config
-systemctl enable $app1.service
+systemctl enable $app.service
 
 #=================================================
 # NGINX CONFIGURATION
@@ -149,6 +151,7 @@ ynh_add_nginx_config
 
 # Set permissions to app files
 cp -a ../conf/eula.txt $final_path/eula.txt
+cp -a ../conf/server.properties $final_path/server.properties
 chown -R admin $final_path
 
 #=================================================
@@ -163,4 +166,4 @@ fi
 
 # Reload services
 systemctl reload nginx
-systemctl start $app1.service
+systemctl start $app.service

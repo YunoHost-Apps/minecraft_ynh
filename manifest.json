@@ -72,6 +72,16 @@
                 "default": "vanilla"
             },
             {
+                "name": "port",
+                "type": "port",
+                "ask": {
+                    "en": "Select your port ?",
+                    "fr": "Choisir votre port ?"
+                },
+                "example": "25565",
+                "default": "25565"
+            },
+            {
                 "name": "ram",
                 "type": "ram",
                 "ask": {
