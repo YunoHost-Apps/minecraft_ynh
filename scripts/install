@@ -114,6 +114,7 @@ ynh_replace_string "__OP__" "$op" "../conf/ops.json"
 
 ynh_add_systemd_config
 systemctl enable $app.service
+systemctl start $app.service
 
 #=================================================
 # NGINX CONFIGURATION
@@ -169,4 +170,4 @@ fi
 
 # Reload services
 systemctl reload nginx
-systemctl start $app.service
+systemctl restart $app.service
