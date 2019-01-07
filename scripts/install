@@ -41,7 +41,7 @@ ram=$YNH_APP_ARG_RAM
 ### The app instance name is probably what interests you most, since this is
 ### guaranteed to be unique. This is a good unique identifier to define installation path,
 ### db names, ...
-app=$YNH_APP_ARG_APP
+app=$YNH_APP_ARG_INSTANCE
 
 #=================================================
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
