@@ -1,5 +1,6 @@
 {
     "name": "Minecraft",
+    "id": "minecraft",
     "packaging_format": 1,
     "description": {
         "en": "Minecraft package for YunoHost.",
@@ -23,8 +24,8 @@
     ],
     "arguments": {
         "install": [{
-                "name": "id",
-                "type": "id",
+                "name": "app",
+                "type": "app",
                 "ask": {
                     "en": "Choose a server name for Minecraft",
                     "fr": "Choisissez un nom de server pour Minecraft"
