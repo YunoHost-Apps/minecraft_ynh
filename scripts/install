@@ -31,6 +31,7 @@ is_public=$YNH_APP_ARG_IS_PUBLIC
 server=$YNH_APP_ARG_SERVER
 ram=$YNH_APP_ARG_RAM
 port=$YNH_APP_ARG_PORT
+op=$YNH_APP_ARG_OP
 
 ### If it's a multi-instance app, meaning it can be installed several times independently
 ### The id of the app as stated in the manifest is available as $YNH_APP_ID
@@ -105,6 +106,7 @@ ynh_setup_source "$final_path" "$server"
 
 ynh_replace_string "__RAM__" "$ram" "../conf/systemd.service"
 ynh_replace_string "__PORT__" "$port" "../conf/server.properties"
+ynh_replace_string "__OP__" "$op" "../conf/ops.json"
 
 #=================================================
 # SETUP SYSTEMD
@@ -152,6 +154,7 @@ ynh_add_nginx_config
 # Set permissions to app files
 cp -a ../conf/eula.txt $final_path/eula.txt
 cp -a ../conf/server.properties $final_path/server.properties
+cp -a ../conf/ops.json $final_path/ops.json
 chown -R admin $final_path
 
 #=================================================

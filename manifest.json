@@ -90,6 +90,15 @@
                 },
                 "example": "1024, 2048, 4096, ...",
                 "default": "1024"
+            },
+            {
+                "name": "op",
+                "type": "op",
+                "ask": {
+                    "en": "Enter the name of the administrator (minecraft pseudo) !",
+                    "fr": "Entrer le nom de l'adminsitrateur (minecraft pseudo) !"
+                },
+                "example": "liberodark"
             }
         ]
     }
