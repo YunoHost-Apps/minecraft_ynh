@@ -41,7 +41,8 @@ ram=$YNH_APP_ARG_RAM
 ### The app instance name is probably what interests you most, since this is
 ### guaranteed to be unique. This is a good unique identifier to define installation path,
 ### db names, ...
-app=$YNH_APP_ARG_INSTANCE
+app=$YNH_APP_INSTANCE_NAME
+app1=$YNH_APP_ARG_INSTANCE
 
 #=================================================
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
@@ -49,24 +50,24 @@ app=$YNH_APP_ARG_INSTANCE
 
 ### If the app uses nginx as web server (written in HTML/PHP in most cases), the final path should be "/var/www/$app".
 ### If the app provides an internal web server (or uses another application server such as uwsgi), the final path should be "/opt/yunohost/$app"
-final_path=/home/yunohost.app/$app
+final_path=/home/yunohost.app/$app1
 test ! -e "$final_path" || ynh_die "This path already contains a folder"
 
 # Normalize the url path syntax
-#path_url=$(ynh_normalize_url_path $path_url)
+path_url=$(ynh_normalize_url_path $path_url)
 
 # Check web path availability
-#ynh_webpath_available $domain $path_url
+ynh_webpath_available $domain $path_url
 # Register (book) web path
-#ynh_webpath_register $app $domain $path_url
+ynh_webpath_register $app $domain $path_url
 
 #=================================================
 # STORE SETTINGS FROM MANIFEST
 #=================================================
 
-#ynh_app_setting_set $app domain $domain
-#ynh_app_setting_set $app path $path_url
-#ynh_app_setting_set $app is_public $is_public
+ynh_app_setting_set $app domain $domain
+ynh_app_setting_set $app path $path_url
+ynh_app_setting_set $app is_public $is_public
 
 #=================================================
 # FIND AND OPEN A PORT
@@ -81,7 +82,7 @@ test ! -e "$final_path" || ynh_die "This path already contains a folder"
 port=$(ynh_find_port 25565)
 # Open this port
 yunohost firewall allow --no-upnp TCP $port 2>&1
-ynh_app_setting_set $app port $port
+ynh_app_setting_set $app1 port $port
 
 #==============================================
 # INSTALL DEPS
@@ -93,7 +94,7 @@ ynh_package_install openjdk-8-jre-headless
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
-ynh_app_setting_set $app final_path $final_path
+ynh_app_setting_set $app1 final_path $final_path
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source "$final_path" "$server"
 
@@ -108,14 +109,14 @@ ynh_replace_string "__RAM__" "$ram" "../conf/systemd.service"
 #=================================================
 
 ynh_add_systemd_config
-systemctl enable $app.service
+systemctl enable $app1.service
 
 #=================================================
 # NGINX CONFIGURATION
 #=================================================
 
 # Create a dedicated nginx config
-#ynh_add_nginx_config
+ynh_add_nginx_config
 
 #=================================================
 # CREATE DEDICATED USER
@@ -162,4 +163,4 @@ fi
 
 # Reload services
 systemctl reload nginx
-systemctl start $app.service
+systemctl start $app1.service
