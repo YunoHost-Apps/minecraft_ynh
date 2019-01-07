@@ -53,12 +53,12 @@ final_path=/home/yunohost.app/$app
 test ! -e "$final_path" || ynh_die "This path already contains a folder"
 
 # Normalize the url path syntax
-path_url=$(ynh_normalize_url_path $path_url)
+#path_url=$(ynh_normalize_url_path $path_url)
 
 # Check web path availability
-ynh_webpath_available $domain $path_url
+#ynh_webpath_available $domain $path_url
 # Register (book) web path
-ynh_webpath_register $app $domain $path_url
+#ynh_webpath_register $app $domain $path_url
 
 #=================================================
 # STORE SETTINGS FROM MANIFEST
@@ -155,10 +155,10 @@ chown -R admin $final_path
 #=================================================
 
 # If app is public, add url to SSOWat conf as skipped_uris
-#if [ $is_public -eq 1 ]; then
+if [ $is_public -eq 1 ]; then
   # unprotected_uris allows SSO credentials to be passed anyway.
-#  ynh_app_setting_set "$app" unprotected_uris "/"
-#fi
+  ynh_app_setting_set "$app" unprotected_uris "/"
+fi
 
 # Reload services
 systemctl reload nginx
