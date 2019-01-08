@@ -29,6 +29,7 @@ domain=$YNH_APP_ARG_DOMAIN
 path_url=$YNH_APP_ARG_PATH
 is_public=$YNH_APP_ARG_IS_PUBLIC
 server=$YNH_APP_ARG_SERVER
+version=$YNH_APP_ARG_VERSION
 ram=$YNH_APP_ARG_RAM
 port=$YNH_APP_ARG_PORT
 op=$YNH_APP_ARG_OP
@@ -97,6 +98,7 @@ ynh_package_install openjdk-8-jre-headless
 
 ynh_app_setting_set $app final_path $final_path
 # Download, check integrity, uncompress and patch the source from app.src
+ynh_replace_string "__VERSION__" "$version" "../conf/$server.src"
 ynh_setup_source "$final_path" "$server"
 
 #=================================================

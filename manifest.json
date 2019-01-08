@@ -6,7 +6,6 @@
         "en": "Minecraft package for YunoHost.",
         "fr": "Minecraft pour YunoHost."
     },
-    "version": "1.13.2",
     "url": "https://minecraft.net/",
     "license": "free",
     "maintainer": {
@@ -60,6 +59,16 @@
                 },
                 "choices": ["vanilla", "bungeecord", "craftbukkit", "paper", "spigot", "waterfall"],
                 "default": "vanilla"
+            },
+            {
+                "name": "version",
+                "type": "version",
+                "ask": {
+                    "en": "Select your server version ?",
+                    "fr": "Choisir votre version du serveur ?"
+                },
+                "example": "1.13.2, 1.13.1, 1.13, 1.12.2, ...",
+                "default": "1.13.2"
             },
             {
                 "name": "port",
