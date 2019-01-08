@@ -33,7 +33,7 @@ version=$YNH_APP_ARG_VERSION
 ram=$YNH_APP_ARG_RAM
 port=$YNH_APP_ARG_PORT
 op=$YNH_APP_ARG_OP
-sha512=$server_$version
+sha512="$server"_"$version"
 
 ### If it's a multi-instance app, meaning it can be installed several times independently
 ### The id of the app as stated in the manifest is available as $YNH_APP_ID
