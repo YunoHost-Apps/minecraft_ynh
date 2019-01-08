@@ -1,5 +1,5 @@
 SOURCE_URL=https://github.com/liberodark/minecraft-server/blob/master/Vanilla/server-__VERSION__.jar?raw=true
-SOURCE_SUM=skip
+SOURCE_SUM=false
 SOURCE_SUM_PRG=false
 SOURCE_FORMAT=jar
 SOURCE_IN_SUBDIR=false
