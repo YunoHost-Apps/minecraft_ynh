@@ -98,6 +98,16 @@
                     "fr": "Entrer le nom de l'adminsitrateur (minecraft pseudo) !"
                 },
                 "example": "liberodark"
+            },
+            {
+                "name": "eula",
+                "type": "eula",
+                "ask": {
+                    "en": "By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).",
+                    "fr": "En modifiant le paramètre ci-dessous sur TRUE, vous indiquez votre accord avec notre CLUF (https://account.mojang.com/documents/minecraft_eula)."
+                },
+                "example": "true, false"
+                "default": "true"
             }
         ]
     }
