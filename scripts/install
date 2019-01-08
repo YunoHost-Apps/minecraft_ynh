@@ -33,7 +33,7 @@ version=$YNH_APP_ARG_VERSION
 ram=$YNH_APP_ARG_RAM
 port=$YNH_APP_ARG_PORT
 op=$YNH_APP_ARG_OP
-sha512=$server-$version
+sha512=$server_$version
 
 ### If it's a multi-instance app, meaning it can be installed several times independently
 ### The id of the app as stated in the manifest is available as $YNH_APP_ID
@@ -107,7 +107,7 @@ ynh_package_install openjdk-8-jre-headless
 #$spigot-1.13.2=
 
 # Vanilla
-vanilla-1.13.2="a82805cc0b6ea0c3481405eef1910549623db9b025ff78d228ef9c767950b34d1e8c30452f2f6f9ec22a53445a8dd64ebaec7c13cee1a9eac63bfc80725fcc44"
+vanilla_1.13.2="a82805cc0b6ea0c3481405eef1910549623db9b025ff78d228ef9c767950b34d1e8c30452f2f6f9ec22a53445a8dd64ebaec7c13cee1a9eac63bfc80725fcc44"
 
 #server-1.13.1=a82805cc0b6ea0c3481405eef1910549623db9b025ff78d228ef9c767950b34d1e8c30452f2f6f9ec22a53445a8dd64ebaec7c13cee1a9eac63bfc80725fcc44
 
