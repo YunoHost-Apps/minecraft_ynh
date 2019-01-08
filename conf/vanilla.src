@@ -1,6 +1,6 @@
 SOURCE_URL=https://github.com/liberodark/minecraft-server/blob/master/Vanilla/server-__VERSION__.jar?raw=true
-SOURCE_SUM=false
-SOURCE_SUM_PRG=false
+SOURCE_SUM=__SHA__
+SOURCE_SUM_PRG=sha512sum
 SOURCE_FORMAT=jar
 SOURCE_IN_SUBDIR=false
 SOURCE_EXTRACT=false
