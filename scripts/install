@@ -98,16 +98,16 @@ ynh_package_install openjdk-8-jre-headless
 #==============================================
 
 # CraftBukit
-$server-1.13.2=
+#$craftbukkit-1.13.2=
 
 # Paper
-$server-1.13.2=
+#$paper-1.13.2=
 
 # Spigot
-$server-1.13.2=
+#$spigot-1.13.2=
 
 # Vanilla
-$server-1.13.2="a82805cc0b6ea0c3481405eef1910549623db9b025ff78d228ef9c767950b34d1e8c30452f2f6f9ec22a53445a8dd64ebaec7c13cee1a9eac63bfc80725fcc44"
+$vanilla-1.13.2=a82805cc0b6ea0c3481405eef1910549623db9b025ff78d228ef9c767950b34d1e8c30452f2f6f9ec22a53445a8dd64ebaec7c13cee1a9eac63bfc80725fcc44
 
 #$server-1.13.1=a82805cc0b6ea0c3481405eef1910549623db9b025ff78d228ef9c767950b34d1e8c30452f2f6f9ec22a53445a8dd64ebaec7c13cee1a9eac63bfc80725fcc44
 
