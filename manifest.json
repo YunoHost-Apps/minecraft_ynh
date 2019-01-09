@@ -7,7 +7,7 @@
         "fr": "Minecraft pour YunoHost."
     },
     "url": "https://minecraft.net/",
-    "license": "free",
+    "license": "non-free",
     "maintainer": {
         "name": "liberodark",
         "email": "liberodark@gmail.com"
