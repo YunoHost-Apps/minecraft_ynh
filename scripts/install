@@ -84,11 +84,12 @@ ynh_app_setting_set $app is_public $is_public
 
 # Find a free port
 port_test=$(ynh_find_port $port)
-port_test=$(ynh_find_port 25575)
+port_test1=$(ynh_find_port 25575)
 # Open this port
 yunohost firewall allow --no-upnp TCP $port_test 2>&1
-yunohost firewall allow --no-upnp TCP 25575 2>&1
+yunohost firewall allow --no-upnp TCP $port_test1 2>&1
 ynh_app_setting_set $app port_test $port_test
+ynh_app_setting_set $app port_test1 $port_test1
 
 #==============================================
 # INSTALL DEPS
