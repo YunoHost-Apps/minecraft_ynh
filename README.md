@@ -15,8 +15,12 @@ Minecraft Server
 
          $ sudo yunohost app install https://github.com/YunoHost-Apps/minecraft_ynh
          
-For admin the server use minecraft or https://github.com/Tiiffi/mcrcon/releases rcon is open on 25575 with your password.
- 
+For admin the server use minecraft or rcon is open on 25575 with your password.
+
+Rcon :
+https://github.com/Tiiffi/mcrcon/releases
+https://github.com/Tee7even/RCONClient
+
  ### Supported Servers :
  
 1. Minecraft (Vanilla)
