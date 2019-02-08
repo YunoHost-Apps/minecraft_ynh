@@ -32,6 +32,8 @@ server=$YNH_APP_ARG_SERVER
 ram=$YNH_APP_ARG_RAM
 port=$YNH_APP_ARG_PORT
 op=$YNH_APP_ARG_OP
+rcon=$YNH_APP_ARG_RCON
+passwd=$YNH_APP_ARG_PASSWD
 eula=$YNH_APP_ARG_EULA
 
 ### If it's a multi-instance app, meaning it can be installed several times independently
@@ -108,7 +110,9 @@ ynh_replace_string "__RAM__" "$ram" "../conf/systemd.service"
 ynh_replace_string "__PATH__" "$final_path" "../conf/systemd.service"
 ynh_replace_string "__PORT__" "$port" "../conf/server.properties"
 ynh_replace_string "__OP__" "$op" "../conf/ops.txt"
- ynh_replace_string "__EULA__" "$eula" "../conf/eula.txt"
+ynh_replace_string "__RCON__" "$rcon" "../conf/server.properties"
+ynh_replace_string "__PASSWD__" "$passwd" "../conf/server.properties"
+ynh_replace_string "__EULA__" "$eula" "../conf/eula.txt"
 
 #=================================================
 # SETUP SYSTEMD

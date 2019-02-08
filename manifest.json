@@ -90,6 +90,25 @@
                 "example": "liberodark"
             },
             {
+                "name": "rcon",
+                "type": "rcon",
+                "ask": {
+                    "en": "Do you want to activate RCON ?",
+                    "fr": "Voulez vous activer RCON ?"
+                },
+                "example": "true, false",
+                "default": "true"
+            },
+            {
+                "name": "passwd",
+                "type": "passwd",
+                "ask": {
+                    "en": "Enter your password for RCON !",
+                    "fr": "Entrez votre mot de passe pour RCON !"
+                },
+                "example": "mypassword"
+            },
+            {
                 "name": "eula",
                 "type": "eula",
                 "ask": {
