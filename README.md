@@ -14,8 +14,8 @@ Minecraft Server
  1. App can be installed by YunoHost **admin web-interface** or by **running following command**:
 
          $ sudo yunohost app install https://github.com/YunoHost-Apps/minecraft_ynh
- 1. Admin username is : **root**.
- 
+         
+For admin the server use minecraft or https://github.com/Tiiffi/mcrcon/releases rcon is open on 25575 with your password.
  
  ### Supported Servers :
  
