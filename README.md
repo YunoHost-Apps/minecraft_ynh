@@ -30,7 +30,7 @@ For admin the server use minecraft console or rcon is open on 25575 with your pa
 
 ### Location :
 
-The folder of yours servers is : /home/yunohost.app/
+The folder of yours servers is : ```/home/yunohost.app/```
 
 ### Supported Servers :
  
