@@ -9,7 +9,7 @@ Minecraft Server
 
 [![Install Minecraft with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=minecraft)
 
-### Installing guide
+### Installing guide :
 
  1. App can be installed by YunoHost **admin web-interface** or by **running following command**:
 
@@ -21,6 +21,12 @@ For admin the server use minecraft console or rcon is open on 25575 with your pa
 - https://github.com/Tee7even/RCONClient (in java)
 - https://github.com/Tiiffi/mcrcon/releases (in c)
 
+### Start / Stop / Restart / Status Minecraft :
+
+- ```systemctl start minecraft```
+- ```systemctl stop minecraft```
+- ```systemctl restart minecraft```
+- ```systemctl status minecraft```
 
  ### Supported Servers :
  
