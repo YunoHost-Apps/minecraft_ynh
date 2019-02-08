@@ -17,9 +17,10 @@ Minecraft Server
          
 For admin the server use minecraft console or rcon is open on 25575 with your password.
 
-### Rcon Client :
-- https://github.com/Tiiffi/mcrcon/releases
-- https://github.com/Tee7even/RCONClient
+### Rcon Clients :
+- https://github.com/Tee7even/RCONClient (in java)
+- https://github.com/Tiiffi/mcrcon/releases (in c)
+
 
  ### Supported Servers :
  
