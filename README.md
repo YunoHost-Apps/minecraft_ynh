@@ -28,7 +28,11 @@ For admin the server use minecraft console or rcon is open on 25575 with your pa
 - ```systemctl restart minecraft```
 - ```systemctl status minecraft```
 
- ### Supported Servers :
+### Location :
+
+The folder of yours servers is : /home/yunohost.app/
+
+### Supported Servers :
  
 1. Minecraft (Vanilla)
 2. Spigot
