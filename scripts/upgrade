@@ -10,8 +10,8 @@ final_path=/home/yunohost.app/$app
 # Source YunoHost helpers
 source /usr/share/yunohost/helpers
 
-# Stop vintagestory service
-systemctl stop vintagestory
+# Stop minecraft service
+systemctl stop $app
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -49,6 +49,6 @@ sudo chown -R admin $final_path
 #  ynh_app_setting_set "$app" unprotected_uris "/"
 #fi
 
-# Start vintagestory service
-systemctl start vintagestory
+# Start minecraft service
+systemctl start $app
 
