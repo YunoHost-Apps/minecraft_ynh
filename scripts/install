@@ -91,11 +91,20 @@ yunohost firewall allow --no-upnp TCP $port_test1 2>&1
 ynh_app_setting_set $app port_test $port_test
 ynh_app_setting_set $app port_test1 $port_test1
 
-#==============================================
-# INSTALL DEPS
-#==============================================
+#=================================================
+# INSTALL DEPENDENCIES
+#=================================================
 
-ynh_package_install openjdk-8-jre-headless
+ynh_print_info "Installing dependencies..."
+
+### `ynh_install_app_dependencies` allows you to add any "apt" dependencies to the package.
+### Those deb packages will be installed as dependencies of this package.
+### If you're not using this helper:
+###		- Remove the section "REMOVE DEPENDENCIES" in the remove script
+###		- As well as the section "REINSTALL DEPENDENCIES" in the restore script
+###		- And the section "UPGRADE DEPENDENCIES" in the upgrade script
+
+ynh_install_app_dependencies openjdk-8-jre-headless
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
