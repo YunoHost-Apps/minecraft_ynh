@@ -45,7 +45,7 @@
                 "name": "is_public",
                 "type": "boolean",
                 "ask": {
-                    "en": "Is it a public site ?",
+                    "en": "Is it a public site?",
                     "fr": "Est-ce un site public ?"
                 },
                 "default": "true"
@@ -54,7 +54,7 @@
                 "name": "server",
                 "type": "server",
                 "ask": {
-                    "en": "Select your server ?",
+                    "en": "Select your server.",
                     "fr": "Choisir votre serveur ?"
                 },
                 "choices": ["vanilla", "bungeecord", "craftbukkit", "paper", "spigot", "waterfall"],
@@ -64,7 +64,7 @@
                 "name": "port",
                 "type": "port",
                 "ask": {
-                    "en": "Select your port ?",
+                    "en": "Select your port.",
                     "fr": "Choisir votre port ?"
                 },
                 "example": "25565",
@@ -74,7 +74,7 @@
                 "name": "ram",
                 "type": "ram",
                 "ask": {
-                    "en": "Set the memory of server ? Convert the number in MegaByte (MB binary) : for example 2GB = 2048, 4GB = 4096...",
+                    "en": "Set the memory limit for the server. Convert the number to megabytes (MB binary): for example, 2GB = 2048, 4GB = 4096...",
                     "fr": "Définir la mémoire du serveur ? Convertir le chiffre en MegaByte (MB binaire) : soit 2GB = 2048, 4GB = 4096..."
                 },
                 "example": "1024, 2048, 4096, ...",
@@ -93,7 +93,7 @@
                 "name": "rcon",
                 "type": "rcon",
                 "ask": {
-                    "en": "Do you want to activate RCON ?",
+                    "en": "Do you want to activate RCON?",
                     "fr": "Voulez vous activer RCON ?"
                 },
                 "example": "true, false",
@@ -103,7 +103,7 @@
                 "name": "passwd",
                 "type": "passwd",
                 "ask": {
-                    "en": "Enter your password for RCON !",
+                    "en": "Enter your password for RCON!",
                     "fr": "Entrez votre mot de passe pour RCON !"
                 },
                 "example": "mypassword"
