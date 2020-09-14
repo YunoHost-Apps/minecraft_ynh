@@ -16,11 +16,7 @@
         "yunohost": ">= 2.7.2"
     },
     "multi_instance": true,
-    "services": [
-        "nginx",
-        "php5-fpm",
-        "mysql"
-    ],
+    "services": [],
     "arguments": {
         "install": [{
                 "name": "domain",
@@ -42,15 +38,6 @@
                 "default": "/mc"
             },
             {
-                "name": "is_public",
-                "type": "boolean",
-                "ask": {
-                    "en": "Is it a public site?",
-                    "fr": "Est-ce un site public ?"
-                },
-                "default": "true"
-            },
-            {
                 "name": "server",
                 "type": "server",
                 "ask": {
@@ -59,26 +46,6 @@
                 },
                 "choices": ["vanilla", "bungeecord", "craftbukkit", "paper", "spigot", "waterfall"],
                 "default": "vanilla"
-            },
-            {
-                "name": "port",
-                "type": "port",
-                "ask": {
-                    "en": "Select your port.",
-                    "fr": "Choisir votre port ?"
-                },
-                "example": "25565",
-                "default": "25565"
-            },
-            {
-                "name": "ram",
-                "type": "ram",
-                "ask": {
-                    "en": "Set the memory limit for the server. Convert the number to megabytes (MB binary): for example, 2GB = 2048, 4GB = 4096...",
-                    "fr": "Définir la mémoire du serveur ? Convertir le chiffre en MegaByte (MB binaire) : soit 2GB = 2048, 4GB = 4096..."
-                },
-                "example": "1024, 2048, 4096, ...",
-                "default": "1024"
             },
             {
                 "name": "op",
@@ -90,16 +57,6 @@
                 "example": "liberodark"
             },
             {
-                "name": "rcon",
-                "type": "rcon",
-                "ask": {
-                    "en": "Do you want to activate RCON?",
-                    "fr": "Voulez vous activer RCON ?"
-                },
-                "example": "true, false",
-                "default": "true"
-            },
-            {
                 "name": "passwd",
                 "type": "passwd",
                 "ask": {
@@ -107,16 +64,6 @@
                     "fr": "Entrez votre mot de passe pour RCON !"
                 },
                 "example": "mypassword"
-            },
-            {
-                "name": "eula",
-                "type": "eula",
-                "ask": {
-                    "en": "By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).",
-                    "fr": "En modifiant le paramètre ci-dessous sur TRUE, vous indiquez votre accord avec notre CLUF (https://account.mojang.com/documents/minecraft_eula)."
-                },
-                "example": "true, false",
-                "default": "true"
             }
         ]
     }
