@@ -104,11 +104,3 @@ cp -a ../conf/eula.txt $final_path/eula.txt
 cp -a ../conf/server.properties $final_path/server.properties
 cp -a ../conf/ops.txt $final_path/ops.txt
 chown -R admin $final_path
-
-#=================================================
-# SETUP SSOWAT
-#=================================================
-
-# Reload services
-systemctl reload nginx
-systemctl start $app.service
