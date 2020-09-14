@@ -104,7 +104,7 @@ ynh_print_info "Installing dependencies..."
 ###		- As well as the section "REINSTALL DEPENDENCIES" in the restore script
 ###		- And the section "UPGRADE DEPENDENCIES" in the upgrade script
 
-ynh_install_app_dependencies openjdk-8-jre-headless
+ynh_install_app_dependencies openjdk-11-jre-headless
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
