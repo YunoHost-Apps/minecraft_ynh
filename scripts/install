@@ -40,12 +40,6 @@ app=$YNH_APP_INSTANCE_NAME
 final_path=/home/yunohost.app/$app
 test ! -e "$final_path" || ynh_die "This path already contains a folder"
 
-# Normalize the url path syntax
-#path_url=$(ynh_normalize_url_path $path_url)
-
-# Check web path availability
-#ynh_webpath_available $domain $path_url
-# Register (book) web path
 ynh_webpath_register $app $domain $path_url
 
 #=================================================
@@ -54,16 +48,10 @@ ynh_webpath_register $app $domain $path_url
 
 ynh_app_setting_set $app domain $domain
 ynh_app_setting_set $app path $path_url
-#ynh_app_setting_set $app is_public $is_public
 
 #=================================================
 # FIND AND OPEN A PORT
 #=================================================
-
-### Use these lines if you have to open a port for the application
-### `ynh_find_port` will find the first available port starting from the given port.
-### If you're not using these lines:
-###		- Remove the section "CLOSE A PORT" in the remove script
 
 # Find a free port
 port_test=$(ynh_find_port 25565)
@@ -80,13 +68,6 @@ ynh_app_setting_set $app port_test1 $port_test1
 
 ynh_print_info "Installing dependencies..."
 
-### `ynh_install_app_dependencies` allows you to add any "apt" dependencies to the package.
-### Those deb packages will be installed as dependencies of this package.
-### If you're not using this helper:
-###		- Remove the section "REMOVE DEPENDENCIES" in the remove script
-###		- As well as the section "REINSTALL DEPENDENCIES" in the restore script
-###		- And the section "UPGRADE DEPENDENCIES" in the upgrade script
-
 ynh_install_app_dependencies openjdk-11-jre-headless
 
 #=================================================
@@ -94,18 +75,14 @@ ynh_install_app_dependencies openjdk-11-jre-headless
 #=================================================
 
 ynh_app_setting_set $app final_path $final_path
-# Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source "$final_path" "$server"
 
 #=================================================
 # MODIFY A CONFIG FILE
 #=================================================
 
-ynh_replace_string "__RAM__" "1024" "../conf/systemd.service"
 ynh_replace_string "__PATH__" "$final_path" "../conf/systemd.service"
-ynh_replace_string "__PORT__" "25565" "../conf/server.properties"
 ynh_replace_string "__OP__" "$op" "../conf/ops.txt"
-ynh_replace_string "__RCON__" "true" "../conf/server.properties"
 ynh_replace_string "__PASSWD__" "$passwd" "../conf/server.properties"
 ynh_replace_string "__EULA__" "true" "../conf/eula.txt"
 
@@ -122,10 +99,6 @@ systemctl enable $app.service
 # SECURE FILES AND DIRECTORIES
 #=================================================
 
-### For security reason, any app should set the permissions to root: before anything else.
-### Then, if write authorization is needed, any access should be given only to directories
-### that really need such authorization.
-
 # Set permissions to app files
 cp -a ../conf/eula.txt $final_path/eula.txt
 cp -a ../conf/server.properties $final_path/server.properties
@@ -135,12 +108,6 @@ chown -R admin $final_path
 #=================================================
 # SETUP SSOWAT
 #=================================================
-
-# If app is public, add url to SSOWat conf as skipped_uris
-#if [ $is_public -eq 1 ]; then
-#  # unprotected_uris allows SSO credentials to be passed anyway.
-#  ynh_app_setting_set "$app" unprotected_uris "/"
-#fi
 
 # Reload services
 systemctl reload nginx
