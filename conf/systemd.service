@@ -8,7 +8,7 @@ User=admin
 Group=users
 Type=simple
 UMask=000
-ExecStart=/usr/bin/java -Xmx__RAM__M -Xms__RAM__M -jar server.jar nogui
+ExecStart=/usr/bin/java -Xmx1024M -Xms1024M -jar server.jar nogui
 RestartSec=30
 Restart=always
 
