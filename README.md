@@ -56,7 +56,7 @@ sudo yunohost app upgrade minecraft -u https://github.com/YunoHost-Apps/minecraf
 
 ## Documentation
 
- * Official documentation: Link to the official documentation of this app
+ * Official documentation: https://minecraft.gamepedia.com/Tutorials/Setting_up_a_server
  * YunoHost documentation: If specific documentation is needed, feel free to contribute.
 
 ## YunoHost specific features
