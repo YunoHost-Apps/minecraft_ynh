@@ -1,6 +1,6 @@
-SOURCE_URL=https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.13.2.jar
-SOURCE_SUM=9e2dc833ce9041b5cd5893c22fb0fca30a0008c82d1c15b095428ecfa556dc918099c2e02ae2f785a9fdeb07c3e31f195326b7eca6114893c9164b169359f513
-SOURCE_SUM_PRG=sha512sum
+SOURCE_URL=https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.16.4.jar
+SOURCE_SUM=98c39d77c119dd7128777da973daf1720e11825f20d1ebf3fd5ae938fe5050e1
+SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=jar
 SOURCE_IN_SUBDIR=false
 SOURCE_EXTRACT=false

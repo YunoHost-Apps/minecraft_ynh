@@ -1,6 +1,6 @@
-SOURCE_URL=https://ci.md-5.net/job/BungeeCord/1390/artifact/bootstrap/target/BungeeCord.jar
-SOURCE_SUM=c856a322618bfb28afa31548b295b4f49a5c8c7aad7f2f9f8f7f81112ac5416789ce1d43f1cb9dfa31f415c560f38415c8984eb3a9c3e2810fd24fac6c1d12fb
-SOURCE_SUM_PRG=sha512sum
+SOURCE_URL=https://ci.md-5.net/job/BungeeCord/1539/artifact/bootstrap/target/BungeeCord.jar
+SOURCE_SUM=9935b1c548398ad322d1433bb0ccdbb4550c927750ab03d326da634db78db60a
+SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=jar
 SOURCE_IN_SUBDIR=false
 SOURCE_EXTRACT=false

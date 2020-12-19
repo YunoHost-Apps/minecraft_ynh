@@ -3,9 +3,10 @@
     "id": "minecraft",
     "packaging_format": 1,
     "description": {
-        "en": "Minecraft package for YunoHost.",
-        "fr": "Minecraft pour YunoHost."
+        "en": "Three-dimensional sandbox construction game",
+        "fr": "Jeu de construction de type \"bac à sable\" en trois dimensions"
     },
+    "version": "1.16.4~ynh1",
     "url": "https://minecraft.net/",
     "license": "non-free",
     "maintainer": {
@@ -13,13 +14,11 @@
         "email": "liberodark@gmail.com"
     },
     "requirements": {
-        "yunohost": ">= 2.7.2"
+        "yunohost": ">= 3.8.1"
     },
-    "multi_instance": true,
+    "multi_instance": false,
     "services": [
-        "nginx",
-        "php5-fpm",
-        "mysql"
+        "nginx"
     ],
     "arguments": {
         "install": [{
@@ -35,11 +34,11 @@
                 "name": "path",
                 "type": "path",
                 "ask": {
-                    "en": "Choose a path for Minecraft /vs is accepted",
-                    "fr": "Choisissez un chemin pour Minecraft /vs est accepté"
+                    "en": "Choose a path for Minecraft",
+                    "fr": "Choisissez un chemin pour Minecraft"
                 },
-                "example": "/mc",
-                "default": "/mc"
+                "example": "/minecraft",
+                "default": "/minecraft"
             },
             {
                 "name": "is_public",
@@ -48,50 +47,40 @@
                     "en": "Is it a public site?",
                     "fr": "Est-ce un site public ?"
                 },
-                "default": "true"
+                "default": true
             },
             {
                 "name": "server",
-                "type": "server",
+                "type": "string",
                 "ask": {
-                    "en": "Select your server.",
-                    "fr": "Choisir votre serveur ?"
+                    "en": "Select your server",
+                    "fr": "Choisir votre serveur"
                 },
                 "choices": ["vanilla", "bungeecord", "craftbukkit", "paper", "spigot", "waterfall"],
                 "default": "vanilla"
             },
             {
-                "name": "port",
-                "type": "port",
-                "ask": {
-                    "en": "Select your port.",
-                    "fr": "Choisir votre port ?"
-                },
-                "example": "25565",
-                "default": "25565"
-            },
-            {
                 "name": "ram",
-                "type": "ram",
+                "type": "string",
                 "ask": {
-                    "en": "Set the memory limit for the server. Convert the number to megabytes (MB binary): for example, 2GB = 2048, 4GB = 4096...",
-                    "fr": "Définir la mémoire du serveur ? Convertir le chiffre en MegaByte (MB binaire) : soit 2GB = 2048, 4GB = 4096..."
+                    "en": "Set the memory limit for the server. Convert the number to mebibytes (binary MB): for example, 2GB = 2048, 4GB = 4096...",
+                    "fr": "Définir la mémoire du serveur ? Convertir le chiffre en mébioctets (Mo binaires) : soit 2Go = 2048, 4Go = 4096..."
                 },
-                "example": "1024, 2048, 4096, ...",
+                "example": "1024, 2048, 4096...",
                 "default": "1024"
             },
             {
                 "name": "op",
-                "type": "op",
+                "type": "string",
                 "ask": {
-                    "en": "Enter the name of the administrator (minecraft pseudo) !",
-                    "fr": "Entrer le nom de l'adminsitrateur (minecraft pseudo) !"
+                    "en": "Enter the name of the administrator (Minecraft pseudo)",
+                    "fr": "Entrer le nom de l'adminsitrateur (pseudo Minecraft)"
                 },
-                "example": "liberodark"
+                "example": "johndoe"
             },
             {
                 "name": "rcon",
-                "type": "rcon",
+                "type": "string",
                 "ask": {
                     "en": "Do you want to activate RCON?",
                     "fr": "Voulez vous activer RCON ?"
@@ -100,17 +89,17 @@
                 "default": "true"
             },
             {
-                "name": "passwd",
-                "type": "passwd",
+                "name": "password",
+                "type": "password",
                 "ask": {
-                    "en": "Enter your password for RCON!",
-                    "fr": "Entrez votre mot de passe pour RCON !"
+                    "en": "Enter your password for RCON",
+                    "fr": "Entrez votre mot de passe pour RCON"
                 },
                 "example": "mypassword"
             },
             {
                 "name": "eula",
-                "type": "eula",
+                "type": "string",
                 "ask": {
                     "en": "By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).",
                     "fr": "En modifiant le paramètre ci-dessous sur TRUE, vous indiquez votre accord avec notre CLUF (https://account.mojang.com/documents/minecraft_eula)."

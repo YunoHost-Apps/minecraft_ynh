@@ -1,16 +1,20 @@
 [Unit]
-Description=minecraft
+Description=Minecraft Server
 After=network.target
 
 [Service]
-WorkingDirectory=__PATH__
-User=admin
-Group=users
 Type=simple
-UMask=000
-ExecStart=/usr/bin/java -Xmx__RAM__M -Xms__RAM__M -jar server.jar nogui
+User=__APP__
+Group=__APP__
+#ProtectSystem=full 
+#PrivateUsers=true 
+#ProtectKernelTunables=true
+#ProtectControlGroups=true 
+WorkingDirectory=__PATH__
+UMask=022
+ExecStart=/usr/bin/java -Xmx__RAM__M -Xms__RAM__M -jar server.jar --nogui
+Restart=on-failure
 RestartSec=30
-Restart=always
 
 [Install]
 WantedBy=multi-user.target

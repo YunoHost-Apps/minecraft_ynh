@@ -1,6 +1,6 @@
-SOURCE_URL=https://papermc.io/ci/job/Waterfall/245/artifact/Waterfall-Proxy/bootstrap/target/Waterfall.jar
-SOURCE_SUM=69fd947d852d2f682e0f3d0bf3a1cb99496625319de5d90dbeb68ec98f1438ef61f957f0fa7a767250457ef91a931a660344966bdb45ececd71225aa95be12d6
-SOURCE_SUM_PRG=sha512sum
+SOURCE_URL=https://papermc.io/ci/job/Waterfall/388/artifact/Waterfall-Proxy/bootstrap/target/Waterfall.jar
+SOURCE_SUM=1c1fe54e90e9b5c891c87699878f90e749f0c2dce023916a81bac7b332cbf98d
+SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=jar
 SOURCE_IN_SUBDIR=false
 SOURCE_EXTRACT=false
