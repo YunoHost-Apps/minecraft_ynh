@@ -16,7 +16,7 @@ Minecraft is a sandbox construction game, whose gameplay involves players intera
 
 ## Configuration
 
-### Installing guide:
+### Installing guide
 
 The app can be installed by **running the following command**:
 
@@ -24,22 +24,22 @@ The app can be installed by **running the following command**:
          
 For server administration, use the Minecraft console or RCON (which is open on port 25575 with your password).
 
-### Rcon Clients:
+### Rcon Clients
 - https://github.com/Tee7even/RCONClient (in Java)
 - https://github.com/Tiiffi/mcrcon/releases (in C)
 
-### Start/Stop/Restart/ Check Status Minecraft:
+### Start/Stop/Restart/Check Status Minecraft
 
 - ```systemctl start minecraft```
 - ```systemctl stop minecraft```
 - ```systemctl restart minecraft```
 - ```systemctl status minecraft```
 
-### Location:
+### Location
 
 The folder of your servers is: `/home/yunohost.app/`
 
-### Supported Servers:
+### Supported Servers
  
 1. Minecraft (Vanilla)
 2. Spigot
@@ -48,7 +48,7 @@ The folder of your servers is: `/home/yunohost.app/`
 5. Paper
 6. Waterfall (by Paper)
  
-### Upgrade this package:
+### Upgrade this package
 
 ```
 sudo yunohost app upgrade minecraft -u https://github.com/YunoHost-Apps/minecraft_ynh
@@ -56,7 +56,7 @@ sudo yunohost app upgrade minecraft -u https://github.com/YunoHost-Apps/minecraf
 
 ## Documentation
 
- * Official documentation: https://minecraft.gamepedia.com/Tutorials/Setting_up_a_server
+ * Non-official documentation: https://minecraft.gamepedia.com/Tutorials/Setting_up_a_server
  * YunoHost documentation: If specific documentation is needed, feel free to contribute.
 
 ## YunoHost specific features
