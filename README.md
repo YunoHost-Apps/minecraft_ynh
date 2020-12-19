@@ -25,7 +25,7 @@ The app can be installed by **running the following command**:
 For server administration, use the Minecraft console or RCON (which is open on port 25575 with your password).
 
 ### Rcon Clients
-- https://github.com/Tee7even/RCONClient (in Java)
+
 - https://github.com/Tiiffi/mcrcon/releases (in C)
 
 ### Start/Stop/Restart/Check Status Minecraft
