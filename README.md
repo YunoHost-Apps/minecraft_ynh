@@ -1,18 +1,14 @@
-# Minecraft for YunoHost
+# Minecraft Server for YunoHost
  
 [![Install Minecraft with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=minecraft)
 
-> *This package allows you to install Minecraft quickly and simply on a YunoHost server.  
+> *This package allows you to install Minecraft Server quickly and simply on a YunoHost server.  
 If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/install) to learn how to install it.*
 
 ## Overview
 Minecraft is a sandbox construction game, whose gameplay involves players interacting with the game world by placing and breaking various types of blocks in a three-dimensional environment. In this environment, players can build creative structures, creations, and artwork on multiplayer servers and singleplayer worlds across multiple game modes. 
 
 **Shipped version:** 1.16.4 (Vanilla version)
-
-## Screenshots
-
-![](home-hero-1200x600.jpg)
 
 ## Configuration
 
