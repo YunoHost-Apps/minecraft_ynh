@@ -11,8 +11,8 @@ Group=__APP__
 #ProtectKernelTunables=true
 #ProtectControlGroups=true 
 WorkingDirectory=__PATH__
-UMask=022
-ExecStart=/usr/bin/java -Xmx__RAM__M -Xms__RAM__M -jar server.jar --nogui
+UMask=000
+ExecStart=/usr/bin/java -Xmx__RAM__M -Xms__RAM__M -jar server.jar nogui
 Restart=on-failure
 RestartSec=30
 
