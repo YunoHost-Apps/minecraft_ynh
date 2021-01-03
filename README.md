@@ -53,14 +53,8 @@ sudo yunohost app upgrade minecraft -u https://github.com/YunoHost-Apps/minecraf
 ## Documentation
 
  * Non-official documentation: https://minecraft.gamepedia.com/Tutorials/Setting_up_a_server
- * YunoHost documentation: If specific documentation is needed, feel free to contribute.
 
 ## YunoHost specific features
-
-#### Supported architectures
-
-* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/minecraft%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/minecraft/)
-* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/minecraft%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/minecraft/)
 
 ## Limitations
 
