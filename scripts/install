@@ -147,7 +147,7 @@ chmod -R 755 $final_path
 #=================================================
 ynh_script_progression --message="Starting a systemd service..." --weight=3
 
-ynh_systemd_action --service_name=$app --action="start" --log_path="systemd" --line_match="RCON running on" --needs_exposed_ports $port
+ynh_systemd_action --service_name=$app --action="start" --log_path="systemd" --line_match="RCON running on"
 
 #=================================================
 # SETUP SSOWAT
