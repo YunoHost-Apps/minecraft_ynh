@@ -14,7 +14,6 @@ source /usr/share/yunohost/helpers
 #=================================================
 
 ynh_clean_setup () {
-	### Remove this function if there's nothing to clean before calling the remove script.
 	true
 }
 # Exit if an error occurs during the execution of the script
@@ -30,134 +29,109 @@ path_url=$YNH_APP_ARG_PATH
 is_public=$YNH_APP_ARG_IS_PUBLIC
 server=$YNH_APP_ARG_SERVER
 ram=$YNH_APP_ARG_RAM
-port=$YNH_APP_ARG_PORT
 op=$YNH_APP_ARG_OP
 rcon=$YNH_APP_ARG_RCON
-passwd=$YNH_APP_ARG_PASSWD
+password=$YNH_APP_ARG_PASSWORD
 eula=$YNH_APP_ARG_EULA
 
-### If it's a multi-instance app, meaning it can be installed several times independently
-### The id of the app as stated in the manifest is available as $YNH_APP_ID
-### The instance number is available as $YNH_APP_INSTANCE_NUMBER (equals "1", "2", ...)
-### The app instance name is available as $YNH_APP_INSTANCE_NAME
-###    - the first time the app is installed, YNH_APP_INSTANCE_NAME = ynhexample
-###    - the second time the app is installed, YNH_APP_INSTANCE_NAME = ynhexample__2
-###    - ynhexample__{N} for the subsequent installations, with N=3,4, ...
-### The app instance name is probably what interests you most, since this is
-### guaranteed to be unique. This is a good unique identifier to define installation path,
-### db names, ...
 app=$YNH_APP_INSTANCE_NAME
 
 #=================================================
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
 #=================================================
+ynh_script_progression --message="Validating installation parameters..." --weight=1
 
-### If the app uses nginx as web server (written in HTML/PHP in most cases), the final path should be "/var/www/$app".
-### If the app provides an internal web server (or uses another application server such as uwsgi), the final path should be "/opt/yunohost/$app"
 final_path=/home/yunohost.app/$app
-test ! -e "$final_path" || ynh_die "This path already contains a folder"
+test ! -e "$final_path" || ynh_die --message="This path already contains a folder"
 
-# Normalize the url path syntax
-path_url=$(ynh_normalize_url_path $path_url)
-
-# Check web path availability
-ynh_webpath_available $domain $path_url
 # Register (book) web path
-ynh_webpath_register $app $domain $path_url
+ynh_webpath_register --app=$app --domain=$domain --path_url=$path_url
 
 #=================================================
 # STORE SETTINGS FROM MANIFEST
 #=================================================
+ynh_script_progression --message="Storing installation settings..." --weight=1
 
-ynh_app_setting_set $app domain $domain
-ynh_app_setting_set $app path $path_url
-ynh_app_setting_set $app is_public $is_public
+ynh_app_setting_set --app=$app --key=domain --value=$domain
+ynh_app_setting_set --app=$app --key=path --value=$path_url
+ynh_app_setting_set --app=$app --key=is_public --value=$is_public
 
 #=================================================
 # FIND AND OPEN A PORT
 #=================================================
-
-### Use these lines if you have to open a port for the application
-### `ynh_find_port` will find the first available port starting from the given port.
-### If you're not using these lines:
-###		- Remove the section "CLOSE A PORT" in the remove script
+ynh_script_progression --message="Finding an available port..." --weight=2
 
 # Find a free port
-port_test=$(ynh_find_port $port)
-port_test1=$(ynh_find_port 25575)
+port=$(ynh_find_port --port=25565)
+ynh_app_setting_set --app=$app --key=port --value=$port
+
 # Open this port
-yunohost firewall allow --no-upnp TCP $port_test 2>&1
-yunohost firewall allow --no-upnp TCP $port_test1 2>&1
-ynh_app_setting_set $app port_test $port_test
-ynh_app_setting_set $app port_test1 $port_test1
+ynh_exec_warn_less yunohost firewall allow --no-upnp TCP $port
 
 #=================================================
 # INSTALL DEPENDENCIES
 #=================================================
+ynh_script_progression --message="Installing dependencies..." --weight=5
 
-ynh_print_info "Installing dependencies..."
-
-### `ynh_install_app_dependencies` allows you to add any "apt" dependencies to the package.
-### Those deb packages will be installed as dependencies of this package.
-### If you're not using this helper:
-###		- Remove the section "REMOVE DEPENDENCIES" in the remove script
-###		- As well as the section "REINSTALL DEPENDENCIES" in the restore script
-###		- And the section "UPGRADE DEPENDENCIES" in the upgrade script
-
-ynh_install_app_dependencies openjdk-8-jre-headless
+ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
+ynh_script_progression --message="Setting up source files..." --weight=10
 
-ynh_app_setting_set $app final_path $final_path
+ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 # Download, check integrity, uncompress and patch the source from app.src
-ynh_setup_source "$final_path" "$server"
-
-#=================================================
-# MODIFY A CONFIG FILE
-#=================================================
-
-ynh_replace_string "__RAM__" "$ram" "../conf/systemd.service"
-ynh_replace_string "__PATH__" "$final_path" "../conf/systemd.service"
-ynh_replace_string "__PORT__" "$port" "../conf/server.properties"
-ynh_replace_string "__OP__" "$op" "../conf/ops.txt"
-ynh_replace_string "__RCON__" "$rcon" "../conf/server.properties"
-ynh_replace_string "__PASSWD__" "$passwd" "../conf/server.properties"
-ynh_replace_string "__EULA__" "$eula" "../conf/eula.txt"
-
-#=================================================
-# SETUP SYSTEMD
-#=================================================
-
-ynh_add_systemd_config
-systemctl enable $app.service
+ynh_setup_source --dest_dir="$final_path" --source_id="$server"
 
 #=================================================
 # NGINX CONFIGURATION
 #=================================================
+ynh_script_progression --message="Configuring NGINX web server..." --weight=3
 
-# Create a dedicated nginx config
+# Create a dedicated NGINX config
 ynh_add_nginx_config
 
 #=================================================
 # CREATE DEDICATED USER
 #=================================================
+ynh_script_progression --message="Configuring system user..." --weight=1
 
 # Create a system user
-#ynh_system_user_create $app
+ynh_system_user_create --username=$app
 
 #=================================================
-# STORE THE CONFIG FILE CHECKSUM
+# MODIFY A CONFIG FILE
 #=================================================
 
-### `ynh_store_file_checksum` is used to store the checksum of a file.
-### That way, during the upgrade script, by using `ynh_backup_if_checksum_is_different`,
-### you can make a backup of this file before modifying it again if the admin had modified it.
+ynh_replace_string --match_string="__PORT__" --replace_string="$port" --target_file="../conf/server.properties"
+ynh_replace_string --match_string="__RCON__" --replace_string="$rcon" --target_file="../conf/server.properties"
+ynh_replace_string --match_string="__PASSWD__" --replace_string="$password" --target_file="../conf/server.properties"
+cp -a ../conf/server.properties $final_path/server.properties
 
-# Calculate and store the config file checksum into the app settings
-#ynh_store_file_checksum "/etc/onlyoffice/documentserver/nginx/onlyoffice-documentserver.conf"
+ynh_replace_string --match_string="__OP__" --replace_string="$op" --target_file="../conf/ops.txt"
+cp -a ../conf/ops.txt $final_path/ops.txt
 
+ynh_replace_string --match_string="__EULA__" --replace_string="$eula" --target_file="../conf/eula.txt"
+cp -a ../conf/eula.txt $final_path/eula.txt
+
+#=================================================
+# SETUP SYSTEMD
+#=================================================
+ynh_script_progression --message="Configuring a systemd service..." --weight=2
+
+ynh_replace_string "__RAM__" "$ram" "../conf/systemd.service"
+ynh_replace_string "__PATH__" "$final_path" "../conf/systemd.service"
+
+# Create a dedicated systemd config
+ynh_add_systemd_config
+
+#=================================================
+# INTEGRATE SERVICE IN YUNOHOST
+#=================================================
+ynh_script_progression --message="Integrating service in YunoHost..." --weight=1
+
+yunohost service add $app --description="Three-dimensional sandbox construction game" --log="/var/log/$app/$app.log"
 
 #=================================================
 # GENERIC FINALIZATION
@@ -165,26 +139,36 @@ ynh_add_nginx_config
 # SECURE FILES AND DIRECTORIES
 #=================================================
 
-### For security reason, any app should set the permissions to root: before anything else.
-### Then, if write authorization is needed, any access should be given only to directories
-### that really need such authorization.
+chown -R $app: $final_path
+chmod -R 755 $final_path
 
-# Set permissions to app files
-cp -a ../conf/eula.txt $final_path/eula.txt
-cp -a ../conf/server.properties $final_path/server.properties
-cp -a ../conf/ops.txt $final_path/ops.txt
-chown -R admin $final_path
+#=================================================
+# START SYSTEMD SERVICE
+#=================================================
+ynh_script_progression --message="Starting a systemd service..." --weight=3
+
+ynh_systemd_action --service_name=$app --action="start" --log_path="systemd" --line_match="RCON running on"
 
 #=================================================
 # SETUP SSOWAT
 #=================================================
+ynh_script_progression --message="Configuring SSOwat..." --weight=1
 
-# If app is public, add url to SSOWat conf as skipped_uris
-if [ $is_public -eq 1 ]; then
-  # unprotected_uris allows SSO credentials to be passed anyway.
-  ynh_app_setting_set "$app" unprotected_uris "/"
+# Make app public if necessary or protect it
+if [ $is_public -eq 1 ]
+then
+	ynh_permission_update --permission "main" --add "visitors" --show_tile="false"
 fi
 
-# Reload services
-systemctl reload nginx
-systemctl start $app.service
+#=================================================
+# RELOAD NGINX
+#=================================================
+ynh_script_progression --message="Reloading NGINX web server..." --weight=2
+
+ynh_systemd_action --service_name=nginx --action=reload
+
+#=================================================
+# END OF SCRIPT
+#=================================================
+
+ynh_script_progression --message="Installation of $app completed" --last

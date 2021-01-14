@@ -1,6 +1,6 @@
-SOURCE_URL=https://cdn.getbukkit.org/spigot/spigot-1.13.2.jar
-SOURCE_SUM=b52737f815d4428af8d84401009e742d740bbc1a1429b2cddf33c5bde6737fc2586102d7eb88bf09cb85db74811086a88ed35eea6aef46aa6e90f0347cbd911d
-SOURCE_SUM_PRG=sha512sum
+SOURCE_URL=https://cdn.getbukkit.org/spigot/spigot-1.16.4.jar
+SOURCE_SUM=d333662aa36a1f66c1ef42ac9f27966fb088ac364dafa6fdb70c6a20955792ed
+SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=jar
 SOURCE_IN_SUBDIR=false
 SOURCE_EXTRACT=false
