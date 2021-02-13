@@ -41,6 +41,11 @@ ynh_script_progression --message="Validating installation parameters..." --weigh
 final_path=/home/yunohost.app/$app
 test ! -e "$final_path" || ynh_die --message="This path already contains a folder"
 
+if [ "$eula" != "true" ]
+then
+	ynh_die --message="You must accept the EULA in order to install the app"
+fi
+
 #=================================================
 # FIND AND OPEN A PORT
 #=================================================
