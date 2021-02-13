@@ -6,10 +6,8 @@
 ;; Test complet
 	; Manifest
 		domain="domain.tld"	(DOMAIN)
-		path="/path"	(PATH)	
-		is_public=1	(PUBLIC|public=1|private=0)
 		password="pass"
-		#server="vanilla"
+		server="vanilla"
 		ram="1024"
 		op="johndoe"
 		rcon="true"
@@ -17,10 +15,10 @@
 	; Checks
 		pkg_linter=1
 		setup_sub_dir=0
-		setup_root=1
-		setup_nourl=0
+		setup_root=0
+		setup_nourl=1
 		setup_private=0
-		setup_public=1
+		setup_public=0
 		upgrade=1
 		backup_restore=1
 		multi_instance=0
