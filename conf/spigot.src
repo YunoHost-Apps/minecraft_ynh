@@ -1,5 +1,5 @@
-SOURCE_URL=https://cdn.getbukkit.org/spigot/spigot-1.16.4.jar
-SOURCE_SUM=d333662aa36a1f66c1ef42ac9f27966fb088ac364dafa6fdb70c6a20955792ed
+SOURCE_URL=https://cdn.getbukkit.org/spigot/spigot-1.16.5.jar
+SOURCE_SUM=efb80080c7cd67590b7ef94defb060b308d280e73f406d99ccbe0eba4f74d025
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=jar
 SOURCE_IN_SUBDIR=false

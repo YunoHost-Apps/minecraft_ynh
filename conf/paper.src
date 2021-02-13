@@ -1,7 +1,8 @@
-SOURCE_URL=https://papermc.io/ci/job/Paper-1.16/335/artifact/paperclip-335.jar
-SOURCE_SUM=ef8e3760b02826011b91736219a2790ba711bff76d6d6637b0a4d140db373134
+SOURCE_URL=https://papermc.io/api/v2/projects/paper/versions/1.16.5/builds/468/downloads/paper-1.16.5-468.jar
+SOURCE_SUM=e6e0a0af461c3befcef2ddd57f555ea4a60122d9f784bdc5ac2ab548067bc1e1
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=jar
 SOURCE_IN_SUBDIR=false
 SOURCE_EXTRACT=false
 SOURCE_FILENAME=server.jar
+
