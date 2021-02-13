@@ -24,7 +24,6 @@ ynh_abort_if_errors
 #=================================================
 
 # Retrieve arguments
-domain=$YNH_APP_ARG_DOMAIN
 server=$YNH_APP_ARG_SERVER
 ram=$YNH_APP_ARG_RAM
 op=$YNH_APP_ARG_OP
@@ -41,13 +40,6 @@ ynh_script_progression --message="Validating installation parameters..." --weigh
 
 final_path=/home/yunohost.app/$app
 test ! -e "$final_path" || ynh_die --message="This path already contains a folder"
-
-#=================================================
-# STORE SETTINGS FROM MANIFEST
-#=================================================
-ynh_script_progression --message="Storing installation settings..." --weight=1
-
-ynh_app_setting_set --app=$app --key=domain --value=$domain
 
 #=================================================
 # FIND AND OPEN A PORT
@@ -88,17 +80,19 @@ ynh_system_user_create --username=$app
 #=================================================
 # MODIFY A CONFIG FILE
 #=================================================
+ynh_add_config --template="../conf/server.properties" --destination="$final_path/server.properties"
+# ynh_replace_string --match_string="__PORT__" --replace_string="$port" --target_file="../conf/server.properties"
+# ynh_replace_string --match_string="__RCON__" --replace_string="$rcon" --target_file="../conf/server.properties"
+# ynh_replace_string --match_string="__PASSWORD__" --replace_string="$password" --target_file="../conf/server.properties"
+# cp -a ../conf/server.properties $final_path/server.properties
 
-ynh_replace_string --match_string="__PORT__" --replace_string="$port" --target_file="../conf/server.properties"
-ynh_replace_string --match_string="__RCON__" --replace_string="$rcon" --target_file="../conf/server.properties"
-ynh_replace_string --match_string="__PASSWD__" --replace_string="$password" --target_file="../conf/server.properties"
-cp -a ../conf/server.properties $final_path/server.properties
+ynh_add_config --template="../conf/ops.txt" --destination="$final_path/ops.txt"
+# ynh_replace_string --match_string="__OP__" --replace_string="$op" --target_file="../conf/ops.txt"
+# cp -a ../conf/ops.txt $final_path/ops.txt
 
-ynh_replace_string --match_string="__OP__" --replace_string="$op" --target_file="../conf/ops.txt"
-cp -a ../conf/ops.txt $final_path/ops.txt
-
-ynh_replace_string --match_string="__EULA__" --replace_string="$eula" --target_file="../conf/eula.txt"
-cp -a ../conf/eula.txt $final_path/eula.txt
+ynh_add_config --template="../conf/eula.txt" --destination="$final_path/eula.txt"
+# ynh_replace_string --match_string="__EULA__" --replace_string="$eula" --target_file="../conf/eula.txt"
+# cp -a ../conf/eula.txt $final_path/eula.txt
 
 #=================================================
 # SETUP SYSTEMD
@@ -106,7 +100,7 @@ cp -a ../conf/eula.txt $final_path/eula.txt
 ynh_script_progression --message="Configuring a systemd service..." --weight=2
 
 ynh_replace_string "__RAM__" "$ram" "../conf/systemd.service"
-ynh_replace_string "__PATH__" "$final_path" "../conf/systemd.service"
+ynh_replace_string "__FINALPATH__" "$final_path" "../conf/systemd.service"
 
 # Create a dedicated systemd config
 ynh_add_systemd_config

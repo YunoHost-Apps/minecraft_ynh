@@ -5,7 +5,6 @@
 
 ;; Test complet
 	; Manifest
-		domain="domain.tld"	(DOMAIN)
 		password="pass"
 		server="vanilla"
 		ram="1024"
