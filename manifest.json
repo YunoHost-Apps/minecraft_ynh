@@ -31,25 +31,6 @@
                 "example": "example.com"
             },
             {
-                "name": "path",
-                "type": "path",
-                "ask": {
-                    "en": "Choose a path for Minecraft",
-                    "fr": "Choisissez un chemin pour Minecraft"
-                },
-                "example": "/minecraft",
-                "default": "/minecraft"
-            },
-            {
-                "name": "is_public",
-                "type": "boolean",
-                "ask": {
-                    "en": "Is it a public site?",
-                    "fr": "Est-ce un site public ?"
-                },
-                "default": true
-            },
-            {
                 "name": "server",
                 "type": "string",
                 "ask": {
