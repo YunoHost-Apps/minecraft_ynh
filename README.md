@@ -8,7 +8,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 ## Overview
 Minecraft is a sandbox construction game, whose gameplay involves players interacting with the game world by placing and breaking various types of blocks in a three-dimensional environment. In this environment, players can build creative structures, creations, and artwork on multiplayer servers and singleplayer worlds across multiple game modes. 
 
-**Shipped version:** 1.16.4 (Vanilla version)
+**Shipped version:** 1.16.5 (Vanilla version)
 
 ## Configuration
 
@@ -38,11 +38,12 @@ The folder of your servers is: `/home/yunohost.app/`
 ### Supported Servers
  
 1. Minecraft (Vanilla)
-2. Spigot
-3. CraftBukkit (by Spigot)
-4. BungeeCord
-5. Paper
-6. Waterfall (by Paper)
+2. Minecraft (Vanilla snapshot)
+3. Spigot
+4. CraftBukkit (by Spigot)
+5. BungeeCord
+6. Paper
+7. Waterfall (by Paper)
  
 ### Upgrade this package
 
