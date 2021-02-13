@@ -85,19 +85,10 @@ ynh_system_user_create --username=$app
 #=================================================
 # MODIFY A CONFIG FILE
 #=================================================
+
 ynh_add_config --template="../conf/server.properties" --destination="$final_path/server.properties"
-# ynh_replace_string --match_string="__PORT__" --replace_string="$port" --target_file="../conf/server.properties"
-# ynh_replace_string --match_string="__RCON__" --replace_string="$rcon" --target_file="../conf/server.properties"
-# ynh_replace_string --match_string="__PASSWORD__" --replace_string="$password" --target_file="../conf/server.properties"
-# cp -a ../conf/server.properties $final_path/server.properties
-
 ynh_add_config --template="../conf/ops.txt" --destination="$final_path/ops.txt"
-# ynh_replace_string --match_string="__OP__" --replace_string="$op" --target_file="../conf/ops.txt"
-# cp -a ../conf/ops.txt $final_path/ops.txt
-
 ynh_add_config --template="../conf/eula.txt" --destination="$final_path/eula.txt"
-# ynh_replace_string --match_string="__EULA__" --replace_string="$eula" --target_file="../conf/eula.txt"
-# cp -a ../conf/eula.txt $final_path/eula.txt
 
 #=================================================
 # SETUP SYSTEMD
