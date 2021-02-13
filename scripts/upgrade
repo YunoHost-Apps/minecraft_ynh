@@ -95,7 +95,7 @@ chmod -R 755 $final_path
 #=================================================
 ynh_script_progression --message="Integrating service in YunoHost..."
 
-yunohost service add $app --description="Three-dimensional sandbox construction game" --log="/var/log/$app/$app.log"
+yunohost service add $app --description="Three-dimensional sandbox construction game" --log="/var/log/$app/$app.log" --needs_exposed_ports="$port"
 
 #=================================================
 # START SYSTEMD SERVICE
