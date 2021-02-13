@@ -16,6 +16,7 @@ ynh_script_progression --message="Loading installation settings..." --weight=1
 
 app=$YNH_APP_INSTANCE_NAME
 
+domain=$(ynh_app_setting_get --app=$app --key=domain)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 port=$(ynh_app_setting_get --app=$app --key=port)
 server=$(ynh_app_setting_get --app=$app --key=server)
@@ -85,7 +86,7 @@ fi
 #=================================================
 # INSTALL DEPENDENCIES
 #=================================================
-ynh_print_info "Reinstalling dependencies..." --weight=3
+ynh_script_progression "Reinstalling dependencies..." --weight=3
 
 ynh_install_app_dependencies $pkg_dependencies
 
