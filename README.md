@@ -1,6 +1,4 @@
 # Minecraft Server for YunoHost
- 
-[![Install Minecraft with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=minecraft)
 
 > *This package allows you to install Minecraft Server quickly and simply on a YunoHost server.  
 If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/install) to learn how to install it.*
