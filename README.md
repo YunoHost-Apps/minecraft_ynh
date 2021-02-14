@@ -33,7 +33,7 @@ For server administration, use the Minecraft console or RCON (which is open on p
 
 ### Location
 
-The folder of your servers is: `/home/yunohost.app/`
+The folder of your servers is: `/home/yunohost.app/minecraft`
 
 ### Supported Servers
  
