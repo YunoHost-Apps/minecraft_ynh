@@ -1,5 +1,5 @@
-SOURCE_URL=https://papermc.io/api/v2/projects/paper/versions/1.16.5/builds/468/downloads/paper-1.16.5-468.jar
-SOURCE_SUM=e6e0a0af461c3befcef2ddd57f555ea4a60122d9f784bdc5ac2ab548067bc1e1
+SOURCE_URL=https://papermc.io/api/v2/projects/paper/versions/1.16.5/builds/645/downloads/paper-1.16.5-645.jar
+SOURCE_SUM=2dab6edb12652cec179c5b549f750105944bf5c1b985f7836a03b0b605b4acb8
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=jar
 SOURCE_IN_SUBDIR=false
