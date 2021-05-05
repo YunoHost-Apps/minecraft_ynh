@@ -1,5 +1,5 @@
-SOURCE_URL=https://papermc.io/api/v2/projects/waterfall/versions/1.16/builds/395/downloads/waterfall-1.16-395.jar
-SOURCE_SUM=77f9e03c36e8bea53f562701dd189206a9ac9045c4ed4502d45ff879db48636d
+SOURCE_URL=https://papermc.io/api/v2/projects/waterfall/versions/1.16/builds/415/downloads/waterfall-1.16-415.jar
+SOURCE_SUM=c0e251c6d6abbc961abe4dddb04c11e3e3f5b3586a81435a093fef1eb0acb48f
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=jar
 SOURCE_IN_SUBDIR=false
