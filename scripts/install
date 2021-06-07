@@ -66,6 +66,14 @@ ynh_script_progression --message="Installing dependencies..." --weight=5
 ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
+# CREATE DEDICATED USER
+#=================================================
+ynh_script_progression --message="Configuring system user..." --weight=1
+
+# Create a system user
+ynh_system_user_create --username=$app
+
+#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression --message="Setting up source files..." --weight=10
@@ -76,14 +84,6 @@ ynh_setup_source --dest_dir="$final_path" --source_id="$server"
 
 chown -R $app: $final_path
 chmod -R 755 $final_path
-
-#=================================================
-# CREATE DEDICATED USER
-#=================================================
-ynh_script_progression --message="Configuring system user..." --weight=1
-
-# Create a system user
-ynh_system_user_create --username=$app
 
 #=================================================
 # MODIFY A CONFIG FILE
