@@ -74,6 +74,9 @@ ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$final_path" --source_id="$server"
 
+chown -R $app: $final_path
+chmod -R 755 $final_path
+
 #=================================================
 # CREATE DEDICATED USER
 #=================================================
@@ -95,9 +98,6 @@ ynh_add_config --template="../conf/eula.txt" --destination="$final_path/eula.txt
 #=================================================
 ynh_script_progression --message="Configuring a systemd service..." --weight=2
 
-ynh_replace_string "__RAM__" "$ram" "../conf/systemd.service"
-ynh_replace_string "__FINALPATH__" "$final_path" "../conf/systemd.service"
-
 # Create a dedicated systemd config
 ynh_add_systemd_config
 
@@ -107,15 +107,6 @@ ynh_add_systemd_config
 ynh_script_progression --message="Integrating service in YunoHost..." --weight=1
 
 yunohost service add $app --description="Three-dimensional sandbox construction game" --log="/var/log/$app/$app.log" --needs_exposed_ports="$port"
-
-#=================================================
-# GENERIC FINALIZATION
-#=================================================
-# SECURE FILES AND DIRECTORIES
-#=================================================
-
-chown -R $app: $final_path
-chmod -R 755 $final_path
 
 #=================================================
 # START SYSTEMD SERVICE
