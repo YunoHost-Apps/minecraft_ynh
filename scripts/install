@@ -47,6 +47,13 @@ then
 fi
 
 #=================================================
+# STORE SETTINGS FROM MANIFEST
+#=================================================
+ynh_script_progression --message="Storing installation settings..." --weight=1
+
+ynh_app_setting_set --app=$app --key=ram --value=$ram
+
+#=================================================
 # FIND AND OPEN A PORT
 #=================================================
 ynh_script_progression --message="Finding an available port..." --weight=2
