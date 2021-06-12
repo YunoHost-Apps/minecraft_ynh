@@ -6,7 +6,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/inst
 ## Overview
 Minecraft is a sandbox construction game, whose gameplay involves players interacting with the game world by placing and breaking various types of blocks in a three-dimensional environment. In this environment, players can build creative structures, creations, and artwork on multiplayer servers and singleplayer worlds across multiple game modes. 
 
-**Shipped version:** 1.16.5 (Vanilla version), 21w18a (Vanilla snapshot version)
+**Shipped version:** 1.17.0 (Vanilla version), 21w18a (Vanilla snapshot version)
 
 ## Configuration
 
