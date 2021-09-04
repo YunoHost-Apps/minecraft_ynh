@@ -13,9 +13,6 @@ source /usr/share/yunohost/helpers
 # MANAGE SCRIPT FAILURE
 #=================================================
 
-ynh_clean_setup () {
-	true
-}
 # Exit if an error occurs during the execution of the script
 ynh_abort_if_errors
 
@@ -66,13 +63,6 @@ ynh_app_setting_set --app=$app --key=port --value=$port
 ynh_exec_warn_less yunohost firewall allow --no-upnp TCP $port
 
 #=================================================
-# INSTALL DEPENDENCIES
-#=================================================
-ynh_script_progression --message="Installing dependencies..." --weight=5
-
-ynh_install_app_dependencies $pkg_dependencies
-
-#=================================================
 # CREATE DEDICATED USER
 #=================================================
 ynh_script_progression --message="Configuring system user..." --weight=1
@@ -85,14 +75,9 @@ ynh_system_user_create --username=$app
 #=================================================
 ynh_script_progression --message="Installing dependencies..." --weight=15
 
-ynh_exec_warn_less ynh_install_app_dependencies $pkg_dependencies
-
 tempdir="$(mktemp -d)"
 ynh_setup_source --dest_dir=$tempdir --source_id=java
 ynh_exec_warn_less dpkg -i $tempdir/jdk-16.0.2_linux-x64_bin.deb
-
-chown -R $app: $final_path
-chmod -R 755 $final_path
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
