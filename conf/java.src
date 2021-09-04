@@ -1,0 +1,6 @@
+SOURCE_URL=https://download.oracle.com/otn-pub/java/jdk/16.0.2%2B7/d4a915d82b4c4fbb9bde534da945d746/jdk-16.0.2_linux-x64_bin.deb
+SOURCE_SUM=78af3b719fa43bac7ce127a9602b9f6a6a057dda3bb883c464710bbcc24db8a4
+SOURCE_SUM_PRG=sha256sum
+SOURCE_FORMAT=deb
+SOURCE_IN_SUBDIR=true
+SOURCE_FILENAME=jdk-16.0.2_linux-x64_bin.deb

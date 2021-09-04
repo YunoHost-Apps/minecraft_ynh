@@ -47,6 +47,8 @@ ynh_script_progression --message="Removing dependencies"
 # Remove metapackage and its dependencies
 ynh_remove_app_dependencies
 
+dpkg --remove jdk-16.0.2
+
 #=================================================
 # REMOVE APP MAIN DIR
 #=================================================

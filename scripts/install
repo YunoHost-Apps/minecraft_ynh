@@ -73,6 +73,17 @@ ynh_script_progression --message="Installing dependencies..." --weight=5
 ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
+# INSTALL DEPENDENCIES
+#=================================================
+ynh_script_progression --message="Installing dependencies..." --weight=15
+
+ynh_exec_warn_less ynh_install_app_dependencies $pkg_dependencies
+
+tempdir="$(mktemp -d)"
+ynh_setup_source --dest_dir=$tempdir --source_id=java
+ynh_exec_warn_less dpkg -i $tempdir/jdk-16.0.2_linux-x64_bin.deb
+
+#=================================================
 # CREATE DEDICATED USER
 #=================================================
 ynh_script_progression --message="Configuring system user..." --weight=1
