@@ -42,7 +42,7 @@ ynh_remove_systemd_config
 #=================================================
 # REMOVE DEPENDENCIES
 #=================================================
-ynh_script_progression --message="Removing dependencies..." --time --weight=1
+ynh_script_progression --message="Removing dependencies..."
 
 # Remove metapackage and its dependencies
 ynh_remove_app_dependencies
@@ -55,7 +55,7 @@ ynh_script_progression --message="Removing dependencies"
 # Remove metapackage and its dependencies
 #ynh_remove_app_dependencies
 
-dpkg --remove jdk-16.0.2
+dpkg --remove jdk-$java_version
 
 #=================================================
 # REMOVE APP MAIN DIR
