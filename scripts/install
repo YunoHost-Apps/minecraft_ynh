@@ -86,7 +86,7 @@ tempdir="$(mktemp -d)"
 #ynh_setup_source --dest_dir=$tempdir --source_id=java
 #ynh_exec_warn_less dpkg -i $tempdir/jdk-16.0.2_linux-x64_bin.deb
 
-wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/otn-pub/java/jdk/16.0.2%2B7/d4a915d82b4c4fbb9bde534da945d746/jdk-16.0.2_linux-x64_bin.deb -P $tempdir >/dev/null 2>&1
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/otn-pub/java/jdk/16.0.2%2B7/d4a915d82b4c4fbb9bde534da945d746/jdk-16.0.2_linux-x64_bin.deb -P $tempdir #>/dev/null 2>&1
 
 ynh_exec_warn_less dpkg -i $tempdir/jdk-16.0.2_linux-x64_bin.deb
 
