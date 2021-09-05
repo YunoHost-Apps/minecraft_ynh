@@ -12,7 +12,7 @@ Group=__APP__
 #ProtectControlGroups=true 
 WorkingDirectory=__FINALPATH__
 UMask=000
-ExecStart=/usr/bin/java -Xmx__RAM__M -Xms__RAM__M -jar server.jar nogui
+ExecStart=/usr/lib/jvm/jdk-__JAVA_VERSION__/bin/java -Xmx__RAM__M -Xms__RAM__M -jar server.jar nogui
 Restart=on-failure
 RestartSec=30
 

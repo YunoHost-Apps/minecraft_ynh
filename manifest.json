@@ -6,7 +6,7 @@
         "en": "Three-dimensional sandbox construction game",
         "fr": "Jeu de construction de type \"bac à sable\" en trois dimensions"
     },
-    "version": "1.16.5~ynh1",
+    "version": "1.17.1~ynh1",
     "url": "https://minecraft.net/",
     "license": "non-free",
     "maintainer": {
@@ -64,10 +64,6 @@
             {
                 "name": "password",
                 "type": "password",
-                "ask": {
-                    "en": "Enter your password for RCON",
-                    "fr": "Entrez votre mot de passe pour RCON"
-                },
                 "example": "mypassword"
             },
             {
