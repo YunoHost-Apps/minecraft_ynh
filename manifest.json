@@ -64,10 +64,6 @@
             {
                 "name": "password",
                 "type": "password",
-                "ask": {
-                    "en": "Enter your password for RCON",
-                    "fr": "Entrez votre mot de passe pour RCON"
-                },
                 "example": "mypassword"
             },
             {
