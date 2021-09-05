@@ -83,12 +83,13 @@ ynh_install_app_dependencies $pkg_dependencies
 ynh_script_progression --message="Installing dependencies..." --weight=15
 
 tempdir="$(mktemp -d)"
-#ynh_setup_source --dest_dir=$tempdir --source_id=java
-#ynh_exec_warn_less dpkg -i $tempdir/jdk-16.0.2_linux-x64_bin.deb
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/otn-pub/java/jdk/16.0.2%2B7/d4a915d82b4c4fbb9bde534da945d746/jdk-${java_version}_linux-x64_bin.deb -P $tempdir >/dev/null 2>&1
 
-wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/otn-pub/java/jdk/16.0.2%2B7/d4a915d82b4c4fbb9bde534da945d746/jdk-16.0.2_linux-x64_bin.deb -P $tempdir >/dev/null 2>&1
+ynh_exec_warn_less dpkg -i $tempdir/jdk-${java_version}_linux-x64_bin.deb
 
-ynh_exec_warn_less dpkg -i $tempdir/jdk-16.0.2_linux-x64_bin.deb
+echo JAVA_HOME="/usr/lib/jvm/jdk-16.0.2" >> /etc/environment
+update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk-${java_version}/bin/java" 0
+update-alternatives --set java /usr/lib/jvm/jdk-${java_version}/bin/java
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
