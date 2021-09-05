@@ -38,6 +38,11 @@ if [ -z "$final_path" ]; then
 	ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 fi
 
+# If ram doesn't exist, create it
+if [ -z "$ram" ]; then
+	ram="1024"
+fi
+
 # If server doesn't exist, create it
 if [ -z "$server" ]; then
 	server=vanilla
@@ -91,9 +96,19 @@ chmod -R 755 $final_path
 #=================================================
 # INSTALL DEPENDENCIES
 #=================================================
-ynh_script_progression "Reinstalling dependencies..."
+ynh_script_progression --message="Installing dependencies..." --weight=1
 
 ynh_install_app_dependencies $pkg_dependencies
+
+#=================================================
+# DOWNLOAD, CHECK AND UNPACK SOURCE
+#=================================================
+ynh_script_progression --message="Installing Java 16..." --weight=15
+
+tempdir="$(mktemp -d)"
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/otn-pub/java/jdk/16.0.2%2B7/d4a915d82b4c4fbb9bde534da945d746/jdk-${java_version}_linux-x64_bin.deb -P $tempdir >/dev/null 2>&1
+
+ynh_exec_warn_less dpkg -i $tempdir/jdk-${java_version}_linux-x64_bin.deb
 
 #=================================================
 # SETUP SYSTEMD

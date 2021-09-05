@@ -5,7 +5,9 @@
 #=================================================
 
 # dependencies used by the app
-pkg_dependencies="openjdk-11-jre-headless"
+pkg_dependencies="libasound2"
+
+java_version="16.0.2"
 
 #=================================================
 # PERSONAL HELPERS
