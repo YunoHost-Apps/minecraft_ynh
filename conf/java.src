@@ -1,6 +1,0 @@
-SOURCE_URL=http://archive.ubuntu.com/ubuntu/pool/universe/o/openjdk-16/openjdk-16-source_16.0.1+9-1_all.deb
-SOURCE_SUM=78af3b719fa43bac7ce127a9602b9f6a6a057dda3bb883c464710bbcc24db8a4
-SOURCE_SUM_PRG=sha256sum
-SOURCE_FORMAT=deb
-SOURCE_IN_SUBDIR=true
-SOURCE_FILENAME=openjdk-16-source_16.0.1+9-1_all.deb
