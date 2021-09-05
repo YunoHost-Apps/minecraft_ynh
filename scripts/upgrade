@@ -38,6 +38,11 @@ if [ -z "$final_path" ]; then
 	ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 fi
 
+# If ram doesn't exist, create it
+if [ -z "$ram" ]; then
+	ram="1024"
+fi
+
 # If server doesn't exist, create it
 if [ -z "$server" ]; then
 	server=vanilla
