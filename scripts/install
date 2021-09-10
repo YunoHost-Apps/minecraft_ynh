@@ -56,7 +56,7 @@ ynh_app_setting_set --app=$app --key=ram --value=$ram
 ynh_script_progression --message="Finding an available port..." --weight=2
 
 # Find a free port
-port=$(ynh_find_port --port=25565)
+port=$(ynh_find_port --port=25575)
 ynh_app_setting_set --app=$app --key=port --value=$port
 
 # Open this port
