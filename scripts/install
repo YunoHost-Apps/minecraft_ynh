@@ -61,20 +61,12 @@ ynh_app_setting_set --app=$app --key=port --value=$port
 
 # Find a free port
 rconport=$(ynh_find_port --port=25575)
-ynh_app_setting_set --app=$app --key=port --value=$port
+ynh_app_setting_set --app=$app --key=rconport --value=$rconport
 
-# Find a free port
-rconport=$(ynh_find_port --port=25575)
-ynh_app_setting_set --app=$app --key=port --value=$port
-
-# Find a free port
-rconport=$(ynh_find_port --port=25575)
-ynh_app_setting_set --app=$app --key=port --value=$port
-
-# Open this port
+# Open port
 ynh_exec_warn_less yunohost firewall allow --no-upnp TCP $port
 
-# Open this port
+# Open rconport port
 ynh_exec_warn_less yunohost firewall allow --no-upnp TCP $rconport
 
 #=================================================
@@ -91,14 +83,6 @@ ynh_system_user_create --username=$app
 ynh_script_progression --message="Installing dependencies..." --weight=1
 
 ynh_install_app_dependencies $pkg_dependencies
-
-#=================================================
-# CREATE DEDICATED USER
-#=================================================
-ynh_script_progression --message="Configuring system user..." --weight=1
-
-# Create a system user
-ynh_system_user_create --username=$app
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE

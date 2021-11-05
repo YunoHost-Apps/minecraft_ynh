@@ -48,8 +48,7 @@
                 "ask": {
                     "en": "Enter the name of the administrator (Minecraft pseudo)",
                     "fr": "Entrer le nom de l'adminsitrateur (pseudo Minecraft)"
-                },
-                "example": "johndoe"
+                }
             },
             {
                 "name": "rcon",
@@ -63,8 +62,7 @@
             },
             {
                 "name": "password",
-                "type": "password",
-                "example": "mypassword"
+                "type": "password"
             },
             {
                 "name": "eula",
