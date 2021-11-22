@@ -65,7 +65,6 @@ ynh_app_setting_set --app=$app --key=rconport --value=$rconport
 
 # Open port
 ynh_exec_warn_less yunohost firewall allow --no-upnp TCP $port
-
 # Open rconport port
 ynh_exec_warn_less yunohost firewall allow --no-upnp TCP $rconport
 
