@@ -56,6 +56,8 @@ The folder of your servers is: `/home/yunohost.app/minecraft`
 
 ## Documentations et ressources
 
+* Site officiel de l'app : https://www.minecraft.net/
+* Documentation officielle de l'admin : https://minecraft.gamepedia.com/Tutorials/Setting_up_a_server
 * Documentation YunoHost pour cette app : https://yunohost.org/app_minecraft
 * Signaler un bug : https://github.com/YunoHost-Apps/minecraft_ynh/issues
 
