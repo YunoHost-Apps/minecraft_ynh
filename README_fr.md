@@ -18,6 +18,10 @@ Minecraft is a sandbox construction game, whose gameplay involves players intera
 
 
 
+## Captures d'écran
+
+![](./doc/screenshots/image.jpg)
+
 ## Avertissements / informations importantes
 
 ## Configuration
