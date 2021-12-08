@@ -90,7 +90,7 @@ ynh_script_progression --message="Installing Java 17..." --weight=15
 
 tempdir="$(mktemp -d)"
 
-ynh_setup_source --dest_dir=$tempdir --source_id=$java
+ynh_setup_source --dest_dir=$tempdir --source_id=java
 
 ynh_exec_warn_less dpkg -i $tempdir/jdk-17_linux-x64_bin.deb
 
