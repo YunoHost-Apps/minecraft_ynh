@@ -86,12 +86,13 @@ ynh_install_app_dependencies $pkg_dependencies
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression --message="Installing Java 16..." --weight=15
+ynh_script_progression --message="Installing Java 17..." --weight=15
 
 tempdir="$(mktemp -d)"
-wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/otn/java/jdk/16.0.2%2B7/d4a915d82b4c4fbb9bde534da945d746/jdk-${java_version}_linux-x64_bin.deb -P $tempdir >/dev/null 2>&1
 
-ynh_exec_warn_less dpkg -i $tempdir/jdk-${java_version}_linux-x64_bin.deb
+ynh_setup_source --dest_dir=$tempdir --source_id=$java
+
+ynh_exec_warn_less dpkg -i $tempdir/jdk-17_linux-x64_bin.deb
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
