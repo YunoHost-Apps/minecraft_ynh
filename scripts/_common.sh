@@ -7,7 +7,7 @@
 # dependencies used by the app
 pkg_dependencies="libasound2 libc6-x32 libc6-i386"
 
-java_version="16.0.2"
+java_version="17"
 
 #=================================================
 # PERSONAL HELPERS
