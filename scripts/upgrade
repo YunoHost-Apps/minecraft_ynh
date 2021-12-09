@@ -103,7 +103,7 @@ ynh_install_app_dependencies $pkg_dependencies
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression --message="Installing Java 17..." --weight=15
+ynh_script_progression --message="Installing Java $java_version..." --weight=15
 
 tempdir="$(mktemp -d)"
 
