@@ -6,7 +6,7 @@
         "en": "Three-dimensional sandbox construction game",
         "fr": "Jeu de construction de type \"bac à sable\" en trois dimensions"
     },
-    "version": "1.18~ynh1",
+    "version": "1.18.1~ynh1",
     "url": "https://www.minecraft.net/",
     "upstream": {
         "license": "non-free",
