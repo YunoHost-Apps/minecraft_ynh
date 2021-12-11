@@ -1,4 +1,4 @@
-OURCE_URL=https://papermc.io/api/v2/projects/paper/versions/1.18.1/builds/68/downloads/paper-1.18.1-68.jar
+SOURCE_URL=https://papermc.io/api/v2/projects/paper/versions/1.18.1/builds/68/downloads/paper-1.18.1-68.jar
 SOURCE_SUM=fb26ffe807b3860dcc20cf39ef3a23541b0cb4603ceed37c47aa4a6751659a23
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=jar
