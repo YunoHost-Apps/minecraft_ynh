@@ -34,7 +34,7 @@
                     "en": "Select your server",
                     "fr": "Choisir votre serveur"
                 },
-                "choices": ["vanilla", "vanilla-snapshot", "bungeecord", "craftbukkit", "paper", "spigot", "waterfall"],
+                "choices": ["vanilla", "vanilla-snapshot", "craftbukkit", "paper", "spigot", "waterfall"],
                 "default": "vanilla"
             },
             {
