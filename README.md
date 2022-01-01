@@ -30,7 +30,7 @@ Minecraft is a sandbox construction game, whose gameplay involves players intera
 
 ## Configuration
 
-:warning: ARM architectures are not supported
+:warning: ARM architecture is not supported.
 
 For server administration, use the Minecraft console or RCON (which is open on port 25575 with your password).
 
