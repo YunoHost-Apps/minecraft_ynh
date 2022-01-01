@@ -30,5 +30,5 @@ The folder of your servers is: `/home/yunohost.app/minecraft`
  
 ## Documentation
 
- * Non-official documentation: https://minecraft.gamepedia.com/Tutorials/Setting_up_a_server
+ * Non-official documentation: https://minecraft.fandom.com/wiki/Tutorials/Setting_up_a_server
 
