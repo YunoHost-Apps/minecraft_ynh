@@ -14,7 +14,7 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 Minecraft is a sandbox construction game, whose gameplay involves players interacting with the game world by placing and breaking various types of blocks in a three-dimensional environment. In this environment, players can build creative structures, creations, and artwork on multiplayer servers and singleplayer worlds across multiple game modes. 
 
 
-**Version incluse :** 1.18.1~ynh1
+**Version incluse :** 1.18.1~ynh2
 
 
 
@@ -49,13 +49,11 @@ The folder of your servers is: `/home/yunohost.app/minecraft`
 2. Minecraft (Vanilla snapshot)
 3. Spigot
 4. CraftBukkit (by Spigot)
-5. BungeeCord
-6. Paper
-7. Waterfall (by Paper)
+5. Paper
  
 ## Documentation
 
- * Non-official documentation: https://minecraft.gamepedia.com/Tutorials/Setting_up_a_server
+ * Non-official documentation: https://minecraft.fandom.com/Tutorials/Setting_up_a_server
 
 
 ## Documentations et ressources
