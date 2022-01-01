@@ -27,6 +27,7 @@ op=$YNH_APP_ARG_OP
 rcon=$YNH_APP_ARG_RCON
 password=$YNH_APP_ARG_PASSWORD
 eula=$YNH_APP_ARG_EULA
+architecture=$YNH_ARCH
 
 app=$YNH_APP_INSTANCE_NAME
 
@@ -34,6 +35,12 @@ app=$YNH_APP_INSTANCE_NAME
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
 #=================================================
 ynh_script_progression --message="Validating installation parameters..." --weight=1
+
+# Check machine architecture (in particular, we don't support ARM architectures)
+if [ $architecture != "amd64" ]
+then
+	ynh_die --message="Sorry, Minecraft server can't be installed on ARM architectures."
+fi
 
 final_path=/home/yunohost.app/$app
 test ! -e "$final_path" || ynh_die --message="This path already contains a folder"
