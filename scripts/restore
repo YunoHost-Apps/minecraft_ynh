@@ -56,7 +56,7 @@ chmod -R 755 $final_path
 ynh_script_progression --message="Reinstalling dependencies..." --weight=10
 
 # Define and install dependencies
-ynh_install_app_dependencies $pkg_dependencies
+#ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE

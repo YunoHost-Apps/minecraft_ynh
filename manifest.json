@@ -6,7 +6,7 @@
         "en": "Three-dimensional sandbox construction game",
         "fr": "Jeu de construction de type \"bac à sable\" en trois dimensions"
     },
-    "version": "1.18.1~ynh1",
+    "version": "1.18.1~ynh2",
     "url": "https://www.minecraft.net/",
     "upstream": {
         "license": "non-free",
@@ -34,7 +34,7 @@
                     "en": "Select your server",
                     "fr": "Choisir votre serveur"
                 },
-                "choices": ["vanilla", "vanilla-snapshot", "bungeecord", "craftbukkit", "paper", "spigot", "waterfall"],
+                "choices": ["vanilla", "vanilla-snapshot", "craftbukkit", "paper", "spigot"],
                 "default": "vanilla"
             },
             {
