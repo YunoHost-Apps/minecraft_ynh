@@ -6,7 +6,7 @@
         "en": "Three-dimensional sandbox construction game",
         "fr": "Jeu de construction de type \"bac à sable\" en trois dimensions"
     },
-    "version": "1.18.1~ynh1",
+    "version": "1.18.2~ynh1",
     "url": "https://www.minecraft.net/",
     "upstream": {
         "license": "non-free",
@@ -15,8 +15,8 @@
     },
     "license": "non-free",
     "maintainer": {
-        "name": "liberodark",
-        "email": "liberodark@gmail.com"
+        "name": "",
+        "email": ""
     },
     "requirements": {
         "yunohost": ">= 4.3.0"
