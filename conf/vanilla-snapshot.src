@@ -1,5 +1,5 @@
-SOURCE_URL=https://launcher.mojang.com/v1/objects/125e5adf40c659fd3bce3e66e67a16bb49ecc1b9/server.jar
-SOURCE_SUM=ebcd120ad81480b968a548df6ffb83b88075e95195c8ff63d461c9df4df5dbdf
+SOURCE_URL=https://launcher.mojang.com/v1/objects/2760f745a00711bcc19bf78d6056019f69318d03/server.jar
+SOURCE_SUM=daf80a03e7788c54d1c350f0cb8ab78968bfcc60fcc3cd0d3c56c7b4938a62a4
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=jar
 SOURCE_IN_SUBDIR=false
