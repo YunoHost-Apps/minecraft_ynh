@@ -1,5 +1,5 @@
 SOURCE_URL=https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.deb
-SOURCE_SUM=f59f5921a8d6d92ed6d816aaca226133b7eb0bc51e621acc3f8c50ad43afc71e
+SOURCE_SUM=8f7b6d6d7ba4324f19d94c0a69eef0090280387d09622357c6ec7335656a41ce
 SOURCE_SUM_PRG=sha256sum
 SOURCE_EXTRACT=false
 SOURCE_FILENAME=jdk-17_linux-x64_bin.deb
