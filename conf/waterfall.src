@@ -1,7 +1,0 @@
-SOURCE_URL=https://papermc.io/api/v2/projects/waterfall/versions/1.18/builds/483/downloads/waterfall-1.18-483.jar
-SOURCE_SUM=326cd40114034731deaee062dabc1b766de6ed29d2c42d166181469ccd289302
-SOURCE_SUM_PRG=sha256sum
-SOURCE_FORMAT=jar
-SOURCE_IN_SUBDIR=false
-SOURCE_EXTRACT=false
-SOURCE_FILENAME=server.jar
