@@ -52,7 +52,6 @@ The folder of your servers is: `/home/yunohost.app/minecraft`
 3. Spigot
 4. CraftBukkit (by Spigot)
 5. Paper
-6. Waterfall (by Paper)
  
 ## Documentation
 
