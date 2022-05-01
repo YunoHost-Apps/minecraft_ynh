@@ -30,7 +30,7 @@ rconport=$(ynh_app_setting_get --app=$app --key=rconport)
 #=================================================
 # CHECK IF THE APP CAN BE RESTORED
 #=================================================
-ynh_script_progression --message="Validating restoration parameters..." --time --weight=1
+ynh_script_progression --message="Validating restoration parameters..." --weight=1
 
 test ! -d $final_path \
 	|| ynh_die --message="There is already a directory: $final_path "
