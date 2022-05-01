@@ -50,7 +50,6 @@ The folder of your servers is: `/home/yunohost.app/minecraft`
 1. Minecraft (Vanilla)
 2. Minecraft (Vanilla snapshot)
 3. Spigot
-4. CraftBukkit (by Spigot)
 5. Paper
  
 ## Documentation
