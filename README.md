@@ -5,7 +5,7 @@ It shall NOT be edited by hand.
 
 # Minecraft for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/minecraft.svg)](https://dash.yunohost.org/appci/app/minecraft) ![](https://ci-apps.yunohost.org/ci/badges/minecraft.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/minecraft.maintain.svg)  
+[![Integration level](https://dash.yunohost.org/integration/minecraft.svg)](https://dash.yunohost.org/appci/app/minecraft) ![Working status](https://ci-apps.yunohost.org/ci/badges/minecraft.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/minecraft.maintain.svg)  
 [![Install Minecraft with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=minecraft)
 
 *[Lire ce readme en français.](./README_fr.md)*
@@ -18,13 +18,11 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 Minecraft is a sandbox construction game, whose gameplay involves players interacting with the game world by placing and breaking various types of blocks in a three-dimensional environment. In this environment, players can build creative structures, creations, and artwork on multiplayer servers and singleplayer worlds across multiple game modes. 
 
 
-**Shipped version:** 1.18.2~ynh2
-
-
+**Shipped version:** 1.18.2~ynh3
 
 ## Screenshots
 
-![](./doc/screenshots/image.jpg)
+![Screenshot of Minecraft](./doc/screenshots/image.jpg)
 
 ## Disclaimers / important information
 
@@ -63,20 +61,21 @@ The folder of your servers is: `/home/yunohost.app/minecraft`
 
 ## Documentation and resources
 
-* Official app website: https://www.minecraft.net/
-* Official admin documentation: https://minecraft.gamepedia.com/Tutorials/Setting_up_a_server
-* YunoHost documentation for this app: https://yunohost.org/app_minecraft
-* Report a bug: https://github.com/YunoHost-Apps/minecraft_ynh/issues
+* Official app website: <https://www.minecraft.net/>
+* Official admin documentation: <https://minecraft.gamepedia.com/Tutorials/Setting_up_a_server>
+* YunoHost documentation for this app: <https://yunohost.org/app_minecraft>
+* Report a bug: <https://github.com/YunoHost-Apps/minecraft_ynh/issues>
 
 ## Developer info
 
 Please send your pull request to the [testing branch](https://github.com/YunoHost-Apps/minecraft_ynh/tree/testing).
 
 To try the testing branch, please proceed like that.
-```
+
+``` bash
 sudo yunohost app install https://github.com/YunoHost-Apps/minecraft_ynh/tree/testing --debug
 or
 sudo yunohost app upgrade minecraft -u https://github.com/YunoHost-Apps/minecraft_ynh/tree/testing --debug
 ```
 
-**More info regarding app packaging:** https://yunohost.org/packaging_apps
+**More info regarding app packaging:** <https://yunohost.org/packaging_apps>
