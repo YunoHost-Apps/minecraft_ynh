@@ -1,0 +1,16 @@
+version = "1.0"
+
+[main]
+name = "Minecraft configuration"
+services = ["__APP__"]
+
+    [main.config]
+    name = "Configuration Options"
+
+        [main.config.level_type]
+        ask = "World type"
+        type = "select"
+        choices = ["minecraft:normal", "minecraft:flat", "minecraft:large_biomes", "minecraft:amplified", "minecraft:single_biome_surface"]
+        default = "minecraft:normal"
+        help = ""
+        bind = "level-type:/var/www/__APP__/server.properties"

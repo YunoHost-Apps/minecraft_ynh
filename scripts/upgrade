@@ -21,6 +21,8 @@ port=$(ynh_app_setting_get --app=$app --key=port)
 server=$(ynh_app_setting_get --app=$app --key=server)
 ram=$(ynh_app_setting_get --app=$app --key=ram)
 
+level_type=$(ynh_app_setting_get --app=$app --key=level_type)
+
 #=================================================
 # CHECK VERSION
 #=================================================
@@ -60,6 +62,11 @@ fi
 # If server doesn't exist, create it
 if [ -z "$server" ]; then
 	server=vanilla
+fi
+
+# If level_type doesn't exist, create it
+if [ -z "$level_type" ]; then
+	level_type="minecraft:normal"
 fi
 
 #=================================================
