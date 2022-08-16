@@ -36,16 +36,17 @@ Minecraft is a sandbox construction game, whose gameplay involves players intera
 
 ## Configuration
 
-For server administration, use the Minecraft console or RCON (which is open on port 25575 with your password).
+For server administration, use the Minecraft console or mcrcon (which is open on port 25575 and uses the password chosen during the install).
 
+To use mcrcon, go to `/var/www/minecraft/mcrcon` and type:
 ```
-/var/www/minecraft/mcrcon/mcrcon -H 127.0.0.1 -P YourPort -p YourPassword rconcommand
-``` 
+./mcrcon -p YourPassword command
+```
+where `command` is a standard Minecraft command. You must use quotes if your command contains spaces.
 
-### Location
+You can find more info about the usage of mcrcon here: https://github.com/Tiiffi/mcrcon
 
-The folder of your servers is: `/var/www/minecraft`
-
+You can change your server's settings by modifying `/var/www/minecraft/server.properties`.
 ## Documentation and resources
 
 * Official app website: <https://www.minecraft.net/>
