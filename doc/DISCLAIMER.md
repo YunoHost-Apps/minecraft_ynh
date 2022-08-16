@@ -24,9 +24,5 @@ The folder of your servers is: `/home/yunohost.app/minecraft`
 1. Minecraft (Vanilla)
 2. Minecraft (Vanilla snapshot)
 3. Spigot
-5. Paper
- 
-## Documentation
-
- * Non-official documentation: https://minecraft.fandom.com/wiki/Tutorials/Setting_up_a_server
+4. Paper
 
