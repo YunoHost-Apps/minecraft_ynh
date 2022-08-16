@@ -93,22 +93,17 @@ ynh_install_app_dependencies $pkg_dependencies
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression --message="Installing Java $java_version..." --weight=15
-
-tempdir="$(mktemp -d)"
-
-ynh_setup_source --dest_dir=$tempdir --source_id=java
-
-ynh_exec_warn_less dpkg -i $tempdir/jdk-17_linux-x64_bin.deb
-
-#=================================================
-# DOWNLOAD, CHECK AND UNPACK SOURCE
-#=================================================
 ynh_script_progression --message="Setting up source files..." --weight=10
 
 ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$final_path" --source_id="$server"
+
+if [ $rcon == "true" ] ; then
+	mkdir "$final_path/mcrcon"
+	ynh_setup_source --dest_dir="$final_path/mcrcon" --source_id="mcrcon"
+	chmod +x "$final_path/mcrcon/mcrcon"
+fi
 
 chmod 755 "$final_path"
 chmod -R o-rwx "$final_path"

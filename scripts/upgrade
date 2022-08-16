@@ -102,17 +102,6 @@ ynh_script_progression --message="Installing dependencies..." --weight=1
 ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
-# DOWNLOAD, CHECK AND UNPACK SOURCE
-#=================================================
-ynh_script_progression --message="Installing Java $java_version..." --weight=15
-
-tempdir="$(mktemp -d)"
-
-ynh_setup_source --dest_dir=$tempdir --source_id=java
-
-ynh_exec_warn_less dpkg -i $tempdir/jdk-17_linux-x64_bin.deb
-
-#=================================================
 # SETUP SYSTEMD
 #=================================================
 ynh_script_progression --message="Upgrading systemd configuration..."
