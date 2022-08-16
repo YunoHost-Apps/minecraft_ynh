@@ -2,6 +2,6 @@ SOURCE_URL=https://github.com/Tiiffi/mcrcon/releases/download/v0.7.2/mcrcon-0.7.
 SOURCE_SUM=c1883c3f6610c751c935f4faefbf2c52f704a0f71013be2928972eef5918cb68
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
-SOURCE_IN_SUBDIR=true
+SOURCE_IN_SUBDIR=false
 SOURCE_FILENAME=mcrcon
 SOURCE_EXTRACT=true
