@@ -29,9 +29,9 @@ eula=$YNH_APP_ARG_EULA
 
 app=$YNH_APP_INSTANCE_NAME
 
-level_type="normal"
-gamemode="survival"
-level_seed=""
+level_type=normal
+gamemode=survival
+level_seed=
 
 #=================================================
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
