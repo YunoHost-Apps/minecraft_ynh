@@ -123,6 +123,7 @@ ynh_add_config --template="../conf/eula.txt" --destination="$final_path/eula.txt
 ynh_script_progression --message="Configuring a systemd service..." --weight=2
 
 # Create a dedicated systemd config
+arch=$YNH_ARCH
 ynh_add_systemd_config
 
 #=================================================
