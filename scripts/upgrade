@@ -95,7 +95,6 @@ then
 	# Download, check integrity, uncompress and patch the source from app.src
 	ynh_setup_source --dest_dir="$final_path" --source_id="$server" --keep="server.properties ops.txt eula.txt"
 
-	mkdir "$final_path/mcrcon"
 	ynh_setup_source --dest_dir="$final_path/mcrcon" --source_id="mcrcon"	
 
 fi
