@@ -21,6 +21,7 @@ port=$(ynh_app_setting_get --app=$app --key=port)
 server=$(ynh_app_setting_get --app=$app --key=server)
 ram=$(ynh_app_setting_get --app=$app --key=ram)
 password=$(ynh_app_setting_get --app=$app --key=password)
+rconport=$(ynh_app_setting_get --app=$app --key=rconport)
 
 level_type=$(ynh_app_setting_get --app=$app --key=level_type)
 gamemode=$(ynh_app_setting_get --app=$app --key=gamemode)
@@ -70,6 +71,12 @@ fi
 # If server doesn't exist, create it
 if [ -z "$server" ]; then
 	server=vanilla
+fi
+
+# If rconport doesn't exist, create it
+if [ -z "$rconport" ]; then
+	rconport=$(ynh_find_port --port=25575)
+	ynh_app_setting_set --app=$app --key=rconport --value=$rconport
 fi
 
 # If level_type doesn't exist, create it
