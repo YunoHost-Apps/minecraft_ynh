@@ -30,7 +30,9 @@ architecture=$YNH_ARCH
 
 app=$YNH_APP_INSTANCE_NAME
 
-level_type=""
+level_type="normal"
+gamemode="survival"
+level_seed=""
 
 #=================================================
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
@@ -57,8 +59,10 @@ fi
 ynh_script_progression --message="Storing installation settings..." --weight=1
 
 ynh_app_setting_set --app=$app --key=ram --value=$ram
-ynh_app_setting_set --app=$app --key=level_type --value=$level_type
 ynh_app_setting_set --app=$app --key=password --value=$password
+ynh_app_setting_set --app=$app --key=level_type --value=$level_type
+ynh_app_setting_set --app=$app --key=gamemode --value=$gamemode
+ynh_app_setting_set --app=$app --key=level_seed --value=$level_seed
 
 #=================================================
 # FIND AND OPEN A PORT
@@ -139,7 +143,7 @@ yunohost service add $app --description="Three-dimensional sandbox construction 
 #=================================================
 ynh_script_progression --message="Starting a systemd service..." --weight=3
 
-ynh_systemd_action --service_name=$app --action=start --log_path=systemd #--line_match="RCON running on"
+ynh_systemd_action --service_name=$app --action=start --log_path=systemd --line_match="RCON running on"
 
 #=================================================
 # END OF SCRIPT

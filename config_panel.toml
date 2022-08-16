@@ -10,7 +10,21 @@ services = ["__APP__"]
         [main.config.level_type]
         ask = "World type"
         type = "select"
-        choices = ["minecraft:normal", "minecraft:flat", "minecraft:large_biomes", "minecraft:amplified", "minecraft:single_biome_surface"]
-        default = "minecraft:normal"
+        choices = ["normal", "flat", "large_biomes", "amplified", "single_biome_surface"]
+        default = "normal"
         help = ""
         bind = "level-type:/var/www/__APP__/server.properties"
+
+        [main.config.gamemode]
+        ask = "Gamemode"
+        type = "select"
+        choices = ["survival", "creative", "adventure", "spectator"]
+        default = "survival"
+        help = ""
+        bind = "gamemode:/var/www/__APP__/server.properties"
+
+        [main.config.level_seed]
+        ask = "World seed"
+        type = "string"
+        help = ""
+        bind = "level-seed:/var/www/__APP__/server.properties"
