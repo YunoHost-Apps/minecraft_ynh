@@ -58,6 +58,7 @@ ynh_script_progression --message="Storing installation settings..." --weight=1
 
 ynh_app_setting_set --app=$app --key=ram --value=$ram
 ynh_app_setting_set --app=$app --key=level_type --value=$level_type
+ynh_app_setting_set --app=$app --key=password --value=$password
 
 #=================================================
 # FIND AND OPEN A PORT
