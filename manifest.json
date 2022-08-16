@@ -51,7 +51,7 @@
                 "name": "op",
                 "type": "string",
                 "ask": {
-                    "en": "Enter the name of the administrator (Minecraft pseudo)",
+                    "en": "Enter the administrator name (Minecraft pseudo)",
                     "fr": "Entrer le nom de l'adminsitrateur (pseudo Minecraft)"
                 }
             },
