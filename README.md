@@ -39,7 +39,7 @@ Minecraft is a sandbox construction game, whose gameplay involves players intera
 For server administration, use the Minecraft console or RCON (which is open on port 25575 with your password).
 
 ```
-/var/www/minecraft/mcrcon/mcrcon -H 127.0.0.1 -P YourPort -p YourPassword youcommand
+/var/www/minecraft/mcrcon/mcrcon -H 127.0.0.1 -P YourPort -p YourPassword rconcommand
 ``` 
 
 ### Location
