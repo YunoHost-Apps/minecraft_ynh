@@ -120,7 +120,6 @@ ynh_add_config --template="../conf/eula.txt" --destination="$final_path/eula.txt
 ynh_script_progression --message="Configuring a systemd service..." --weight=2
 
 # Create a dedicated systemd config
-arch=$YNH_ARCH
 ynh_add_systemd_config
 
 #=================================================
@@ -135,7 +134,7 @@ yunohost service add $app --description="Three-dimensional sandbox construction 
 #=================================================
 ynh_script_progression --message="Starting a systemd service..." --weight=3
 
-ynh_systemd_action --service_name=$app --action=start --log_path=systemd --line_match="RCON running on"
+ynh_systemd_action --service_name=$app --action=start --log_path=systemd #--line_match="RCON running on"
 
 #=================================================
 # END OF SCRIPT
