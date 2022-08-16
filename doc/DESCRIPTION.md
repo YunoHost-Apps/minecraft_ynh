@@ -5,4 +5,4 @@ Minecraft is a sandbox construction game, whose gameplay involves players intera
 1. Minecraft (Vanilla)
 2. Minecraft (Vanilla snapshot)
 3. Spigot
-5. Paper
+4. Paper
