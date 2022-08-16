@@ -54,6 +54,11 @@ if [ -z "$final_path" ]; then
 	ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 fi
 
+# If final_path doesn't exist, create it
+if [ -z "$final_path/mcrcon" ]; then
+	mkdir $final_path/mcrcon
+fi
+
 # If rconport doesn't exist, create it
 if [ -z "$rconport" ]; then
 	rconport=$(ynh_find_port --port=25575)
