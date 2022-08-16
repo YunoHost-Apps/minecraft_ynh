@@ -57,7 +57,11 @@
             },
             {
                 "name": "password",
-                "type": "password"
+                "type": "password",
+                "help": {
+                    "en": "Enter the RCON password",
+                    "fr": "Entrer le mot de passe RCON"
+                }
             },
             {
                 "name": "eula",
