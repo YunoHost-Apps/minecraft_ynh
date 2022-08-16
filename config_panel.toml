@@ -10,16 +10,16 @@ services = ["__APP__"]
         [main.config.level_type]
         ask = "World type"
         type = "select"
-        choices = [normal, flat, large_biomes, amplified, single_biome_surface]
-        default = normal
+        choices = ["normal", "flat", "large_biomes", "amplified", "single_biome_surface"]
+        default = "normal"
         help = "help"
         bind = "level-type:/var/www/__APP__/server.properties"
 
         [main.config.gamemode]
         ask = "Gamemode"
         type = "select"
-        choices = [survival, creative, adventure, spectator]
-        default = survival
+        choices = ["survival", "creative", "adventure", "spectator"]
+        default = "survival"
         help = "help"
         bind = "gamemode:/var/www/__APP__/server.properties"
 
