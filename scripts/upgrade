@@ -98,7 +98,7 @@ chmod 755 "$final_path"
 chmod -R o-rwx "$final_path"
 chown -R $app:www-data "$final_path"
 chmod +x "$final_path/mcrcon/mcrcon"
-chmod +x $final_path/server.jar
+chmod +x "$final_path/server.jar"
 
 #=================================================
 # INSTALL DEPENDENCIES

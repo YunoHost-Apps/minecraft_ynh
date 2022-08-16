@@ -11,7 +11,7 @@
     "upstream": {
         "license": "non-free",
         "website": "https://www.minecraft.net/",
-        "admindoc": "https://minecraft.gamepedia.com/Tutorials/Setting_up_a_server"
+        "admindoc": "https://minecraft.fandom.com/wiki/Tutorials/Setting_up_a_server"
     },
     "license": "non-free",
     "maintainer": {
