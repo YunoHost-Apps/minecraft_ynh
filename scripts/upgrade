@@ -97,7 +97,6 @@ then
 	# Download, check integrity, uncompress and patch the source from app.src
 	ynh_setup_source --dest_dir="$final_path" --source_id="$server" --keep="ops.txt eula.txt"
 
-	mkdir "$final_path/mcrcon"
 	ynh_setup_source --dest_dir="$final_path/mcrcon" --source_id="mcrcon"	
 fi
 
@@ -118,7 +117,7 @@ ynh_install_app_dependencies $pkg_dependencies
 #=================================================
 # MODIFY A CONFIG FILE
 #=================================================
-ynh_script_progression --message="Modifying config file..." --weight=1
+ynh_script_progression --message="Updating the configuration file..." --weight=1
 
 ynh_add_config --template="../conf/server.properties" --destination="$final_path/server.properties"
 
