@@ -86,13 +86,18 @@ then
 	ynh_script_progression --message="Upgrading source files..."
 
 	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$final_path" --source_id="$server" --keep="$final_path/server.properties $final_path/ops.txt $final_path/eula.txt"
+	ynh_setup_source --dest_dir="$final_path" --source_id="$server" --keep="server.properties ops.txt eula.txt"
+
+	mkdir "$final_path/mcrcon"
+	ynh_setup_source --dest_dir="$final_path/mcrcon" --source_id="mcrcon"	
+
 fi
 
 # Set permissions to app files
 chmod 755 "$final_path"
 chmod -R o-rwx "$final_path"
 chown -R $app:www-data "$final_path"
+chmod +x "$final_path/mcrcon/mcrcon"
 
 #=================================================
 # INSTALL DEPENDENCIES

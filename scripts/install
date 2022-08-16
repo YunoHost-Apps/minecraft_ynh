@@ -24,7 +24,6 @@ ynh_abort_if_errors
 server=$YNH_APP_ARG_SERVER
 ram=$YNH_APP_ARG_RAM
 op=$YNH_APP_ARG_OP
-rcon=$YNH_APP_ARG_RCON
 password=$YNH_APP_ARG_PASSWORD
 eula=$YNH_APP_ARG_EULA
 architecture=$YNH_ARCH
@@ -99,15 +98,13 @@ ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$final_path" --source_id="$server"
 
-if [ $rcon == "true" ] ; then
-	mkdir "$final_path/mcrcon"
-	ynh_setup_source --dest_dir="$final_path/mcrcon" --source_id="mcrcon"
-	chmod +x "$final_path/mcrcon/mcrcon"
-fi
+mkdir "$final_path/mcrcon"
+ynh_setup_source --dest_dir="$final_path/mcrcon" --source_id="mcrcon"	
 
 chmod 755 "$final_path"
 chmod -R o-rwx "$final_path"
 chown -R $app:www-data "$final_path"
+chmod +x "$final_path/mcrcon/mcrcon"
 
 #=================================================
 # MODIFY A CONFIG FILE
