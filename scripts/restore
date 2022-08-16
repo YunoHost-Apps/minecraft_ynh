@@ -41,7 +41,7 @@ test ! -d $final_path \
 ynh_script_progression --message="Recreating the dedicated system user..." --weight=1
 
 # Create the dedicated user (if not existing)
-ynh_system_user_create --username=$app
+ynh_system_user_create --username=$app --home_dir="$final_path"
 
 #=================================================
 # STANDARD RESTORATION STEPS
@@ -56,6 +56,8 @@ ynh_restore_file --origin_path="$final_path"
 chmod 755 "$final_path"
 chmod -R o-rwx "$final_path"
 chown -R $app:www-data "$final_path"
+chmod +x "$final_path/mcrcon/mcrcon"
+chmod +x "$final_path/server.jar"
 
 #=================================================
 # SPECIFIC RESTORATION

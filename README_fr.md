@@ -42,9 +42,6 @@ For server administration, use the Minecraft console or RCON (which is open on p
 
 The folder of your servers is: `/var/www/minecraft`
 
-
-
-
 ## Documentations et ressources
 
 * Site officiel de l'app : <https://www.minecraft.net/>

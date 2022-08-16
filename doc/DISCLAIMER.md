@@ -5,6 +5,3 @@ For server administration, use the Minecraft console or RCON (which is open on p
 ### Location
 
 The folder of your servers is: `/var/www/minecraft`
-
-
-

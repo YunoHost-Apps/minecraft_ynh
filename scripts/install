@@ -26,7 +26,6 @@ ram=$YNH_APP_ARG_RAM
 op=$YNH_APP_ARG_OP
 password=$YNH_APP_ARG_PASSWORD
 eula=$YNH_APP_ARG_EULA
-architecture=$YNH_ARCH
 
 app=$YNH_APP_INSTANCE_NAME
 
@@ -82,7 +81,7 @@ ynh_exec_warn_less yunohost firewall allow --no-upnp TCP $rconport
 ynh_script_progression --message="Configuring system user..." --weight=1
 
 # Create a system user
-ynh_system_user_create --username=$app
+ynh_system_user_create --username=$app --home_dir="$final_path"
 
 #=================================================
 # INSTALL DEPENDENCIES

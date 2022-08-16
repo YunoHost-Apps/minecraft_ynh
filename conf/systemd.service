@@ -7,7 +7,6 @@ Type=simple
 User=__APP__
 Group=__APP__
 Nice=1
-KillMode=none
 SuccessExitStatus=0 1
 ProtectHome=true
 ProtectSystem=full
