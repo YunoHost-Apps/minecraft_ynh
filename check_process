@@ -1,10 +1,9 @@
 ;; Test complet
 	; Manifest
-		password="pass"
 		server="vanilla"
 		ram="1024"
 		op="johndoe"
-		rcon="true"
+		password="1Strong-Password"
 		eula="true"
 	; Checks
 		pkg_linter=1

@@ -26,7 +26,6 @@ ram=$YNH_APP_ARG_RAM
 op=$YNH_APP_ARG_OP
 password=$YNH_APP_ARG_PASSWORD
 eula=$YNH_APP_ARG_EULA
-architecture=$YNH_ARCH
 
 app=$YNH_APP_INSTANCE_NAME
 
@@ -34,12 +33,6 @@ app=$YNH_APP_INSTANCE_NAME
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
 #=================================================
 ynh_script_progression --message="Validating installation parameters..." --weight=1
-
-# Check machine architecture (in particular, we don't support ARM architectures)
-#if [ $architecture != "amd64" ]
-#then
-#	ynh_die --message="Sorry, Minecraft server can't be installed on ARM architectures."
-#fi
 
 final_path=/var/www/$app
 test ! -e "$final_path" || ynh_die --message="This path already contains a folder"
@@ -55,6 +48,7 @@ fi
 ynh_script_progression --message="Storing installation settings..." --weight=1
 
 ynh_app_setting_set --app=$app --key=ram --value=$ram
+ynh_app_setting_set --app=$app --key=password --value=$password
 
 #=================================================
 # FIND AND OPEN A PORT
