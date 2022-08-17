@@ -23,6 +23,8 @@ server=$(ynh_app_setting_get --app=$app --key=server)
 ram=$(ynh_app_setting_get --app=$app --key=ram)
 password=$(ynh_app_setting_get --app=$app --key=password)
 
+gamemode=$(ynh_app_setting_get --app=$app --key=gamemode)
+
 #=================================================
 # CHECK VERSION
 #=================================================
@@ -75,6 +77,12 @@ fi
 if [ -z "$server" ]; then
 	server=vanilla
 fi
+
+# If gamemode doesn't exist, create it
+if [ -z "$gamemode" ]; then
+	gamemode=survival
+fi
+
 
 #=================================================
 # STOP SYSTEMD SERVICE

@@ -1,0 +1,16 @@
+version = "1.0"
+
+[main]
+name = "Minecraft configuration"
+services = ["__APP__"]
+
+    [main.config]
+    name = "Configuration Options"
+
+        [main.config.gamemode]
+        ask = "Gamemode"
+        type = "select"
+        choices = ["survival", "creative", "adventure", "spectator"]
+        default = "survival"
+        help = "Choose the default gamemode on your server."
+        bind = "gamemode:/var/www/__APP__/server.properties"
