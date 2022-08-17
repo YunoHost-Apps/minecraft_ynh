@@ -24,10 +24,8 @@ ynh_abort_if_errors
 server=$YNH_APP_ARG_SERVER
 ram=$YNH_APP_ARG_RAM
 op=$YNH_APP_ARG_OP
-rcon=$YNH_APP_ARG_RCON
 password=$YNH_APP_ARG_PASSWORD
 eula=$YNH_APP_ARG_EULA
-architecture=$YNH_ARCH
 
 app=$YNH_APP_INSTANCE_NAME
 
@@ -36,13 +34,7 @@ app=$YNH_APP_INSTANCE_NAME
 #=================================================
 ynh_script_progression --message="Validating installation parameters..." --weight=1
 
-# Check machine architecture (in particular, we don't support ARM architectures)
-if [ $architecture != "amd64" ]
-then
-	ynh_die --message="Sorry, Minecraft server can't be installed on ARM architectures."
-fi
-
-final_path=/home/yunohost.app/$app
+final_path=/var/www/$app
 test ! -e "$final_path" || ynh_die --message="This path already contains a folder"
 
 if [ "$eula" != "true" ]
@@ -56,6 +48,7 @@ fi
 ynh_script_progression --message="Storing installation settings..." --weight=1
 
 ynh_app_setting_set --app=$app --key=ram --value=$ram
+ynh_app_setting_set --app=$app --key=password --value=$password
 
 #=================================================
 # FIND AND OPEN A PORT
@@ -81,7 +74,7 @@ ynh_exec_warn_less yunohost firewall allow --no-upnp TCP $rconport
 ynh_script_progression --message="Configuring system user..." --weight=1
 
 # Create a system user
-ynh_system_user_create --username=$app
+ynh_system_user_create --username=$app --home_dir="$final_path"
 
 #=================================================
 # INSTALL DEPENDENCIES
@@ -93,26 +86,20 @@ ynh_install_app_dependencies $pkg_dependencies
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression --message="Installing Java $java_version..." --weight=15
-
-tempdir="$(mktemp -d)"
-
-ynh_setup_source --dest_dir=$tempdir --source_id=java
-
-ynh_exec_warn_less dpkg -i $tempdir/jdk-17_linux-x64_bin.deb
-
-#=================================================
-# DOWNLOAD, CHECK AND UNPACK SOURCE
-#=================================================
 ynh_script_progression --message="Setting up source files..." --weight=10
 
 ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$final_path" --source_id="$server"
 
+mkdir "$final_path/mcrcon"
+ynh_setup_source --dest_dir="$final_path/mcrcon" --source_id="mcrcon"	
+
 chmod 755 "$final_path"
 chmod -R o-rwx "$final_path"
 chown -R $app:www-data "$final_path"
+chmod +x "$final_path/mcrcon/mcrcon"
+chmod +x "$final_path/server.jar"
 
 #=================================================
 # MODIFY A CONFIG FILE

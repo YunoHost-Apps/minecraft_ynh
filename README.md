@@ -15,10 +15,17 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 ## Overview
 
-Minecraft is a sandbox construction game, whose gameplay involves players interacting with the game world by placing and breaking various types of blocks in a three-dimensional environment. In this environment, players can build creative structures, creations, and artwork on multiplayer servers and singleplayer worlds across multiple game modes. 
+Minecraft is a sandbox construction game, whose gameplay involves players interacting with the game world by placing and breaking various types of blocks in a three-dimensional environment. In this environment, players can build creative structures, creations, and artwork on multiplayer servers and singleplayer worlds across multiple game modes.
+
+### Supported Servers
+ 
+1. Minecraft (Vanilla)
+2. Minecraft (Vanilla snapshot)
+3. Spigot
+4. Paper
 
 
-**Shipped version:** 1.19~ynh2
+**Shipped version:** 1.19.2~ynh1
 
 
 ## Screenshots
@@ -29,41 +36,21 @@ Minecraft is a sandbox construction game, whose gameplay involves players intera
 
 ## Configuration
 
-:warning: ARM architecture is not supported.
+For server administration, use the Minecraft console or mcrcon (which is open on port 25575 and uses the password chosen during the install).
 
-For server administration, use the Minecraft console or RCON (which is open on port 25575 with your password).
+To use mcrcon, go to `/var/www/minecraft/mcrcon` and type:
+```
+./mcrcon -p YourPassword command
+```
+where `command` is a standard Minecraft command. You must use quotes if your command contains spaces.
 
-### Rcon Clients
+You can find more info about the usage of mcrcon here: https://github.com/Tiiffi/mcrcon
 
-- https://github.com/Tiiffi/mcrcon/releases (in C)
-
-### Start/Stop/Restart/Check Status Minecraft
-
-- ```systemctl start minecraft```
-- ```systemctl stop minecraft```
-- ```systemctl restart minecraft```
-- ```systemctl status minecraft```
-
-### Location
-
-The folder of your servers is: `/home/yunohost.app/minecraft`
-
-### Supported Servers
- 
-1. Minecraft (Vanilla)
-2. Minecraft (Vanilla snapshot)
-3. Spigot
-5. Paper
- 
-## Documentation
-
- * Non-official documentation: https://minecraft.fandom.com/wiki/Tutorials/Setting_up_a_server
-
-
+You can change your server's settings by modifying `/var/www/minecraft/server.properties`.
 ## Documentation and resources
 
 * Official app website: <https://www.minecraft.net/>
-* Official admin documentation: <https://minecraft.gamepedia.com/Tutorials/Setting_up_a_server>
+* Official admin documentation: <https://minecraft.fandom.com/wiki/Tutorials/Setting_up_a_server>
 * YunoHost documentation for this app: <https://yunohost.org/app_minecraft>
 * Report a bug: <https://github.com/YunoHost-Apps/minecraft_ynh/issues>
 

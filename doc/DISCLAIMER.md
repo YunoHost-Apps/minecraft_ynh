@@ -1,32 +1,13 @@
 ## Configuration
 
-:warning: ARM architecture is not supported.
+For server administration, use the Minecraft console or mcrcon (which is open on port 25575 and uses the password chosen during the install).
 
-For server administration, use the Minecraft console or RCON (which is open on port 25575 with your password).
+To use mcrcon, go to `/var/www/minecraft/mcrcon` and type:
+```
+./mcrcon -p YourPassword command
+```
+where `command` is a standard Minecraft command. You must use quotes if your command contains spaces.
 
-### Rcon Clients
+You can find more info about the usage of mcrcon here: https://github.com/Tiiffi/mcrcon
 
-- https://github.com/Tiiffi/mcrcon/releases (in C)
-
-### Start/Stop/Restart/Check Status Minecraft
-
-- ```systemctl start minecraft```
-- ```systemctl stop minecraft```
-- ```systemctl restart minecraft```
-- ```systemctl status minecraft```
-
-### Location
-
-The folder of your servers is: `/home/yunohost.app/minecraft`
-
-### Supported Servers
- 
-1. Minecraft (Vanilla)
-2. Minecraft (Vanilla snapshot)
-3. Spigot
-5. Paper
- 
-## Documentation
-
- * Non-official documentation: https://minecraft.fandom.com/wiki/Tutorials/Setting_up_a_server
-
+You can change your server's settings by modifying `/var/www/minecraft/server.properties`.
