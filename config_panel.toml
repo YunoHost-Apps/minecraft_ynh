@@ -33,4 +33,4 @@ services = ["__APP__"]
         type = "string"
         default = "A Minecraft Server"
         help = "Choose the MOTD of your server (supports color and formatting codes)."
-        bind = "level-seed:/var/www/__APP__/server.properties"
+        bind = "motd:/var/www/__APP__/server.properties"
