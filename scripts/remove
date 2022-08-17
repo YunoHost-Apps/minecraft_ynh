@@ -62,7 +62,7 @@ ynh_secure_remove --file="$final_path"
 
 if yunohost firewall list | grep -q "\- $rconport$"
 then
-	ynh_script_progression --message="Closing port $rconport..."
+	ynh_script_progression --message="Closing rcon port $rconport..."
 	ynh_exec_warn_less yunohost firewall disallow TCP $rconport
 fi
 
