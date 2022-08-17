@@ -30,6 +30,7 @@ eula=$YNH_APP_ARG_EULA
 app=$YNH_APP_INSTANCE_NAME
 
 gamemode=survival
+level_seed=""
 
 #=================================================
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
@@ -52,6 +53,7 @@ ynh_script_progression --message="Storing installation settings..." --weight=1
 ynh_app_setting_set --app=$app --key=ram --value=$ram
 ynh_app_setting_set --app=$app --key=password --value=$password
 ynh_app_setting_set --app=$app --key=gamemode --value=$gamemode
+ynh_app_setting_set --app=$app --key=level_seed --value=$level_seed
 
 #=================================================
 # FIND AND OPEN A PORT

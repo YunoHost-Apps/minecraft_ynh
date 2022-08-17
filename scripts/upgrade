@@ -24,6 +24,7 @@ ram=$(ynh_app_setting_get --app=$app --key=ram)
 password=$(ynh_app_setting_get --app=$app --key=password)
 
 gamemode=$(ynh_app_setting_get --app=$app --key=gamemode)
+level_seed=$(ynh_app_setting_get --app=$app --key=level_seed)
 
 #=================================================
 # CHECK VERSION
@@ -83,6 +84,10 @@ if [ -z "$gamemode" ]; then
 	gamemode=survival
 fi
 
+# If level_seed doesn't exist, create it
+if [ -z "$level_seed" ]; then
+	level_seed=""
+fi
 
 #=================================================
 # STOP SYSTEMD SERVICE

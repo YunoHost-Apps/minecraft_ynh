@@ -14,3 +14,9 @@ services = ["__APP__"]
         default = "survival"
         help = "Choose the default gamemode on your server."
         bind = "gamemode:/var/www/__APP__/server.properties"
+
+        [main.config.level_seed]
+        ask = "World seed"
+        type = "string"
+        help = "Choose the seed used on your server (leave blank for a random seed)."
+        bind = "level-seed:/var/www/__APP__/server.properties"
