@@ -46,7 +46,8 @@ where `command` is a standard Minecraft command. You must use quotes if your com
 
 You can find more info about the usage of mcrcon here: https://github.com/Tiiffi/mcrcon
 
-You can change your server's settings by modifying `/var/www/minecraft/server.properties`.
+The **gamemode** and the **world seed** can be set in the config panel, in the webadmin.
+Other settings can be set by modifying `/var/www/minecraft/server.properties`.
 ## Documentations et ressources
 
 * Site officiel de l'app : <https://www.minecraft.net/>
