@@ -8,11 +8,11 @@ services = ["__APP__"]
     name = "Configuration Options"
 
         [main.config.gamemode]
-        ask = "Gamemode"
+        ask = "Game mode"
         type = "select"
         choices = ["survival", "creative", "adventure", "spectator"]
         default = "survival"
-        help = "Choose the default gamemode on your server."
+        help = "Choose the default game mode on your server."
         bind = "gamemode:/var/www/__APP__/server.properties"
 
         [main.config.level_seed]
