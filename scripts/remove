@@ -17,6 +17,7 @@ ynh_script_progression --message="Loading installation settings..."
 app=$YNH_APP_INSTANCE_NAME
 
 port=$(ynh_app_setting_get --app=$app --key=port)
+rconport=$(ynh_app_setting_get --app=$app --key=rconport)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 
 #=================================================
@@ -47,8 +48,6 @@ ynh_script_progression --message="Removing dependencies..."
 # Remove metapackage and its dependencies
 ynh_remove_app_dependencies
 
-dpkg --remove jdk-$java_version
-
 #=================================================
 # REMOVE APP MAIN DIR
 #=================================================
@@ -63,7 +62,7 @@ ynh_secure_remove --file="$final_path"
 
 if yunohost firewall list | grep -q "\- $rconport$"
 then
-	ynh_script_progression --message="Closing port $rconport..."
+	ynh_script_progression --message="Closing rcon port $rconport..."
 	ynh_exec_warn_less yunohost firewall disallow TCP $rconport
 fi
 

@@ -6,12 +6,12 @@
         "en": "Three-dimensional sandbox construction game",
         "fr": "Jeu de construction de type \"bac à sable\" en trois dimensions"
     },
-    "version": "1.19~ynh2",
+    "version": "1.19.2~ynh1",
     "url": "https://www.minecraft.net/",
     "upstream": {
         "license": "non-free",
         "website": "https://www.minecraft.net/",
-        "admindoc": "https://minecraft.gamepedia.com/Tutorials/Setting_up_a_server"
+        "admindoc": "https://minecraft.fandom.com/wiki/Tutorials/Setting_up_a_server"
     },
     "license": "non-free",
     "maintainer": {
@@ -19,7 +19,7 @@
         "email": ""
     },
     "requirements": {
-        "yunohost": ">= 4.3.0"
+        "yunohost": ">= 11.0.9"
     },
     "multi_instance": false,
     "services": [
@@ -51,23 +51,17 @@
                 "name": "op",
                 "type": "string",
                 "ask": {
-                    "en": "Enter the name of the administrator (Minecraft pseudo)",
+                    "en": "Enter the administrator name (Minecraft pseudo)",
                     "fr": "Entrer le nom de l'adminsitrateur (pseudo Minecraft)"
                 }
             },
             {
-                "name": "rcon",
-                "type": "string",
-                "ask": {
-                    "en": "Do you want to activate RCON?",
-                    "fr": "Voulez vous activer RCON ?"
-                },
-                "example": "true, false",
-                "default": "true"
-            },
-            {
                 "name": "password",
-                "type": "password"
+                "type": "password",
+                "help": {
+                    "en": "Enter the RCON password",
+                    "fr": "Entrer le mot de passe RCON"
+                }
             },
             {
                 "name": "eula",
