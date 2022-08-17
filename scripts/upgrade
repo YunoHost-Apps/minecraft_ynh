@@ -82,12 +82,12 @@ fi
 
 # If level_type doesn't exist, create it
 if [ -z "$level_type" ]; then
-	level_type="normal"
+	level_type=normal
 fi
 
 # If gamemode doesn't exist, create it
 if [ -z "$gamemode" ]; then
-	gamemode="survival"
+	gamemode=survival
 fi
 
 # If level_seed doesn't exist, create it
