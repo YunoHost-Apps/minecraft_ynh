@@ -25,6 +25,8 @@ password=$(ynh_app_setting_get --app=$app --key=password)
 
 gamemode=$(ynh_app_setting_get --app=$app --key=gamemode)
 level_seed=$(ynh_app_setting_get --app=$app --key=level_seed)
+max_players=$(ynh_app_setting_get --app=$app --key=max_players)
+motd=$(ynh_app_setting_get --app=$app --key=motd)
 
 #=================================================
 # CHECK VERSION
@@ -87,6 +89,16 @@ fi
 # If level_seed doesn't exist, create it
 if [ -z "$level_seed" ]; then
 	level_seed=""
+fi
+
+# If max_players doesn't exist, create it
+if [ -z "$max_players" ]; then
+	max_players=20
+fi
+
+# If motd doesn't exist, create it
+if [ -z "$motd" ]; then
+	motd="A Minecraft Server"
 fi
 
 #=================================================
