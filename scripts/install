@@ -59,7 +59,6 @@ ynh_script_progression --message="Finding an available port..." --weight=2
 port=$(ynh_find_port --port=25565)
 ynh_app_setting_set --app=$app --key=port --value=$port
 
-# Find a free port
 rconport=$(ynh_find_port --port=25575)
 ynh_app_setting_set --app=$app --key=rconport --value=$rconport
 
@@ -104,6 +103,7 @@ chmod +x "$final_path/server.jar"
 #=================================================
 # MODIFY A CONFIG FILE
 #=================================================
+ynh_script_progression --message="Configuring configuration files..." --weight=2
 
 ynh_add_config --template="../conf/server.properties" --destination="$final_path/server.properties"
 ynh_add_config --template="../conf/ops.txt" --destination="$final_path/ops.txt"
