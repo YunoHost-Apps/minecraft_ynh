@@ -91,7 +91,7 @@ ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$final_path" --source_id="$server"
 
-mkdir "$final_path/mcrcon"
+mkdir -p "$final_path/mcrcon"
 ynh_setup_source --dest_dir="$final_path/mcrcon" --source_id="mcrcon"	
 
 chmod 755 "$final_path"

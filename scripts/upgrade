@@ -56,7 +56,7 @@ fi
 
 # If final_path doesn't exist, create it
 if [ -z "$final_path/mcrcon" ]; then
-	mkdir $final_path/mcrcon
+	mkdir -p $final_path/mcrcon
 fi
 
 # If rconport doesn't exist, create it
