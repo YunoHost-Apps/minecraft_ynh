@@ -22,7 +22,6 @@ rconport=$(ynh_app_setting_get --app=$app --key=rconport)
 server=$(ynh_app_setting_get --app=$app --key=server)
 ram=$(ynh_app_setting_get --app=$app --key=ram)
 password=$(ynh_app_setting_get --app=$app --key=password)
-rconport=$(ynh_app_setting_get --app=$app --key=rconport)
 
 level_type=$(ynh_app_setting_get --app=$app --key=level_type)
 gamemode=$(ynh_app_setting_get --app=$app --key=gamemode)
