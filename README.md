@@ -27,11 +27,6 @@ Minecraft is a sandbox construction game, whose gameplay involves players intera
 
 **Shipped version:** 1.19.2~ynh2
 
-
-## Screenshots
-
-![Screenshot of Minecraft](./doc/screenshots/image.jpg)
-
 ## Disclaimers / important information
 
 ## Configuration
