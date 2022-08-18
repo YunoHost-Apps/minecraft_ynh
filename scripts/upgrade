@@ -107,6 +107,26 @@ if [ -z "$motd" ]; then
 	ynh_app_setting_set --app=$app --key=motd --value=$motd
 fi
 
+# If gamemode doesn't exist, create it
+if [ -z "$gamemode" ]; then
+	gamemode=survival
+fi
+
+# If level_seed doesn't exist, create it
+if [ -z "$level_seed" ]; then
+	level_seed=""
+fi
+
+# If max_players doesn't exist, create it
+if [ -z "$max_players" ]; then
+	max_players=20
+fi
+
+# If motd doesn't exist, create it
+if [ -z "$motd" ]; then
+	motd="A Minecraft Server"
+fi
+
 #=================================================
 # STOP SYSTEMD SERVICE
 #=================================================
