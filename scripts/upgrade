@@ -74,31 +74,37 @@ fi
 # If ram doesn't exist, create it
 if [ -z "$ram" ]; then
 	ram="1024"
+	ynh_app_setting_set --app=$app --key=ram --value=$ram
 fi
 
 # If server doesn't exist, create it
 if [ -z "$server" ]; then
 	server=vanilla
+	ynh_app_setting_set --app=$app --key=vanilla --value=$vanilla
 fi
 
 # If gamemode doesn't exist, create it
 if [ -z "$gamemode" ]; then
 	gamemode=survival
+	ynh_app_setting_set --app=$app --key=survival --value=$survival
 fi
 
 # If level_seed doesn't exist, create it
 if [ -z "$level_seed" ]; then
 	level_seed=""
+	ynh_app_setting_set --app=$app --key=level_seed --value=$level_seed
 fi
 
 # If max_players doesn't exist, create it
 if [ -z "$max_players" ]; then
 	max_players=20
+	ynh_app_setting_set --app=$app --key=max_players --value=$max_players
 fi
 
 # If motd doesn't exist, create it
 if [ -z "$motd" ]; then
 	motd="A Minecraft Server"
+	ynh_app_setting_set --app=$app --key=motd --value=$motd
 fi
 
 #=================================================
