@@ -5,15 +5,16 @@ It shall NOT be edited by hand.
 
 # Minecraft pour YunoHost
 
-[![Niveau d'intégration](https://dash.yunohost.org/integration/minecraft.svg)](https://dash.yunohost.org/appci/app/minecraft) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/minecraft.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/minecraft.maintain.svg)  
+[![Niveau d’intégration](https://dash.yunohost.org/integration/minecraft.svg)](https://dash.yunohost.org/appci/app/minecraft) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/minecraft.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/minecraft.maintain.svg)
+
 [![Installer Minecraft avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=minecraft)
 
 *[Read this readme in english.](./README.md)*
 
-> *Ce package vous permet d'installer Minecraft rapidement et simplement sur un serveur YunoHost.
-Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l'installer et en profiter.*
+> *Ce package vous permet d’installer Minecraft rapidement et simplement sur un serveur YunoHost.
+Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l’installer et en profiter.*
 
-## Vue d'ensemble
+## Vue d’ensemble
 
 Minecraft is a sandbox construction game, whose gameplay involves players interacting with the game world by placing and breaking various types of blocks in a three-dimensional environment. In this environment, players can build creative structures, creations, and artwork on multiplayer servers and singleplayer worlds across multiple game modes.
 
@@ -44,8 +45,8 @@ The **gamemode** and the **world seed** can be set in the config panel, in the w
 Other settings can be set by modifying `/var/www/minecraft/server.properties`.
 ## Documentations et ressources
 
-* Site officiel de l'app : <https://www.minecraft.net/>
-* Documentation officielle de l'admin : <https://minecraft.fandom.com/wiki/Tutorials/Setting_up_a_server>
+* Site officiel de l’app : <https://www.minecraft.net/>
+* Documentation officielle de l’admin : <https://minecraft.fandom.com/wiki/Tutorials/Setting_up_a_server>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_minecraft>
 * Signaler un bug : <https://github.com/YunoHost-Apps/minecraft_ynh/issues>
 
@@ -61,4 +62,4 @@ ou
 sudo yunohost app upgrade minecraft -u https://github.com/YunoHost-Apps/minecraft_ynh/tree/testing --debug
 ```
 
-**Plus d'infos sur le packaging d'applications :** <https://yunohost.org/packaging_apps>
+**Plus d’infos sur le packaging d’applications :** <https://yunohost.org/packaging_apps>
