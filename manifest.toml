@@ -83,7 +83,7 @@ ram.runtime = "50M"
 
         [resources.sources.spigot]
         url = "https://download.getbukkit.org/spigot/spigot-1.19.3.jar"
-        sha256 = "fe03b30dc4f9dc5b03b55550e0a3a2cd35f8ee7c802aa8162dc14eaf7f0685ff"
+        sha256 = "6b56712c3966312a6a7b07b1f8aa33ff312953245d49755247a1da97b4f211aa"
         format = "jar"
         rename = "server.jar"
 
