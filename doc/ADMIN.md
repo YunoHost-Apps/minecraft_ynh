@@ -4,7 +4,7 @@ For server administration, use the Minecraft console or mcrcon (which is open on
 
 To use mcrcon, go to `/var/www/minecraft/mcrcon` and type:
 ```
-./mcrcon -p YourPassword command
+./mcrcon -p __PASSWORD__ command
 ```
 where `command` is a standard Minecraft command. You must use quotes if your command contains spaces.
 
