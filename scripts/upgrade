@@ -12,21 +12,21 @@ source /usr/share/yunohost/helpers
 #=================================================
 # LOAD SETTINGS
 #=================================================
-ynh_script_progression --message="Loading installation settings..."
+#REMOVEME? ynh_script_progression --message="Loading installation settings..."
 
-app=$YNH_APP_INSTANCE_NAME
+#REMOVEME? app=$YNH_APP_INSTANCE_NAME
 
-final_path=$(ynh_app_setting_get --app=$app --key=final_path)
-port=$(ynh_app_setting_get --app=$app --key=port)
-rconport=$(ynh_app_setting_get --app=$app --key=rconport)
-server=$(ynh_app_setting_get --app=$app --key=server)
-ram=$(ynh_app_setting_get --app=$app --key=ram)
-password=$(ynh_app_setting_get --app=$app --key=password)
+#REMOVEME? #REMOVEME? install_dir=$(ynh_app_setting_get --app=$app --key=install_dir)
+#REMOVEME? port=$(ynh_app_setting_get --app=$app --key=port)
+#REMOVEME? rconport=$(ynh_app_setting_get --app=$app --key=rconport)
+#REMOVEME? server=$(ynh_app_setting_get --app=$app --key=server)
+#REMOVEME? ram=$(ynh_app_setting_get --app=$app --key=ram)
+#REMOVEME? password=$(ynh_app_setting_get --app=$app --key=password)
 
-gamemode=$(ynh_app_setting_get --app=$app --key=gamemode)
-level_seed=$(ynh_app_setting_get --app=$app --key=level_seed)
-max_players=$(ynh_app_setting_get --app=$app --key=max_players)
-motd=$(ynh_app_setting_get --app=$app --key=motd)
+#REMOVEME? gamemode=$(ynh_app_setting_get --app=$app --key=gamemode)
+#REMOVEME? level_seed=$(ynh_app_setting_get --app=$app --key=level_seed)
+#REMOVEME? max_players=$(ynh_app_setting_get --app=$app --key=max_players)
+#REMOVEME? motd=$(ynh_app_setting_get --app=$app --key=motd)
 
 #=================================================
 # CHECK VERSION
@@ -37,37 +37,37 @@ upgrade_type=$(ynh_check_app_version_changed)
 #=================================================
 # BACKUP BEFORE UPGRADE THEN ACTIVE TRAP
 #=================================================
-ynh_script_progression --message="Backing up the app before upgrading (may take a while)..."
+#REMOVEME? ynh_script_progression --message="Backing up the app before upgrading (may take a while)..."
 
 # Backup the current version of the app
-ynh_backup_before_upgrade
-ynh_clean_setup () {
+#REMOVEME? ynh_backup_before_upgrade
+#REMOVEME? ynh_clean_setup () {
 	# restore it if the upgrade fails
-	ynh_restore_upgradebackup
+#REMOVEME? 	ynh_restore_upgradebackup
 }
 # Exit if an error occurs during the execution of the script
-ynh_abort_if_errors
+#REMOVEME? ynh_abort_if_errors
 
 #=================================================
 # ENSURE DOWNWARD COMPATIBILITY
 #=================================================
 ynh_script_progression --message="Ensuring downward compatibility..."
 
-# If final_path doesn't exist, create it
-if [ -z "$final_path" ]; then
-	final_path=/var/www/$app
-	ynh_app_setting_set --app=$app --key=final_path --value=$final_path
+# If install_dir doesn't exist, create it
+if [ -z "$install_dir" ]; then
+#REMOVEME? 	install_dir=/var/www/$app
+#REMOVEME? 	ynh_app_setting_set --app=$app --key=install_dir --value=$install_dir
 fi
 
-# If final_path doesn't exist, create it
-if [ -z "$final_path/mcrcon" ]; then
-	mkdir -p $final_path/mcrcon
+# If install_dir doesn't exist, create it
+if [ -z "$install_dir/mcrcon" ]; then
+	mkdir -p $install_dir/mcrcon
 fi
 
 # If rconport doesn't exist, create it
 if [ -z "$rconport" ]; then
-	rconport=$(ynh_find_port --port=25575)
-	ynh_app_setting_set --app=$app --key=rconport --value=$rconport
+#REMOVEME? 	rconport=$(ynh_find_port --port=25575)
+#REMOVEME? 	ynh_app_setting_set --app=$app --key=rconport --value=$rconport
 	ynh_exec_warn_less yunohost firewall allow --no-upnp TCP $rconport
 fi
 
@@ -137,10 +137,10 @@ ynh_systemd_action --service_name=$app --action=stop --log_path="systemd"
 #=================================================
 # CREATE DEDICATED USER
 #=================================================
-ynh_script_progression --message="Making sure dedicated system user exists..."
+#REMOVEME? ynh_script_progression --message="Making sure dedicated system user exists..."
 
 # Create a dedicated user (if not existing)
-ynh_system_user_create --username=$app --home_dir="$final_path"
+#REMOVEME? ynh_system_user_create --username=$app --home_dir="$install_dir"
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -151,31 +151,31 @@ then
 	ynh_script_progression --message="Upgrading source files..."
 
 	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$final_path" --source_id="$server" --keep="ops.txt eula.txt"
+	ynh_setup_source --dest_dir="$install_dir" --source_id="$server" --keep="ops.txt eula.txt"
 
-	ynh_setup_source --dest_dir="$final_path/mcrcon" --source_id="mcrcon"	
+	ynh_setup_source --dest_dir="$install_dir/mcrcon" --source_id="mcrcon"	
 fi
 
 # Set permissions to app files
-chmod 755 "$final_path"
-chmod -R o-rwx "$final_path"
-chown -R $app:www-data "$final_path"
-chmod +x "$final_path/mcrcon/mcrcon"
-chmod +x "$final_path/server.jar"
+chmod 755 "$install_dir"
+chmod -R o-rwx "$install_dir"
+chown -R $app:www-data "$install_dir"
+chmod +x "$install_dir/mcrcon/mcrcon"
+chmod +x "$install_dir/server.jar"
 
 #=================================================
 # INSTALL DEPENDENCIES
 #=================================================
-ynh_script_progression --message="Installing dependencies..." --weight=1
+#REMOVEME? ynh_script_progression --message="Installing dependencies..." --weight=1
 
-ynh_install_app_dependencies $pkg_dependencies
+#REMOVEME? ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
 # MODIFY A CONFIG FILE
 #=================================================
 ynh_script_progression --message="Updating the configuration file..." --weight=1
 
-ynh_add_config --template="../conf/server.properties" --destination="$final_path/server.properties"
+ynh_add_config --template="../conf/server.properties" --destination="$install_dir/server.properties"
 
 #=================================================
 # SETUP SYSTEMD

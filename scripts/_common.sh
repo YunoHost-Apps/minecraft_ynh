@@ -5,7 +5,7 @@
 #=================================================
 
 # dependencies used by the app
-pkg_dependencies="openjdk-17-jdk"
+#REMOVEME? pkg_dependencies="openjdk-17-jdk"
 
 #=================================================
 # PERSONAL HELPERS

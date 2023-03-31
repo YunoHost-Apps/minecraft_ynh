@@ -1,0 +1,98 @@
+packaging_format = 2
+
+id = "minecraft"
+name = "Minecraft"
+description.en = "Three-dimensional sandbox construction game"
+description.fr = "Jeu de construction de type \"bac à sable\" en trois dimensions"
+
+version = "1.19.3~ynh1"
+
+maintainers = []
+
+[upstream]
+license = "non-free"
+website = "https://www.minecraft.net/"
+admindoc = "https://minecraft.fandom.com/wiki/Tutorials/Setting_up_a_server"
+cpe = "???" # FIXME: optional but recommended if relevant, this is meant to contain the Common Platform Enumeration, which is sort of a standard id for applications defined by the NIST. In particular, Yunohost may use this is in the future to easily track CVE (=security reports) related to apps. The CPE may be obtained by searching here: https://nvd.nist.gov/products/cpe/search. For example, for Nextcloud, the CPE is 'cpe:2.3:a:nextcloud:nextcloud' (no need to include the version number)
+fund = "???" # FIXME: optional but recommended (or remove if irrelevant / not applicable). This is meant to be an URL where people can financially support this app, especially when its development is based on volunteers and/or financed by its community. YunoHost may later advertise it in the webadmin.
+
+[integration]
+yunohost = ">= 11.0.9"
+architectures = "all" # FIXME: can be replaced by a list of supported archs using the dpkg --print-architecture nomenclature (amd64/i386/armhf/arm64), for example: ["amd64", "i386"]
+multi_instance = false
+ldap = "?" # FIXME: replace with true, false, or "not_relevant". Not to confuse with the "sso" key : the "ldap" key corresponds to wether or not a user *can* login on the app using its YunoHost credentials.
+sso = "?" # FIXME: replace with true, false, or "not_relevant". Not to confuse with the "ldap" key : the "sso" key corresponds to wether or not a user is *automatically logged-in* on the app when logged-in on the YunoHost portal.
+disk = "50M" # FIXME: replace with an **estimate** minimum disk requirement. e.g. 20M, 400M, 1G, ...
+ram.build = "50M" # FIXME: replace with an **estimate** minimum ram requirement. e.g. 50M, 400M, 1G, ...
+ram.runtime = "50M" # FIXME: replace with an **estimate** minimum ram requirement. e.g. 50M, 400M, 1G, ...
+
+[install]
+    [install.server]
+    ask.en = "Select your server"
+    ask.fr = "Choisir votre serveur"
+    type = "string"
+    choices = ["vanilla", "vanilla-snapshot", "paper", "spigot"]
+    default = "vanilla"
+
+    [install.ram]
+    ask.en = "Set the memory limit for the server. Convert the number to mebibytes (binary MB): for example, 2GB = 2048, 4GB = 4096..."
+    ask.fr = "Définir la mémoire du serveur ? Convertir le chiffre en mébioctets (Mo binaires) : soit 2Go = 2048, 4Go = 4096..."
+    type = "string"
+    example = "1024, 2048, 4096..."
+    default = "2048"
+
+    [install.op]
+    ask.en = "Enter the administrator name (Minecraft pseudo)"
+    ask.fr = "Entrer le nom de l'adminsitrateur (pseudo Minecraft)"
+    type = "string"
+
+    [install.password]
+    # this is a generic question - ask strings are automatically handled by Yunohost's core
+    help.en = "Enter the RCON password"
+    help.fr = "Entrer le mot de passe RCON"
+    type = "password"
+
+    [install.eula]
+    ask.en = "By changing the setting below to TRUE you are indicating your agreement to Minecraft's EULA (https://account.mojang.com/documents/minecraft_eula)."
+    ask.fr = "En modifiant le paramètre ci-dessous sur TRUE, vous indiquez votre accord avec la CLUF de Minecraft (https://account.mojang.com/documents/minecraft_eula)."
+    type = "string"
+    example = "true, false"
+    default = "true"
+
+[resources]
+    [resources.sources]
+        [resources.sources.mcrcon]
+        url = "https://github.com/Tiiffi/mcrcon/releases/download/v0.7.2/mcrcon-0.7.2-linux-x86-64.tar.gz"
+        sha256 = "c1883c3f6610c751c935f4faefbf2c52f704a0f71013be2928972eef5918cb68"
+        in_subdir = false
+
+        [resources.sources.paper]
+        url = "https://api.papermc.io/v2/projects/paper/versions/1.19.3/builds/371/downloads/paper-1.19.3-371.jar"
+        sha256 = "dd62ce8af938c7ee3379ed93d5724b033ce327cd3ce3a32035262ea1979c8ac7"
+        format = "jar"
+        rename = "server.jar"
+
+        [resources.sources.vanilla]
+        url = "https://piston-data.mojang.com/v1/objects/c9df48efed58511cdd0213c56b9013a7b5c9ac1f/server.jar"
+        sha256 = "4ebd3ad142512953d0193ae3a1d1a30c896907de7c68780977151f6cc79f1e1b"
+        format = "jar"
+        rename = "server.jar"
+
+        [resources.sources.vanilla-snapshot]
+        url = "https://piston-data.mojang.com/v1/objects/c9df48efed58511cdd0213c56b9013a7b5c9ac1f/server.jar"
+        sha256 = "4ebd3ad142512953d0193ae3a1d1a30c896907de7c68780977151f6cc79f1e1b"
+        format = "jar"
+        rename = "server.jar"
+
+        [resources.sources.spigot]
+        url = "https://download.getbukkit.org/spigot/spigot-1.19.3.jar"
+        sha256 = "fe03b30dc4f9dc5b03b55550e0a3a2cd35f8ee7c802aa8162dc14eaf7f0685ff"
+        format = "jar"
+        rename = "server.jar"
+
+
+    [resources.system_user]
+
+    [resources.install_dir]
+
+    [resources.permissions]
