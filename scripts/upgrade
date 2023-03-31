@@ -10,43 +10,10 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# LOAD SETTINGS
-#=================================================
-#REMOVEME? ynh_script_progression --message="Loading installation settings..."
-
-#REMOVEME? app=$YNH_APP_INSTANCE_NAME
-
-#REMOVEME? #REMOVEME? install_dir=$(ynh_app_setting_get --app=$app --key=install_dir)
-#REMOVEME? port=$(ynh_app_setting_get --app=$app --key=port)
-#REMOVEME? rconport=$(ynh_app_setting_get --app=$app --key=rconport)
-#REMOVEME? server=$(ynh_app_setting_get --app=$app --key=server)
-#REMOVEME? ram=$(ynh_app_setting_get --app=$app --key=ram)
-#REMOVEME? password=$(ynh_app_setting_get --app=$app --key=password)
-
-#REMOVEME? gamemode=$(ynh_app_setting_get --app=$app --key=gamemode)
-#REMOVEME? level_seed=$(ynh_app_setting_get --app=$app --key=level_seed)
-#REMOVEME? max_players=$(ynh_app_setting_get --app=$app --key=max_players)
-#REMOVEME? motd=$(ynh_app_setting_get --app=$app --key=motd)
-
-#=================================================
 # CHECK VERSION
 #=================================================
 
 upgrade_type=$(ynh_check_app_version_changed)
-
-#=================================================
-# BACKUP BEFORE UPGRADE THEN ACTIVE TRAP
-#=================================================
-#REMOVEME? ynh_script_progression --message="Backing up the app before upgrading (may take a while)..."
-
-# Backup the current version of the app
-#REMOVEME? ynh_backup_before_upgrade
-#REMOVEME? ynh_clean_setup () {
-	# restore it if the upgrade fails
-#REMOVEME? 	ynh_restore_upgradebackup
-}
-# Exit if an error occurs during the execution of the script
-#REMOVEME? ynh_abort_if_errors
 
 #=================================================
 # ENSURE DOWNWARD COMPATIBILITY
@@ -54,77 +21,44 @@ upgrade_type=$(ynh_check_app_version_changed)
 ynh_script_progression --message="Ensuring downward compatibility..."
 
 # If install_dir doesn't exist, create it
-if [ -z "$install_dir" ]; then
-#REMOVEME? 	install_dir=/var/www/$app
-#REMOVEME? 	ynh_app_setting_set --app=$app --key=install_dir --value=$install_dir
-fi
-
-# If install_dir doesn't exist, create it
-if [ -z "$install_dir/mcrcon" ]; then
+if [ -z "${install_dir/mcrcon:-}" ]; then
 	mkdir -p $install_dir/mcrcon
 fi
 
-# If rconport doesn't exist, create it
-if [ -z "$rconport" ]; then
-#REMOVEME? 	rconport=$(ynh_find_port --port=25575)
-#REMOVEME? 	ynh_app_setting_set --app=$app --key=rconport --value=$rconport
-	ynh_exec_warn_less yunohost firewall allow --no-upnp TCP $rconport
-fi
-
 # If ram doesn't exist, create it
-if [ -z "$ram" ]; then
+if [ -z "${ram:-}" ]; then
 	ram="1024"
 	ynh_app_setting_set --app=$app --key=ram --value=$ram
 fi
 
 # If server doesn't exist, create it
-if [ -z "$server" ]; then
+if [ -z "${server:-}" ]; then
 	server=vanilla
 	ynh_app_setting_set --app=$app --key=vanilla --value=$vanilla
 fi
 
 # If gamemode doesn't exist, create it
-if [ -z "$gamemode" ]; then
+if [ -z "${gamemode:-}" ]; then
 	gamemode=survival
 	ynh_app_setting_set --app=$app --key=survival --value=$survival
 fi
 
 # If level_seed doesn't exist, create it
-if [ -z "$level_seed" ]; then
+if [ -z "${level_seed:-}" ]; then
 	level_seed=""
 	ynh_app_setting_set --app=$app --key=level_seed --value=$level_seed
 fi
 
 # If max_players doesn't exist, create it
-if [ -z "$max_players" ]; then
+if [ -z "${max_players:-}" ]; then
 	max_players=20
 	ynh_app_setting_set --app=$app --key=max_players --value=$max_players
 fi
 
 # If motd doesn't exist, create it
-if [ -z "$motd" ]; then
+if [ -z "${motd:-}" ]; then
 	motd="A Minecraft Server"
 	ynh_app_setting_set --app=$app --key=motd --value=$motd
-fi
-
-# If gamemode doesn't exist, create it
-if [ -z "$gamemode" ]; then
-	gamemode=survival
-fi
-
-# If level_seed doesn't exist, create it
-if [ -z "$level_seed" ]; then
-	level_seed=""
-fi
-
-# If max_players doesn't exist, create it
-if [ -z "$max_players" ]; then
-	max_players=20
-fi
-
-# If motd doesn't exist, create it
-if [ -z "$motd" ]; then
-	motd="A Minecraft Server"
 fi
 
 #=================================================
@@ -133,14 +67,6 @@ fi
 ynh_script_progression --message="Stopping a systemd service..."
 
 ynh_systemd_action --service_name=$app --action=stop --log_path="systemd"
-
-#=================================================
-# CREATE DEDICATED USER
-#=================================================
-#REMOVEME? ynh_script_progression --message="Making sure dedicated system user exists..."
-
-# Create a dedicated user (if not existing)
-#REMOVEME? ynh_system_user_create --username=$app --home_dir="$install_dir"
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -162,13 +88,6 @@ chmod -R o-rwx "$install_dir"
 chown -R $app:www-data "$install_dir"
 chmod +x "$install_dir/mcrcon/mcrcon"
 chmod +x "$install_dir/server.jar"
-
-#=================================================
-# INSTALL DEPENDENCIES
-#=================================================
-#REMOVEME? ynh_script_progression --message="Installing dependencies..." --weight=1
-
-#REMOVEME? ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
 # MODIFY A CONFIG FILE

@@ -10,17 +10,6 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# LOAD SETTINGS
-#=================================================
-#REMOVEME? ynh_script_progression --message="Loading installation settings..."
-
-#REMOVEME? app=$YNH_APP_INSTANCE_NAME
-
-#REMOVEME? port=$(ynh_app_setting_get --app=$app --key=port)
-#REMOVEME? rconport=$(ynh_app_setting_get --app=$app --key=rconport)
-#REMOVEME? #REMOVEME? install_dir=$(ynh_app_setting_get --app=$app --key=install_dir)
-
-#=================================================
 # STANDARD REMOVE
 #=================================================
 # REMOVE SERVICE FROM ADMIN PANEL
@@ -41,29 +30,13 @@ ynh_script_progression --message="Stopping and removing the systemd service"
 ynh_remove_systemd_config
 
 #=================================================
-# REMOVE DEPENDENCIES
-#=================================================
-#REMOVEME? ynh_script_progression --message="Removing dependencies..."
-
-# Remove metapackage and its dependencies
-#REMOVEME? ynh_remove_app_dependencies
-
-#=================================================
-# REMOVE APP MAIN DIR
-#=================================================
-#REMOVEME? ynh_script_progression --message="Removing app main directory"
-
-# Remove the app directory securely
-#REMOVEME? ynh_secure_remove --file="$install_dir"
-
-#=================================================
 # CLOSE A PORT
 #=================================================
 
-if yunohost firewall list | grep -q "\- $rconport$"
+if yunohost firewall list | grep -q "\- $port_rconport$"
 then
-	ynh_script_progression --message="Closing rcon port $rconport..."
-	ynh_exec_warn_less yunohost firewall disallow TCP $rconport
+	ynh_script_progression --message="Closing rcon port $port_rconport..."
+	ynh_exec_warn_less yunohost firewall disallow TCP $port_rconport
 fi
 
 if yunohost firewall list | grep -q "\- $port$"
@@ -71,16 +44,6 @@ then
 	ynh_script_progression --message="Closing port $port..."
 	ynh_exec_warn_less yunohost firewall disallow TCP $port
 fi
-
-#=================================================
-# GENERIC FINALIZATION
-#=================================================
-# REMOVE DEDICATED USER
-#=================================================
-#REMOVEME? ynh_script_progression --message="Removing the dedicated system user"
-
-# Delete a system user
-#REMOVEME? ynh_system_user_delete --username=$app
 
 #=================================================
 # END OF SCRIPT
