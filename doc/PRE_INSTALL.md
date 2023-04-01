@@ -1,0 +1,1 @@
+By installing this app you agree to the Minecraft EULA: https://account.mojang.com/documents/minecraft_eula.

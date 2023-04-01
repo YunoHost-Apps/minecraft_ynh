@@ -1,7 +1,0 @@
-SOURCE_URL=https://download.getbukkit.org/spigot/spigot-1.19.2.jar
-SOURCE_SUM=5ee8262cb0613fed19b0e42ecf70a666e6845653b974047450797a19e794262f
-SOURCE_SUM_PRG=sha256sum
-SOURCE_FORMAT=jar
-SOURCE_IN_SUBDIR=false
-SOURCE_EXTRACT=false
-SOURCE_FILENAME=server.jar
