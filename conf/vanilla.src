@@ -1,7 +1,0 @@
-SOURCE_URL=https://piston-data.mojang.com/v1/objects/c9df48efed58511cdd0213c56b9013a7b5c9ac1f/server.jar
-SOURCE_SUM=4ebd3ad142512953d0193ae3a1d1a30c896907de7c68780977151f6cc79f1e1b
-SOURCE_SUM_PRG=sha256sum
-SOURCE_FORMAT=jar
-SOURCE_IN_SUBDIR=false
-SOURCE_EXTRACT=false
-SOURCE_FILENAME=server.jar

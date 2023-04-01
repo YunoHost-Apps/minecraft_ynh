@@ -5,7 +5,8 @@ It shall NOT be edited by hand.
 
 # Minecraft for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/minecraft.svg)](https://dash.yunohost.org/appci/app/minecraft) ![Working status](https://ci-apps.yunohost.org/ci/badges/minecraft.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/minecraft.maintain.svg)  
+[![Integration level](https://dash.yunohost.org/integration/minecraft.svg)](https://dash.yunohost.org/appci/app/minecraft) ![Working status](https://ci-apps.yunohost.org/ci/badges/minecraft.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/minecraft.maintain.svg)
+
 [![Install Minecraft with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=minecraft)
 
 *[Lire ce readme en français.](./README_fr.md)*
@@ -26,22 +27,6 @@ Minecraft is a sandbox construction game, whose gameplay involves players intera
 
 
 **Shipped version:** 1.19.3~ynh1
-## Disclaimers / important information
-
-## Configuration
-
-For server administration, use the Minecraft console or mcrcon (which is open on port 25575 and uses the password chosen during the install).
-
-To use mcrcon, go to `/var/www/minecraft/mcrcon` and type:
-```
-./mcrcon -p YourPassword command
-```
-where `command` is a standard Minecraft command. You must use quotes if your command contains spaces.
-
-You can find more info about the usage of mcrcon here: https://github.com/Tiiffi/mcrcon
-
-The **gamemode** and the **world seed** can be set in the config panel, in the webadmin.
-Other settings can be set by modifying `/var/www/minecraft/server.properties`.
 ## Documentation and resources
 
 * Official app website: <https://www.minecraft.net/>

@@ -10,121 +10,55 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# LOAD SETTINGS
-#=================================================
-ynh_script_progression --message="Loading installation settings..."
-
-app=$YNH_APP_INSTANCE_NAME
-
-final_path=$(ynh_app_setting_get --app=$app --key=final_path)
-port=$(ynh_app_setting_get --app=$app --key=port)
-rconport=$(ynh_app_setting_get --app=$app --key=rconport)
-server=$(ynh_app_setting_get --app=$app --key=server)
-ram=$(ynh_app_setting_get --app=$app --key=ram)
-password=$(ynh_app_setting_get --app=$app --key=password)
-
-gamemode=$(ynh_app_setting_get --app=$app --key=gamemode)
-level_seed=$(ynh_app_setting_get --app=$app --key=level_seed)
-max_players=$(ynh_app_setting_get --app=$app --key=max_players)
-motd=$(ynh_app_setting_get --app=$app --key=motd)
-
-#=================================================
 # CHECK VERSION
 #=================================================
 
 upgrade_type=$(ynh_check_app_version_changed)
 
 #=================================================
-# BACKUP BEFORE UPGRADE THEN ACTIVE TRAP
-#=================================================
-ynh_script_progression --message="Backing up the app before upgrading (may take a while)..."
-
-# Backup the current version of the app
-ynh_backup_before_upgrade
-ynh_clean_setup () {
-	# restore it if the upgrade fails
-	ynh_restore_upgradebackup
-}
-# Exit if an error occurs during the execution of the script
-ynh_abort_if_errors
-
-#=================================================
 # ENSURE DOWNWARD COMPATIBILITY
 #=================================================
 ynh_script_progression --message="Ensuring downward compatibility..."
 
-# If final_path doesn't exist, create it
-if [ -z "$final_path" ]; then
-	final_path=/var/www/$app
-	ynh_app_setting_set --app=$app --key=final_path --value=$final_path
-fi
-
-# If final_path doesn't exist, create it
-if [ -z "$final_path/mcrcon" ]; then
-	mkdir -p $final_path/mcrcon
-fi
-
-# If rconport doesn't exist, create it
-if [ -z "$rconport" ]; then
-	rconport=$(ynh_find_port --port=25575)
-	ynh_app_setting_set --app=$app --key=rconport --value=$rconport
-	ynh_exec_warn_less yunohost firewall allow --no-upnp TCP $rconport
+# If install_dir doesn't exist, create it
+if [ -z "${install_dir/mcrcon:-}" ]; then
+	mkdir -p $install_dir/mcrcon
 fi
 
 # If ram doesn't exist, create it
-if [ -z "$ram" ]; then
+if [ -z "${ram:-}" ]; then
 	ram="1024"
 	ynh_app_setting_set --app=$app --key=ram --value=$ram
 fi
 
 # If server doesn't exist, create it
-if [ -z "$server" ]; then
+if [ -z "${server:-}" ]; then
 	server=vanilla
 	ynh_app_setting_set --app=$app --key=vanilla --value=$vanilla
 fi
 
 # If gamemode doesn't exist, create it
-if [ -z "$gamemode" ]; then
+if [ -z "${gamemode:-}" ]; then
 	gamemode=survival
 	ynh_app_setting_set --app=$app --key=survival --value=$survival
 fi
 
 # If level_seed doesn't exist, create it
-if [ -z "$level_seed" ]; then
+if [ -z "${level_seed:-}" ]; then
 	level_seed=""
 	ynh_app_setting_set --app=$app --key=level_seed --value=$level_seed
 fi
 
 # If max_players doesn't exist, create it
-if [ -z "$max_players" ]; then
+if [ -z "${max_players:-}" ]; then
 	max_players=20
 	ynh_app_setting_set --app=$app --key=max_players --value=$max_players
 fi
 
 # If motd doesn't exist, create it
-if [ -z "$motd" ]; then
+if [ -z "${motd:-}" ]; then
 	motd="A Minecraft Server"
 	ynh_app_setting_set --app=$app --key=motd --value=$motd
-fi
-
-# If gamemode doesn't exist, create it
-if [ -z "$gamemode" ]; then
-	gamemode=survival
-fi
-
-# If level_seed doesn't exist, create it
-if [ -z "$level_seed" ]; then
-	level_seed=""
-fi
-
-# If max_players doesn't exist, create it
-if [ -z "$max_players" ]; then
-	max_players=20
-fi
-
-# If motd doesn't exist, create it
-if [ -z "$motd" ]; then
-	motd="A Minecraft Server"
 fi
 
 #=================================================
@@ -135,14 +69,6 @@ ynh_script_progression --message="Stopping a systemd service..."
 ynh_systemd_action --service_name=$app --action=stop --log_path="systemd"
 
 #=================================================
-# CREATE DEDICATED USER
-#=================================================
-ynh_script_progression --message="Making sure dedicated system user exists..."
-
-# Create a dedicated user (if not existing)
-ynh_system_user_create --username=$app --home_dir="$final_path"
-
-#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
@@ -151,31 +77,17 @@ then
 	ynh_script_progression --message="Upgrading source files..."
 
 	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$final_path" --source_id="$server" --keep="ops.txt eula.txt"
+	ynh_setup_source --dest_dir="$install_dir" --source_id="$server" --keep="ops.txt eula.txt server.properties"
 
-	ynh_setup_source --dest_dir="$final_path/mcrcon" --source_id="mcrcon"	
+	ynh_setup_source --dest_dir="$install_dir/mcrcon" --source_id="mcrcon"	
 fi
 
 # Set permissions to app files
-chmod 755 "$final_path"
-chmod -R o-rwx "$final_path"
-chown -R $app:www-data "$final_path"
-chmod +x "$final_path/mcrcon/mcrcon"
-chmod +x "$final_path/server.jar"
-
-#=================================================
-# INSTALL DEPENDENCIES
-#=================================================
-ynh_script_progression --message="Installing dependencies..." --weight=1
-
-ynh_install_app_dependencies $pkg_dependencies
-
-#=================================================
-# MODIFY A CONFIG FILE
-#=================================================
-ynh_script_progression --message="Updating the configuration file..." --weight=1
-
-ynh_add_config --template="../conf/server.properties" --destination="$final_path/server.properties"
+chmod 755 "$install_dir"
+chmod -R o-rwx "$install_dir"
+chown -R $app:www-data "$install_dir"
+chmod +x "$install_dir/mcrcon/mcrcon"
+chmod +x "$install_dir/server.jar"
 
 #=================================================
 # SETUP SYSTEMD

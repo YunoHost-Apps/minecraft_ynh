@@ -12,10 +12,10 @@ ProtectHome=true
 ProtectSystem=full
 PrivateDevices=true
 NoNewPrivileges=true
-WorkingDirectory=__FINALPATH__/
+WorkingDirectory=__INSTALL_DIR__/
 UMask=000
 ExecStart=/usr/bin/java -Xmx__RAM__M -Xms__RAM__M -jar server.jar nogui
-ExecStop=__FINALPATH__/mcrcon/mcrcon -H 127.0.0.1 -P __RCONPORT__ -p __PASSWORD__ stop
+ExecStop=__INSTALL_DIR__/mcrcon/mcrcon -H 127.0.0.1 -P __PORT_RCONPORT__ -p __PASSWORD__ stop
 Restart=on-failure
 RestartSec=30
 
