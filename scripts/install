@@ -19,18 +19,8 @@ max_players=20
 motd="A Minecraft Server"
 
 #=================================================
-# CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
-#=================================================
-
-if [ "$eula" != "true" ]
-then
-	ynh_die --message="You must accept the EULA in order to install the app" --ret_code=1
-fi
-
-#=================================================
 # STORE SETTINGS FROM MANIFEST
 #=================================================
-#REMOVEME? ynh_script_progression --message="Storing installation settings..." --weight=1
 
 ynh_app_setting_set --app=$app --key=ram --value=$ram
 ynh_app_setting_set --app=$app --key=gamemode --value=$gamemode
