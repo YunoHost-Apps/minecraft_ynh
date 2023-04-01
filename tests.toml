@@ -5,8 +5,7 @@ test_format = 1.0
     # -------------------------------
     # Default args to use for install
     # -------------------------------
-
-    args.eula = "true"
+    
     args.server = "vanilla"
 	args.ram = "1024"
 	args.op = "johndoe"

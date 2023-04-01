@@ -49,13 +49,6 @@ ram.runtime = "50M"
     help.fr = "Entrer le mot de passe RCON"
     type = "password"
 
-    [install.eula]
-    ask.en = "By changing the setting below to TRUE you are indicating your agreement to Minecraft's EULA (https://account.mojang.com/documents/minecraft_eula)."
-    ask.fr = "En modifiant le paramètre ci-dessous sur TRUE, vous indiquez votre accord avec la CLUF de Minecraft (https://account.mojang.com/documents/minecraft_eula)."
-    type = "string"
-    example = "true, false"
-    default = "true"
-
 [resources]
     [resources.sources]
         [resources.sources.mcrcon]
