@@ -17,6 +17,7 @@ gamemode=survival
 level_seed=""
 max_players=20
 motd="A Minecraft Server"
+password=$YNH_APP_ARG_PASSWORD
 
 #=================================================
 # STORE SETTINGS FROM MANIFEST
@@ -27,6 +28,7 @@ ynh_app_setting_set --app=$app --key=gamemode --value=$gamemode
 ynh_app_setting_set --app=$app --key=level_seed --value=$level_seed
 ynh_app_setting_set --app=$app --key=max_players --value=$max_players
 ynh_app_setting_set --app=$app --key=motd --value=$motd
+ynh_app_setting_set --app=$app --key=password --value=$password
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE

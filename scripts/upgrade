@@ -9,6 +9,8 @@
 source _common.sh
 source /usr/share/yunohost/helpers
 
+password=$(ynh_app_setting_get --app=$app --key=password)
+
 #=================================================
 # CHECK VERSION
 #=================================================
