@@ -99,11 +99,6 @@ ynh_script_progression --message="Upgrading systemd configuration..."
 # Create a dedicated systemd config
 ynh_add_systemd_config
 
-#=================================================
-# INTEGRATE SERVICE IN YUNOHOST
-#=================================================
-ynh_script_progression --message="Integrating service in YunoHost..."
-
 yunohost service add $app --description="Three-dimensional sandbox construction game" --log="/var/log/$app/$app.log" --needs_exposed_ports="$port"
 
 #=================================================
