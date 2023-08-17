@@ -15,7 +15,7 @@ website = "https://www.minecraft.net/"
 admindoc = "https://minecraft.fandom.com/wiki/Tutorials/Setting_up_a_server"
 
 [integration]
-yunohost = ">= 11.1.15"
+yunohost = ">= 11.2"
 architectures = "all"
 multi_instance = false
 ldap = "not_relevant"
