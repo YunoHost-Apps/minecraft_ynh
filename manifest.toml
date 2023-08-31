@@ -15,7 +15,7 @@ website = "https://www.minecraft.net/"
 admindoc = "https://minecraft.fandom.com/wiki/Tutorials/Setting_up_a_server"
 
 [integration]
-yunohost = ">= 11.1.15"
+yunohost = ">= 11.2"
 architectures = "all"
 multi_instance = false
 ldap = "not_relevant"
@@ -101,4 +101,12 @@ ram.runtime = "50M"
     [resources.permissions]
 
     [resources.apt]
-    packages = "openjdk-17-jdk"
+    packages = ""
+    packages_from_raw_bash = """
+    debian=$(lsb_release --codename --short)
+    if [[ $debian = "bullseye" ]]; then
+        echo "openjdk-11-jre";
+    elif [[ $debian = "bookworm" ]]; then
+        echo "openjdk-17-jre";
+    fi
+    """
