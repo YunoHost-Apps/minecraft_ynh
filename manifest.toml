@@ -79,7 +79,7 @@ ram.runtime = "50M"
         
         [resources.sources.spigot]
         url = "https://download.getbukkit.org/spigot/spigot-1.20.1.jar"
-        sha256 = "5cfc697b43a196f8f24d02f1e6b86516a63931ba25227c7415aa523a5ed93578"
+        sha256 = "fb7d0636062d3c666b186f18fa79840aa4b18050ed9c9b02ceb2123a7d74d169"
         rename = "server.jar"
         in_subdir = false
         extract = false
