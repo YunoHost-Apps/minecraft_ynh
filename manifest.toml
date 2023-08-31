@@ -5,7 +5,7 @@ name = "Minecraft"
 description.en = "Three-dimensional sandbox construction game"
 description.fr = "Jeu de construction de type \"bac à sable\" en trois dimensions"
 
-version = "1.19.3~ynh1"
+version = "1.20.1~ynh1"
 
 maintainers = []
 
@@ -28,15 +28,15 @@ ram.runtime = "50M"
     [install.server]
     ask.en = "Select your server"
     ask.fr = "Choisir votre serveur"
-    type = "string"
+    type = "select"
     choices = ["vanilla", "vanilla-snapshot", "paper", "spigot"]
     default = "vanilla"
 
     [install.ram]
     ask.en = "Set the memory limit for the server. Convert the number to mebibytes (binary MB): for example, 2GB = 2048, 4GB = 4096..."
     ask.fr = "Définir la mémoire du serveur ? Convertir le chiffre en mébioctets (Mo binaires) : soit 2Go = 2048, 4Go = 4096..."
-    type = "string"
-    example = "1024, 2048, 4096..."
+    type = "select"
+    choices = ["1024", "2048", "4096"]
     default = "2048"
 
     [install.op]
@@ -57,32 +57,32 @@ ram.runtime = "50M"
         in_subdir = false
 
         [resources.sources.paper]
-        url = "https://api.papermc.io/v2/projects/paper/versions/1.19.3/builds/371/downloads/paper-1.19.3-371.jar"
-        sha256 = "dd62ce8af938c7ee3379ed93d5724b033ce327cd3ce3a32035262ea1979c8ac7"
+        url = "https://api.papermc.io/v2/projects/paper/versions/1.20.1/builds/150/downloads/paper-1.20.1-150.jar"
+        sha256 = "e396b6fb8e511c7042652ec31bbd4936196098b96be913566dfa89f34dfe7e3d"
         format = "jar"
         rename = "server.jar"
         in_subdir = false
         extract = false
 
         [resources.sources.vanilla]
-        url = "https://piston-data.mojang.com/v1/objects/c9df48efed58511cdd0213c56b9013a7b5c9ac1f/server.jar"
-        sha256 = "4ebd3ad142512953d0193ae3a1d1a30c896907de7c68780977151f6cc79f1e1b"
+        url = "https://piston-data.mojang.com/v1/objects/84194a2f286ef7c14ed7ce0090dba59902951553/server.jar"
+        sha256 = "3af73a9dc5a102e38147946360dd27d4d70bae7055bf91cf2151cd5d121b79e0"
         format = "jar"
         rename = "server.jar"
         in_subdir = false
         extract = false
 
         [resources.sources.vanilla-snapshot]
-        url = "https://piston-data.mojang.com/v1/objects/c9df48efed58511cdd0213c56b9013a7b5c9ac1f/server.jar"
-        sha256 = "4ebd3ad142512953d0193ae3a1d1a30c896907de7c68780977151f6cc79f1e1b"
+        url = "https://piston-data.mojang.com/v1/objects/84194a2f286ef7c14ed7ce0090dba59902951553/server.jar"
+        sha256 = "3af73a9dc5a102e38147946360dd27d4d70bae7055bf91cf2151cd5d121b79e0"
         format = "jar"
         rename = "server.jar"
         in_subdir = false
         extract = false
         
         [resources.sources.spigot]
-        url = "https://download.getbukkit.org/spigot/spigot-1.19.3.jar"
-        sha256 = "6b56712c3966312a6a7b07b1f8aa33ff312953245d49755247a1da97b4f211aa"
+        url = "https://download.getbukkit.org/spigot/spigot-1.20.1.jar"
+        sha256 = "5cfc697b43a196f8f24d02f1e6b86516a63931ba25227c7415aa523a5ed93578"
         format = "jar"
         rename = "server.jar"
         in_subdir = false
