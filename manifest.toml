@@ -59,7 +59,6 @@ ram.runtime = "50M"
         [resources.sources.paper]
         url = "https://api.papermc.io/v2/projects/paper/versions/1.20.1/builds/150/downloads/paper-1.20.1-150.jar"
         sha256 = "e396b6fb8e511c7042652ec31bbd4936196098b96be913566dfa89f34dfe7e3d"
-        format = "jar"
         rename = "server.jar"
         in_subdir = false
         extract = false
@@ -67,7 +66,6 @@ ram.runtime = "50M"
         [resources.sources.vanilla]
         url = "https://piston-data.mojang.com/v1/objects/84194a2f286ef7c14ed7ce0090dba59902951553/server.jar"
         sha256 = "3af73a9dc5a102e38147946360dd27d4d70bae7055bf91cf2151cd5d121b79e0"
-        format = "jar"
         rename = "server.jar"
         in_subdir = false
         extract = false
@@ -75,7 +73,6 @@ ram.runtime = "50M"
         [resources.sources.vanilla-snapshot]
         url = "https://piston-data.mojang.com/v1/objects/84194a2f286ef7c14ed7ce0090dba59902951553/server.jar"
         sha256 = "3af73a9dc5a102e38147946360dd27d4d70bae7055bf91cf2151cd5d121b79e0"
-        format = "jar"
         rename = "server.jar"
         in_subdir = false
         extract = false
@@ -83,7 +80,6 @@ ram.runtime = "50M"
         [resources.sources.spigot]
         url = "https://download.getbukkit.org/spigot/spigot-1.20.1.jar"
         sha256 = "5cfc697b43a196f8f24d02f1e6b86516a63931ba25227c7415aa523a5ed93578"
-        format = "jar"
         rename = "server.jar"
         in_subdir = false
         extract = false
