@@ -26,12 +26,12 @@ Minecraft is a sandbox construction game, whose gameplay involves players intera
 4. Paper
 
 
-**Version incluse :** 1.19.3~ynh1
+**Version incluse :** 1.20.1~ynh1
 ## Documentations et ressources
 
 * Site officiel de l’app : <https://www.minecraft.net/>
 * Documentation officielle de l’admin : <https://minecraft.fandom.com/wiki/Tutorials/Setting_up_a_server>
-* Documentation YunoHost pour cette app : <https://yunohost.org/app_minecraft>
+* YunoHost Store: <https://apps.yunohost.org/app/minecraft>
 * Signaler un bug : <https://github.com/YunoHost-Apps/minecraft_ynh/issues>
 
 ## Informations pour les développeurs

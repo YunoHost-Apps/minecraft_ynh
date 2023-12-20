@@ -13,24 +13,24 @@ services = ["__APP__"]
         choices = ["survival", "creative", "adventure", "spectator"]
         default = "survival"
         help = "Choose the default game mode on your server."
-        bind = "gamemode:/var/www/__APP__/server.properties"
+        bind = "gamemode:__INSTALL_DIR__/server.properties"
 
         [main.config.level_seed]
         ask = "World seed"
         type = "string"
         help = "Choose the seed used on your server (leave blank for a random seed)."
-        bind = "level-seed:/var/www/__APP__/server.properties"
+        bind = "level-seed:__INSTALL_DIR__/server.properties"
 
         [main.config.max_players]
         ask = "Max player number"
         type = "number"
         default = 20
         help = "Choose the maximum number of players on your server."
-        bind = "max-players:/var/www/__APP__/server.properties"
+        bind = "max-players:__INSTALL_DIR__/server.properties"
 
         [main.config.motd]
         ask = "MOTD"
         type = "string"
         default = "A Minecraft Server"
         help = "Choose the MOTD of your server (supports color and formatting codes)."
-        bind = "motd:/var/www/__APP__/server.properties"
+        bind = "motd:__INSTALL_DIR__/server.properties"
