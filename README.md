@@ -31,7 +31,7 @@ Minecraft is a sandbox construction game, whose gameplay involves players intera
 
 * Official app website: <https://www.minecraft.net/>
 * Official admin documentation: <https://minecraft.fandom.com/wiki/Tutorials/Setting_up_a_server>
-* YunoHost documentation for this app: <https://yunohost.org/app_minecraft>
+* YunoHost Store: <https://apps.yunohost.org/app/minecraft>
 * Report a bug: <https://github.com/YunoHost-Apps/minecraft_ynh/issues>
 
 ## Developer info
