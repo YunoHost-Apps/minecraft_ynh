@@ -5,7 +5,7 @@ name = "Minecraft"
 description.en = "Three-dimensional sandbox construction game"
 description.fr = "Jeu de construction de type \"bac à sable\" en trois dimensions"
 
-version = "1.20.1~ynh1"
+version = "1.20.4~ynh1"
 
 maintainers = []
 
@@ -67,15 +67,15 @@ ram.runtime = "50M"
         extract = false
 
         [resources.sources.vanilla]
-        url = "https://piston-data.mojang.com/v1/objects/84194a2f286ef7c14ed7ce0090dba59902951553/server.jar"
-        sha256 = "3af73a9dc5a102e38147946360dd27d4d70bae7055bf91cf2151cd5d121b79e0"
+        url = "https://piston-data.mojang.com/v1/objects/8dd1a28015f51b1803213892b50b7b4fc76e594d/server.jar"
+        sha256 = "c03fa6f39daa69ddf413c965a3a83084db746a7a138ce535a693293b5472d363"
         rename = "server.jar"
         in_subdir = false
         extract = false
 
         [resources.sources.vanilla-snapshot]
-        url = "https://piston-data.mojang.com/v1/objects/84194a2f286ef7c14ed7ce0090dba59902951553/server.jar"
-        sha256 = "3af73a9dc5a102e38147946360dd27d4d70bae7055bf91cf2151cd5d121b79e0"
+        url = "https://piston-data.mojang.com/v1/objects/8dd1a28015f51b1803213892b50b7b4fc76e594d/server.jar"
+        sha256 = "c03fa6f39daa69ddf413c965a3a83084db746a7a138ce535a693293b5472d363"
         rename = "server.jar"
         in_subdir = false
         extract = false
