@@ -35,7 +35,6 @@ ynh_app_setting_set --app=$app --key=password --value=$password
 #=================================================
 ynh_script_progression --message="Setting up source files..." --weight=10
 
-# Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir" --source_id="$server"
 
 mkdir -p "$install_dir/mcrcon"
@@ -61,13 +60,7 @@ ynh_add_config --template="../conf/eula.txt" --destination="$install_dir/eula.tx
 #=================================================
 ynh_script_progression --message="Configuring a systemd service..." --weight=2
 
-# Create a dedicated systemd config
 ynh_add_systemd_config
-
-#=================================================
-# INTEGRATE SERVICE IN YUNOHOST
-#=================================================
-ynh_script_progression --message="Integrating service in YunoHost..." --weight=1
 
 yunohost service add $app --description="Three-dimensional sandbox construction game" --log="/var/log/$app/$app.log" --needs_exposed_ports="$port"
 

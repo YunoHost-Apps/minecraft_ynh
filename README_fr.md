@@ -16,22 +16,22 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 ## Vue d’ensemble
 
-Minecraft is a sandbox construction game, whose gameplay involves players interacting with the game world by placing and breaking various types of blocks in a three-dimensional environment. In this environment, players can build creative structures, creations, and artwork on multiplayer servers and singleplayer worlds across multiple game modes.
+Minecraft est un jeu de construction de type bac à sable, dont le gameplay implique que les joueurs interagissent avec le monde du jeu en plaçant et en cassant différents types de blocs dans un environnement tridimensionnel. Dans cet environnement, les joueurs peuvent créer des structures créatives, des créations et des illustrations sur des serveurs multijoueurs et des mondes solo dans plusieurs modes de jeu.
 
-### Supported Servers
+### Serveurs pris en charge
  
-1. Minecraft (Vanilla)
-2. Minecraft (Vanilla snapshot)
-3. Spigot
-4. Paper
+1. Minecraft (Vanille)
+2. Minecraft (instantané vanille)
+3. Robinet
+4. Papier
 
 
-**Version incluse :** 1.19.3~ynh1
+**Version incluse :** 1.20.4~ynh1
 ## Documentations et ressources
 
 * Site officiel de l’app : <https://www.minecraft.net/>
 * Documentation officielle de l’admin : <https://minecraft.fandom.com/wiki/Tutorials/Setting_up_a_server>
-* Documentation YunoHost pour cette app : <https://yunohost.org/app_minecraft>
+* YunoHost Store: <https://apps.yunohost.org/app/minecraft>
 * Signaler un bug : <https://github.com/YunoHost-Apps/minecraft_ynh/issues>
 
 ## Informations pour les développeurs
