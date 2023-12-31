@@ -17,7 +17,7 @@ gamemode=survival
 level_seed=""
 max_players=20
 motd="A Minecraft Server"
-password=$YNH_APP_ARG_PASSWORD
+#password=$YNH_APP_ARG_PASSWORD
 
 #=================================================
 # STORE SETTINGS FROM MANIFEST
@@ -51,9 +51,9 @@ chmod +x "$install_dir/server.jar"
 #=================================================
 ynh_script_progression --message="Configuring configuration files..." --weight=2
 
-ynh_add_config --template="../conf/server.properties" --destination="$install_dir/server.properties"
-ynh_add_config --template="../conf/ops.txt" --destination="$install_dir/ops.txt"
-ynh_add_config --template="../conf/eula.txt" --destination="$install_dir/eula.txt"
+ynh_add_config --template="server.properties" --destination="$install_dir/server.properties"
+ynh_add_config --template="ops.txt" --destination="$install_dir/ops.txt"
+ynh_add_config --template="eula.txt" --destination="$install_dir/eula.txt"
 
 #=================================================
 # SETUP SYSTEMD
