@@ -101,7 +101,6 @@ ram.runtime = "50M"
 
     [resources.apt]
     packages = "openjdk-17-jre"
-  
 
     # [resources.apt]
     # packages_from_raw_bash = """
