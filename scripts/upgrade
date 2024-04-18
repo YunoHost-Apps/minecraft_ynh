@@ -12,12 +12,6 @@ source /usr/share/yunohost/helpers
 password=$(ynh_app_setting_get --app=$app --key=password)
 
 #=================================================
-# CHECK VERSION
-#=================================================
-
-upgrade_type=$(ynh_check_app_version_changed)
-
-#=================================================
 # ENSURE DOWNWARD COMPATIBILITY
 #=================================================
 ynh_script_progression --message="Ensuring downward compatibility..."
@@ -73,15 +67,11 @@ ynh_systemd_action --service_name=$app --action=stop --log_path="systemd"
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
+ynh_script_progression --message="Upgrading source files..." --weight=1
 
-if [ "$upgrade_type" == "UPGRADE_APP" ]
-then
-	ynh_script_progression --message="Upgrading source files..." --weight=1
+ynh_setup_source --dest_dir="$install_dir" --source_id="$server" --keep="ops.txt eula.txt server.properties"
 
-	ynh_setup_source --dest_dir="$install_dir" --source_id="$server" --keep="ops.txt eula.txt server.properties"
-
-	ynh_setup_source --dest_dir="$install_dir/mcrcon" --source_id="mcrcon"	
-fi
+ynh_setup_source --dest_dir="$install_dir/mcrcon" --source_id="mcrcon"	
 
 # Set permissions to app files
 chmod 755 "$install_dir"
