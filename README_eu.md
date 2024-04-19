@@ -26,7 +26,7 @@ Minecraft is a sandbox construction game, whose gameplay involves players intera
 4. Paper
 
 
-**Paketatutako bertsioa:** 1.20.4~ynh1
+**Paketatutako bertsioa:** 1.20.4~ynh2
 ## Dokumentazioa eta baliabideak
 
 - Aplikazioaren webgune ofiziala: <https://www.minecraft.net/>

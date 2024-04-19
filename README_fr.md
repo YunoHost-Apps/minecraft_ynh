@@ -26,7 +26,7 @@ Minecraft est un jeu de construction de type bac à sable, dont le gameplay impl
 4. Papier
 
 
-**Version incluse :** 1.20.4~ynh1
+**Version incluse :** 1.20.4~ynh2
 ## Documentations et ressources
 
 - Site officiel de l’app : <https://www.minecraft.net/>
