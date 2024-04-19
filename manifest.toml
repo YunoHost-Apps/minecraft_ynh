@@ -5,7 +5,7 @@ name = "Minecraft"
 description.en = "Three-dimensional sandbox construction game"
 description.fr = "Jeu de construction de type \"bac à sable\" en trois dimensions"
 
-version = "1.20.4~ynh1"
+version = "1.20.4~ynh2"
 
 maintainers = []
 
@@ -101,7 +101,6 @@ ram.runtime = "50M"
 
     [resources.apt]
     packages = "openjdk-17-jre"
-  
 
     # [resources.apt]
     # packages_from_raw_bash = """
