@@ -4,15 +4,11 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# STANDARD REMOVE
-#=================================================
 # REMOVE SERVICE FROM ADMIN PANEL
 #=================================================
 ynh_script_progression "Removing system configurations related to $app..."
 
-if yunohost service status $app >/dev/null 2>&1
-then
-	ynh_script_progression "Removing $app service integration..."
+if yunohost service status $app >/dev/null 2>&1; then
 	yunohost service remove $app
 fi
 
