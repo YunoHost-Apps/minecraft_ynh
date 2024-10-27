@@ -1,11 +1,5 @@
 #!/bin/bash
 
-#=================================================
-# GENERIC START
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source _common.sh
 source /usr/share/yunohost/helpers
 
@@ -23,55 +17,55 @@ motd="A Minecraft Server"
 # STORE SETTINGS FROM MANIFEST
 #=================================================
 
-ynh_app_setting_set --app=$app --key=gamemode --value=$gamemode
-ynh_app_setting_set --app=$app --key=level_seed --value=$level_seed
-ynh_app_setting_set --app=$app --key=max_players --value=$max_players
-ynh_app_setting_set --app=$app --key=motd --value=$motd
-ynh_app_setting_set --app=$app --key=password --value=$password
+ynh_app_setting_set --key=gamemode --value=$gamemode
+ynh_app_setting_set --key=level_seed --value=$level_seed
+ynh_app_setting_set --key=max_players --value=$max_players
+ynh_app_setting_set --key=motd --value=$motd
+ynh_app_setting_set --key=password --value=$password
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression --message="Setting up source files..." --weight=10
+ynh_script_progression "Setting up source files..."
 
 ynh_setup_source --dest_dir="$install_dir" --source_id="$server"
 
 mkdir -p "$install_dir/mcrcon"
-ynh_setup_source --dest_dir="$install_dir/mcrcon" --source_id="mcrcon"	
+ynh_setup_source --dest_dir="$install_dir/mcrcon" --source_id="mcrcon"
 
-chmod 755 "$install_dir"
-chmod -R o-rwx "$install_dir"
-chown -R $app:www-data "$install_dir"
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod 755 "$install_dir"
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx "$install_dir"
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:www-data "$install_dir"
 chmod +x "$install_dir/mcrcon/mcrcon"
 chmod +x "$install_dir/server.jar"
 
 #=================================================
 # MODIFY A CONFIG FILE
 #=================================================
-ynh_script_progression --message="Configuring configuration files..." --weight=2
+ynh_script_progression "Configuring configuration files..."
 
-ynh_add_config --template="server.properties" --destination="$install_dir/server.properties"
-ynh_add_config --template="ops.txt" --destination="$install_dir/ops.txt"
-ynh_add_config --template="eula.txt" --destination="$install_dir/eula.txt"
+ynh_config_add --template="server.properties" --destination="$install_dir/server.properties"
+ynh_config_add --template="ops.txt" --destination="$install_dir/ops.txt"
+ynh_config_add --template="eula.txt" --destination="$install_dir/eula.txt"
 
 #=================================================
 # SETUP SYSTEMD
 #=================================================
-ynh_script_progression --message="Configuring a systemd service..." --weight=2
+ynh_script_progression "Configuring $app's systemd service..."
 
-ynh_add_systemd_config
+ynh_config_add_systemd
 
 yunohost service add $app --description="Three-dimensional sandbox construction game" --log="/var/log/$app/$app.log" --needs_exposed_ports="$port"
 
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Starting a systemd service..." --weight=3
+ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemd_action --service_name=$app --action=start --log_path=systemd --line_match="RCON running on"
+ynh_systemctl --service=$app --action=start --log_path=systemd --wait_until="RCON running on"
 
 #=================================================
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Installation of $app completed" --last
+ynh_script_progression "Installation of $app completed"
