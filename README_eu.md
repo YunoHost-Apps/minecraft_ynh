@@ -5,7 +5,7 @@ EZ editatu eskuz.
 
 # Minecraft YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/minecraft.svg)](https://dash.yunohost.org/appci/app/minecraft) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/minecraft.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/minecraft.maintain.svg)
+[![Integrazio maila](https://dash.yunohost.org/integration/minecraft.svg)](https://ci-apps.yunohost.org/ci/apps/minecraft/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/minecraft.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/minecraft.maintain.svg)
 
 [![Instalatu Minecraft YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=minecraft)
 
@@ -26,7 +26,7 @@ Minecraft is a sandbox construction game, whose gameplay involves players intera
 4. Paper
 
 
-**Paketatutako bertsioa:** 1.20.4~ynh2
+**Paketatutako bertsioa:** 1.21.3~ynh2
 ## Dokumentazioa eta baliabideak
 
 - Aplikazioaren webgune ofiziala: <https://www.minecraft.net/>

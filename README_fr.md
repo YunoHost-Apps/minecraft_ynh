@@ -5,7 +5,7 @@ Il NE doit PAS être modifié à la main.
 
 # Minecraft pour YunoHost
 
-[![Niveau d’intégration](https://dash.yunohost.org/integration/minecraft.svg)](https://dash.yunohost.org/appci/app/minecraft) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/minecraft.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/minecraft.maintain.svg)
+[![Niveau d’intégration](https://dash.yunohost.org/integration/minecraft.svg)](https://ci-apps.yunohost.org/ci/apps/minecraft/) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/minecraft.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/minecraft.maintain.svg)
 
 [![Installer Minecraft avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=minecraft)
 
@@ -26,7 +26,7 @@ Minecraft est un jeu de construction de type bac à sable, dont le gameplay impl
 4. Papier
 
 
-**Version incluse :** 1.20.4~ynh2
+**Version incluse :** 1.21.3~ynh2
 ## Documentations et ressources
 
 - Site officiel de l’app : <https://www.minecraft.net/>
