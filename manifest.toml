@@ -33,7 +33,7 @@ ram.runtime = "50M"
     ask.en = "Select your server"
     ask.fr = "Choisir votre serveur"
     type = "select"
-    choices = ["vanilla", "vanilla-snapshot", "paper", "spigot"]
+    choices = ["vanilla", "vanilla-snapshot", "paper"]
     default = "vanilla"
 
     [install.ram]
@@ -61,8 +61,8 @@ ram.runtime = "50M"
         in_subdir = false
 
         [resources.sources.paper]
-        url = "https://api.papermc.io/v2/projects/paper/versions/1.20.1/builds/150/downloads/paper-1.20.1-150.jar"
-        sha256 = "e396b6fb8e511c7042652ec31bbd4936196098b96be913566dfa89f34dfe7e3d"
+        url = "https://api.papermc.io/v2/projects/paper/versions/1.21.1/builds/128/downloads/paper-1.21.1-128.jar"
+        sha256 = "4dab63990686350dbf713f9044991f112cebadb64a44865cd79a5a750b820d91"
         rename = "server.jar"
         in_subdir = false
         extract = false
@@ -75,18 +75,18 @@ ram.runtime = "50M"
         extract = false
 
         [resources.sources.vanilla-snapshot]
-        url = "https://piston-data.mojang.com/v1/objects/8dd1a28015f51b1803213892b50b7b4fc76e594d/server.jar"
-        sha256 = "c03fa6f39daa69ddf413c965a3a83084db746a7a138ce535a693293b5472d363"
+        url = "https://piston-data.mojang.com/v1/objects/45810d238246d90e811d896f87b14695b7fb6839/server.jar"
+        sha256 = "e153b89b02c0839cdf5e8c1d57c80dd42a3fffb80c60817632080c041bf8afb5"
         rename = "server.jar"
         in_subdir = false
         extract = false
         
-        [resources.sources.spigot]
-        url = "https://download.getbukkit.org/spigot/spigot-1.20.1.jar"
-        sha256 = "df672a8effb69fa30bbfcad3345fa8796442bf11bf509da5f6f84c655f743f2d"
-        rename = "server.jar"
-        in_subdir = false
-        extract = false
+        #[resources.sources.spigot]
+        #url = "https://download.getbukkit.org/spigot/spigot-1.21.jar"
+        #sha256 = ""
+        #rename = "server.jar"
+        #in_subdir = false
+        #extract = false
 
     [resources.ports]
     main.default = 25565
