@@ -5,7 +5,9 @@ EZ editatu eskuz.
 
 # Minecraft YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/minecraft.svg)](https://ci-apps.yunohost.org/ci/apps/minecraft/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/minecraft.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/minecraft.maintain.svg)
+[![Integrazio maila](https://apps.yunohost.org/badge/integration/minecraft)](https://ci-apps.yunohost.org/ci/apps/minecraft/)
+![Funtzionamendu egoera](https://apps.yunohost.org/badge/state/minecraft)
+![Mantentze egoera](https://apps.yunohost.org/badge/maintained/minecraft)
 
 [![Instalatu Minecraft YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=minecraft)
 

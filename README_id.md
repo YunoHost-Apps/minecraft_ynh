@@ -5,7 +5,9 @@ Ini TIDAK boleh diedit dengan tangan.
 
 # Minecraft untuk YunoHost
 
-[![Tingkat integrasi](https://dash.yunohost.org/integration/minecraft.svg)](https://ci-apps.yunohost.org/ci/apps/minecraft/) ![Status kerja](https://ci-apps.yunohost.org/ci/badges/minecraft.status.svg) ![Status pemeliharaan](https://ci-apps.yunohost.org/ci/badges/minecraft.maintain.svg)
+[![Tingkat integrasi](https://apps.yunohost.org/badge/integration/minecraft)](https://ci-apps.yunohost.org/ci/apps/minecraft/)
+![Status kerja](https://apps.yunohost.org/badge/state/minecraft)
+![Status pemeliharaan](https://apps.yunohost.org/badge/maintained/minecraft)
 
 [![Pasang Minecraft dengan YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=minecraft)
 
