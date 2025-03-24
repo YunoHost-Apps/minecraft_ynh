@@ -29,6 +29,7 @@ Minecraft is a sandbox construction game, whose gameplay involves players intera
 
 
 **Geleverde versie:** 1.21.4~ynh1
+
 ## Documentatie en bronnen
 
 - Officiele website van de app: <https://www.minecraft.net/>
