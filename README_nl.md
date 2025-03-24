@@ -5,7 +5,9 @@ Hij mag NIET handmatig aangepast worden.
 
 # Minecraft voor Yunohost
 
-[![Integratieniveau](https://dash.yunohost.org/integration/minecraft.svg)](https://ci-apps.yunohost.org/ci/apps/minecraft/) ![Mate van functioneren](https://ci-apps.yunohost.org/ci/badges/minecraft.status.svg) ![Onderhoudsstatus](https://ci-apps.yunohost.org/ci/badges/minecraft.maintain.svg)
+[![Integratieniveau](https://apps.yunohost.org/badge/integration/minecraft)](https://ci-apps.yunohost.org/ci/apps/minecraft/)
+![Mate van functioneren](https://apps.yunohost.org/badge/state/minecraft)
+![Onderhoudsstatus](https://apps.yunohost.org/badge/maintained/minecraft)
 
 [![Minecraft met Yunohost installeren](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=minecraft)
 

@@ -5,7 +5,9 @@ Il NE doit PAS être modifié à la main.
 
 # Minecraft pour YunoHost
 
-[![Niveau d’intégration](https://dash.yunohost.org/integration/minecraft.svg)](https://ci-apps.yunohost.org/ci/apps/minecraft/) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/minecraft.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/minecraft.maintain.svg)
+[![Niveau d’intégration](https://apps.yunohost.org/badge/integration/minecraft)](https://ci-apps.yunohost.org/ci/apps/minecraft/)
+![Statut du fonctionnement](https://apps.yunohost.org/badge/state/minecraft)
+![Statut de maintenance](https://apps.yunohost.org/badge/maintained/minecraft)
 
 [![Installer Minecraft avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=minecraft)
 

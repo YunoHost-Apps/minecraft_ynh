@@ -5,7 +5,9 @@
 
 # YunoHost 上的 Minecraft
 
-[![集成程度](https://dash.yunohost.org/integration/minecraft.svg)](https://ci-apps.yunohost.org/ci/apps/minecraft/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/minecraft.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/minecraft.maintain.svg)
+[![集成程度](https://apps.yunohost.org/badge/integration/minecraft)](https://ci-apps.yunohost.org/ci/apps/minecraft/)
+![工作状态](https://apps.yunohost.org/badge/state/minecraft)
+![维护状态](https://apps.yunohost.org/badge/maintained/minecraft)
 
 [![使用 YunoHost 安装 Minecraft](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=minecraft)
 

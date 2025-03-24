@@ -5,7 +5,9 @@
 
 # Minecraft для YunoHost
 
-[![Уровень интеграции](https://dash.yunohost.org/integration/minecraft.svg)](https://ci-apps.yunohost.org/ci/apps/minecraft/) ![Состояние работы](https://ci-apps.yunohost.org/ci/badges/minecraft.status.svg) ![Состояние сопровождения](https://ci-apps.yunohost.org/ci/badges/minecraft.maintain.svg)
+[![Уровень интеграции](https://apps.yunohost.org/badge/integration/minecraft)](https://ci-apps.yunohost.org/ci/apps/minecraft/)
+![Состояние работы](https://apps.yunohost.org/badge/state/minecraft)
+![Состояние сопровождения](https://apps.yunohost.org/badge/maintained/minecraft)
 
 [![Установите Minecraft с YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=minecraft)
 
