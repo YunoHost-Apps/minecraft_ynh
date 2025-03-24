@@ -9,7 +9,6 @@
 ![Состояние работы](https://apps.yunohost.org/badge/state/minecraft)
 ![Состояние сопровождения](https://apps.yunohost.org/badge/maintained/minecraft)
 
-
 [![Установите Minecraft с YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=minecraft)
 
 *[Прочтите этот README на других языках.](./ALL_README.md)*
@@ -30,7 +29,6 @@ Minecraft is a sandbox construction game, whose gameplay involves players intera
 
 
 **Поставляемая версия:** 1.21.4~ynh1
-
 ## Документация и ресурсы
 
 - Официальный веб-сайт приложения: <https://www.minecraft.net/>
