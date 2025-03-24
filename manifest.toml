@@ -33,12 +33,12 @@ ram.runtime = "50M"
     ask.en = "Select your server"
     ask.fr = "Choisir votre serveur"
     type = "select"
-    choices = ["vanilla", "vanilla-snapshot", "paper"]
+    choices = ["vanilla", "vanilla-snapshot", "paper", "fabric"]
     default = "vanilla"
 
     [install.ram]
-    ask.en = "Set the memory limit for the server. Convert the number to mebibytes (binary MB): for example, 2GB = 2048, 4GB = 4096..."
-    ask.fr = "Définir la mémoire du serveur ? Convertir le chiffre en mébioctets (Mo binaires) : soit 2Go = 2048, 4Go = 4096..."
+    ask.en = "Set the memory limit for the server."
+    ask.fr = "Définir la mémoire du serveur."
     type = "select"
     choices = ["1024", "2048", "4096", "8192"]
     default = "2048"
@@ -80,7 +80,14 @@ ram.runtime = "50M"
         rename = "server.jar"
         in_subdir = false
         extract = false
-        
+
+        [resources.sources.fabric]
+        url = "https://meta.fabricmc.net/v2/versions/loader/1.21.5-rc1/0.16.10/1.0.1/server/jar"
+        sha256 = "a41f903e26d76352a604f13e99a91c4677bf29678d702e3299fe7a20009b583e"
+        rename = "server.jar"
+        in_subdir = false
+        extract = false
+
         #[resources.sources.spigot]
         #url = "https://download.getbukkit.org/spigot/spigot-1.21.jar"
         #sha256 = ""
