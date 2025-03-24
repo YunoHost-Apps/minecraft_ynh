@@ -26,7 +26,7 @@ Minecraft is a sandbox construction game, whose gameplay involves players intera
 2. Minecraft (Vanilla snapshot)
 3. Spigot
 4. Paper
-5. Fabric
+5. [Fabric](https://fabricmc.net/)
 
 
 **Geleverde versie:** 1.21.4~ynh1
