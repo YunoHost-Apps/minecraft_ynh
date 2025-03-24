@@ -5,7 +5,7 @@ name = "Minecraft"
 description.en = "Three-dimensional sandbox construction game"
 description.fr = "Jeu de construction de type \"bac à sable\" en trois dimensions"
 
-version = "1.21.3~ynh2"
+version = "1.21.4~ynh1"
 
 maintainers = []
 
@@ -40,7 +40,7 @@ ram.runtime = "50M"
     ask.en = "Set the memory limit for the server. Convert the number to mebibytes (binary MB): for example, 2GB = 2048, 4GB = 4096..."
     ask.fr = "Définir la mémoire du serveur ? Convertir le chiffre en mébioctets (Mo binaires) : soit 2Go = 2048, 4Go = 4096..."
     type = "select"
-    choices = ["1024", "2048", "4096"]
+    choices = ["1024", "2048", "4096", "8192"]
     default = "2048"
 
     [install.op]
@@ -68,15 +68,15 @@ ram.runtime = "50M"
         extract = false
 
         [resources.sources.vanilla]
-        url = "https://piston-data.mojang.com/v1/objects/45810d238246d90e811d896f87b14695b7fb6839/server.jar"
-        sha256 = "e153b89b02c0839cdf5e8c1d57c80dd42a3fffb80c60817632080c041bf8afb5"
+        url = "https://piston-data.mojang.com/v1/objects/4707d00eb834b446575d89a61a11b5d548d8c001/server.jar"
+        sha256 = "1066970b09e9c671844572291c4a871cc1ac2b85838bf7004fa0e778e10f1358"
         rename = "server.jar"
         in_subdir = false
         extract = false
 
         [resources.sources.vanilla-snapshot]
-        url = "https://piston-data.mojang.com/v1/objects/45810d238246d90e811d896f87b14695b7fb6839/server.jar"
-        sha256 = "e153b89b02c0839cdf5e8c1d57c80dd42a3fffb80c60817632080c041bf8afb5"
+        url = "https://piston-data.mojang.com/v1/objects/4707d00eb834b446575d89a61a11b5d548d8c001/server.jar"
+        sha256 = "1066970b09e9c671844572291c4a871cc1ac2b85838bf7004fa0e778e10f1358"
         rename = "server.jar"
         in_subdir = false
         extract = false
