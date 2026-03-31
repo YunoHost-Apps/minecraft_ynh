@@ -107,7 +107,7 @@ ram.runtime = "50M"
     [resources.permissions]
 
     [resources.apt]
-    packages = "openjdk-21-jdk-headless"
+    packages = "openjdk-21-jdk"
 
     # [resources.apt]
     # packages_from_raw_bash = """
