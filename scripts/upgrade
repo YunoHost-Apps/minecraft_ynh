@@ -1,6 +1,5 @@
 #!/bin/bash
 
-source _common.sh
 source /usr/share/yunohost/helpers
 
 password=$(ynh_app_setting_get --key=password)
