@@ -87,13 +87,6 @@ ram.runtime = "50M"
         in_subdir = false
         extract = false
 
-        #[resources.sources.spigot]
-        #url = "https://download.getbukkit.org/spigot/spigot-1.21.jar"
-        #sha256 = ""
-        #rename = "server.jar"
-        #in_subdir = false
-        #extract = false
-
     [resources.ports]
     main.default = 25565
     main.exposed = "TCP"
@@ -108,13 +101,3 @@ ram.runtime = "50M"
 
     [resources.apt]
     packages = "openjdk-25-jdk"
-
-    # [resources.apt]
-    # packages_from_raw_bash = """
-    # debian=$(lsb_release --codename --short)
-    # if [[ $debian = "bullseye" ]]; then
-    #     echo "openjdk-11-jre";
-    # elif [[ $debian = "bookworm" ]]; then
-    #     echo "openjdk-17-jre";
-    # fi
-    # """
