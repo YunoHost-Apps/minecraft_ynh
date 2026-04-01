@@ -1,6 +1,5 @@
 #!/bin/bash
 
-source _common.sh
 source /usr/share/yunohost/helpers
 
 password=$(ynh_app_setting_get --key=password)
@@ -38,7 +37,7 @@ ynh_app_setting_set_default --key=motd --value="A Minecraft Server"
 #=================================================
 ynh_script_progression "Stopping $app's systemd service..."
 
-ynh_systemctl --service=$app --action=stop --log_path="systemd"
+ynh_systemctl  --action=stop --log_path="systemd"
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -66,7 +65,7 @@ yunohost service add $app --description="Three-dimensional sandbox construction 
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemctl --service=$app --action=start --log_path=systemd --wait_until="RCON running on"
+ynh_systemctl  --action=start --log_path=systemd --wait_until="RCON running on"
 
 #=================================================
 # END OF SCRIPT

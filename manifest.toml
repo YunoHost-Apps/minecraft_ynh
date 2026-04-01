@@ -5,7 +5,7 @@ name = "Minecraft"
 description.en = "Three-dimensional sandbox construction game"
 description.fr = "Jeu de construction de type \"bac à sable\" en trois dimensions"
 
-version = "1.21.3~ynh2"
+version = "1.26.1~ynh1"
 
 maintainers = []
 
@@ -15,13 +15,12 @@ website = "https://www.minecraft.net/"
 admindoc = "https://minecraft.fandom.com/wiki/Tutorials/Setting_up_a_server"
 
 [integration]
-yunohost = ">= 11.2.30"
+yunohost = ">= 13.0.0"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = false
 
 ldap = "not_relevant"
-
 sso = "not_relevant"
 
 disk = "50M"
@@ -33,14 +32,14 @@ ram.runtime = "50M"
     ask.en = "Select your server"
     ask.fr = "Choisir votre serveur"
     type = "select"
-    choices = ["vanilla", "vanilla-snapshot", "paper"]
+    choices = ["vanilla", "vanilla-snapshot", "paper", "fabric"]
     default = "vanilla"
 
     [install.ram]
-    ask.en = "Set the memory limit for the server. Convert the number to mebibytes (binary MB): for example, 2GB = 2048, 4GB = 4096..."
-    ask.fr = "Définir la mémoire du serveur ? Convertir le chiffre en mébioctets (Mo binaires) : soit 2Go = 2048, 4Go = 4096..."
+    ask.en = "Set the memory limit for the server."
+    ask.fr = "Définir la mémoire du serveur."
     type = "select"
-    choices = ["1024", "2048", "4096"]
+    choices = ["1024", "2048", "4096", "8192"]
     default = "2048"
 
     [install.op]
@@ -61,32 +60,32 @@ ram.runtime = "50M"
         in_subdir = false
 
         [resources.sources.paper]
-        url = "https://api.papermc.io/v2/projects/paper/versions/1.21.1/builds/128/downloads/paper-1.21.1-128.jar"
-        sha256 = "4dab63990686350dbf713f9044991f112cebadb64a44865cd79a5a750b820d91"
+        url = "https://api.papermc.io/v2/projects/paper/versions/1.21.11/builds/69/downloads/paper-1.21.11-69.jar"
+        sha256 = "cf374f2af9d71dfcc75343f37b722a7abcb091c574131b95e3b13c6fc2cb8fae"
         rename = "server.jar"
         in_subdir = false
         extract = false
 
         [resources.sources.vanilla]
-        url = "https://piston-data.mojang.com/v1/objects/45810d238246d90e811d896f87b14695b7fb6839/server.jar"
-        sha256 = "e153b89b02c0839cdf5e8c1d57c80dd42a3fffb80c60817632080c041bf8afb5"
+        url = "https://piston-data.mojang.com/v1/objects/3872a7f07a1a595e651aef8b058dfc2bb3772f46/server.jar"
+        sha256 = "98ab064389a8b34d48ac3d4c5ed858dd9433d0dfd1a12e1cbbda916448d92994"
         rename = "server.jar"
         in_subdir = false
         extract = false
 
         [resources.sources.vanilla-snapshot]
-        url = "https://piston-data.mojang.com/v1/objects/45810d238246d90e811d896f87b14695b7fb6839/server.jar"
-        sha256 = "e153b89b02c0839cdf5e8c1d57c80dd42a3fffb80c60817632080c041bf8afb5"
+        url = "https://piston-data.mojang.com/v1/objects/3872a7f07a1a595e651aef8b058dfc2bb3772f46/server.jar"
+        sha256 = "98ab064389a8b34d48ac3d4c5ed858dd9433d0dfd1a12e1cbbda916448d92994"
         rename = "server.jar"
         in_subdir = false
         extract = false
-        
-        #[resources.sources.spigot]
-        #url = "https://download.getbukkit.org/spigot/spigot-1.21.jar"
-        #sha256 = ""
-        #rename = "server.jar"
-        #in_subdir = false
-        #extract = false
+
+        [resources.sources.fabric]
+        url = "https://meta.fabricmc.net/v2/versions/loader/26.1/0.18.5/1.1.1/server/jar"
+        sha256 = "5a1ab6a20614285e34a3aabe3edf4960d36d8304a4f943437acc3572972c6c19"
+        rename = "server.jar"
+        in_subdir = false
+        extract = false
 
     [resources.ports]
     main.default = 25565
@@ -101,14 +100,4 @@ ram.runtime = "50M"
     [resources.permissions]
 
     [resources.apt]
-    packages = "openjdk-17-jre"
-
-    # [resources.apt]
-    # packages_from_raw_bash = """
-    # debian=$(lsb_release --codename --short)
-    # if [[ $debian = "bullseye" ]]; then
-    #     echo "openjdk-11-jre";
-    # elif [[ $debian = "bookworm" ]]; then
-    #     echo "openjdk-17-jre";
-    # fi
-    # """
+    packages = "openjdk-25-jdk"
