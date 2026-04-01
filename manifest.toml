@@ -81,8 +81,8 @@ ram.runtime = "50M"
         extract = false
 
         [resources.sources.fabric]
-        url = "https://meta.fabricmc.net/v2/versions/loader/1.21.5-rc1/0.16.10/1.0.1/server/jar"
-        sha256 = "a41f903e26d76352a604f13e99a91c4677bf29678d702e3299fe7a20009b583e"
+        url = "https://meta.fabricmc.net/v2/versions/loader/26.1/0.18.5/1.1.1/server/jar"
+        sha256 = "5a1ab6a20614285e34a3aabe3edf4960d36d8304a4f943437acc3572972c6c19"
         rename = "server.jar"
         in_subdir = false
         extract = false
