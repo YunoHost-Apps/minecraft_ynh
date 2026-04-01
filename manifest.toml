@@ -18,7 +18,7 @@ admindoc = "https://minecraft.fandom.com/wiki/Tutorials/Setting_up_a_server"
 yunohost = ">= 13.0.0"
 helpers_version = "2.1"
 architectures = "all"
-multi_instance = false
+multi_instance = true
 
 ldap = "not_relevant"
 sso = "not_relevant"
